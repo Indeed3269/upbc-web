@@ -2,16 +2,35 @@
 	
 	"use strict";
 
-	$(window).scroll(function() {
-	  var scroll = $(window).scrollTop();
-	  var box = $('.header-text').height();
-	  var header = $('header').height();
-
-	  if (scroll >= box - header) {
-	    $("header").addClass("background-header");
-	  } else {
-	    $("header").removeClass("background-header");
+	// Configuración del navbar al cargar la página
+	$(document).ready(function() {
+	  // Calcular la altura exacta del banner morado superior
+	  var subHeaderHeight = $('.sub-header').outerHeight();
+	  
+	  // Configurar el header para que esté exactamente debajo del banner morado
+	  $('.header-area').css('top', subHeaderHeight + 'px');
+	  
+	  // Ajustar el padding-top del main-banner para compensar la altura del navbar
+	  var headerHeight = $('.header-area').outerHeight();
+	  var totalOffset = subHeaderHeight + headerHeight;
+	  
+	  // Función de manejo del scroll
+	  function handleScroll() {
+	    var scroll = $(window).scrollTop();
+	    
+	    // El navbar se vuelve fijo exactamente cuando el banner morado superior desaparece
+	    if (scroll >= subHeaderHeight) {
+	      $('header').addClass('background-header');
+	    } else {
+	      $('header').removeClass('background-header');
+	    }
 	  }
+	  
+	  // Ejecutar al inicio para establecer el estado correcto
+	  handleScroll();
+	  
+	  // Asignar el evento de scroll
+	  $(window).scroll(handleScroll);
 	});
 	
 	$('.filters ul li').click(function(){
