@@ -169,13 +169,80 @@
 	  })
 	
 
-	// Menu Dropdown Toggle
-	if($('.menu-trigger').length){
+	// Menú móvil lateral para dispositivos móviles
+	$(document).ready(function() {
+		var isMobile = window.matchMedia("(max-width: 991px)").matches;
+		
+		// Abrir menú móvil al hacer clic en el botón hamburguesa
 		$(".menu-trigger").on('click', function() {	
 			$(this).toggleClass('active');
-			$('.header-area .nav').slideToggle(200);
+			$('.header-area .nav').toggleClass('active');
+			$('.mobile-menu-overlay').toggleClass('active');
+			$('body').toggleClass('menu-open');
 		});
-	}
+		
+		// Cerrar menú móvil al hacer clic en el botón de cierre
+		$(".mobile-menu-close").on('click', function() {
+			$('.menu-trigger').removeClass('active');
+			$('.header-area .nav').removeClass('active');
+			$('.mobile-menu-overlay').removeClass('active');
+			$('body').removeClass('menu-open');
+		});
+		
+		// Cerrar menú móvil al hacer clic en el overlay (fuera del menú)
+		$(".mobile-menu-overlay").on('click', function() {
+			closeMenu();
+		});
+		
+		// Función para cerrar el menú
+		function closeMenu() {
+			$('.menu-trigger').removeClass('active');
+			$('.header-area .nav').removeClass('active');
+			$('.mobile-menu-overlay').removeClass('active');
+			$('body').removeClass('menu-open');
+		}
+		
+		// Cerrar menú al hacer clic en un enlace del menú
+		$('.header-area .main-nav .nav li a').on('click', function(e) {
+			// Si no es un elemento con submenú o si estamos en móvil
+			if (!$(this).parent().hasClass('has-sub') || !isMobile) {
+				closeMenu();
+			}
+		});
+		
+		// Manejar submenús en dispositivos móviles
+		$('.header-area .main-nav .nav li.has-sub > a').on('click', function(e) {
+			if (isMobile) {
+				e.preventDefault();
+				var $parent = $(this).parent('li');
+				
+				// Alternar la clase 'open' para el icono de flecha
+				$parent.toggleClass('open');
+				
+				// Cerrar otros submenús abiertos
+				$('.header-area .main-nav .nav li.has-sub').not($parent).removeClass('open');
+				$('.header-area .main-nav .nav li.has-sub').not($parent).find('ul.sub-menu').slideUp(200);
+				
+				// Alternar el submenú actual
+				$parent.find('ul.sub-menu').slideToggle(200);
+			}
+		});
+		
+		// Actualizar el estado móvil cuando cambia el tamaño de la ventana
+		$(window).resize(function() {
+			isMobile = window.matchMedia("(max-width: 991px)").matches;
+			
+			// Restablecer menú en cambio de tamaño
+			if (!isMobile) {
+				$('.header-area .nav').removeClass('active');
+				$('.menu-trigger').removeClass('active');
+				$('.mobile-menu-overlay').removeClass('active');
+				$('body').removeClass('menu-open');
+				$('.header-area .main-nav .nav li.has-sub').removeClass('open');
+				$('.header-area .main-nav .nav li.has-sub ul.sub-menu').removeAttr('style');
+			}
+		});
+	})
 
 
 	// Menu elevator animation
