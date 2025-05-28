@@ -17,11 +17,103 @@
 
     <!-- Additional CSS Files -->
     <link rel="stylesheet" href="assets/css/fontawesome.css">
-    <link rel="stylesheet" href="assets/css/templatemo-edu-meeting.css">
     <link rel="stylesheet" href="assets/css/owl.css">
     <link rel="stylesheet" href="assets/css/lightbox.css">
-    <!-- UPBC Custom Colors -->
-    <link rel="stylesheet" href="assets/css/upbc-colors.css">
+    <link rel="stylesheet" href="assets/css/templatemo-edu-meeting.css">
+    <!-- UPBC CSS Modular Structure (cargado al final para tener prioridad) -->
+    <link rel="stylesheet" href="assets/css/upbc-main.css">
+    <style>
+      /* Estilos del carrusel de Vida Universitaria */
+      section.our-courses {
+        background: #fff !important;
+        padding: 60px 0 !important;
+        overflow: hidden !important;
+      }
+
+      .our-courses .owl-carousel {
+        margin: 0 -15px !important;
+      }
+
+      .our-courses .owl-stage-outer {
+        overflow: visible !important;
+        padding: 15px 0 !important;
+      }
+
+      .our-courses .item {
+        background: #fff !important;
+        border-radius: 30px !important;
+        box-shadow: 0 4px 20px rgba(96,43,130,0.08) !important;
+        margin: 15px !important;
+        position: relative !important;
+        overflow: hidden !important;
+        transition: all 0.3s ease-in-out !important;
+        border: 1px solid rgba(96,43,130,0.05) !important;
+        height: 100% !important;
+        max-width: calc(100% - 30px) !important;
+        width: 350px !important;
+      }
+
+      .our-courses .item img {
+        width: 100% !important;
+        height: 200px !important;
+        object-fit: cover !important;
+        transition: transform 0.3s ease !important;
+        border-radius: 30px 30px 0 0 !important;
+      }
+
+      .our-courses .item:hover {
+        transform: translateY(-5px) !important;
+        box-shadow: 0 8px 30px rgba(96,43,130,0.15) !important;
+      }
+
+      .our-courses .item:hover img {
+        transform: scale(1.05) !important;
+      }
+
+      .our-courses .down-content {
+        padding: 25px !important;
+        text-align: left !important;
+        background: #fff !important;
+      }
+
+      .our-courses .down-content h4 {
+        color: #602b82 !important;
+        font-size: 20px !important;
+        font-weight: 600 !important;
+        margin-bottom: 15px !important;
+        transition: color 0.3s ease !important;
+      }
+
+      .our-courses .down-content p {
+        color: #666 !important;
+        font-size: 15px !important;
+        line-height: 1.6 !important;
+        margin-bottom: 20px !important;
+      }
+
+      .our-courses .text-button a {
+        color: #cd8b47 !important;
+        font-weight: 500 !important;
+        text-decoration: none !important;
+        transition: all 0.3s ease !important;
+        display: inline-flex !important;
+        align-items: center !important;
+        gap: 5px !important;
+      }
+
+      .our-courses .text-button a:hover {
+        color: #602b82 !important;
+      }
+
+      .our-courses .text-button a i {
+        font-size: 14px !important;
+        transition: transform 0.3s ease !important;
+      }
+
+      .our-courses .text-button a:hover i {
+        transform: translateX(3px) !important;
+      }
+    </style>
   </head>
 
 <body>
@@ -130,92 +222,12 @@
             <div class="row">
               <div class="col-lg-12">
                 <div class="caption">
-              <h6>Bienvenidos</h6>
-              <h2>Universidad Politécnica de Baja California</h2>
-              <p>Formando profesionales de excelencia con una educación integral y de calidad para contribuir al desarrollo sostenible de nuestra región y del país.</p>
-              <div class="main-button-red">
-                  <div class="scroll-to-section"><a href="#apply">¡Inscríbete ahora!</a></div>
-              </div>
-          </div>
-              </div>
-            </div>
-          </div>
-      </div>
-  </section>
-  <!-- ***** Main Banner Area End ***** -->
-
-  <section class="services">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-12">
-          <div class="section-heading">
-            <h2>Accesos Rápidos</h2>
-          </div>
-        </div>
-        <div class="col-lg-12">
-          <div class="owl-service-item owl-carousel">
-          
-            <div class="item">
-              <div class="icon">
-                <img src="assets/images/service-icon-01.png" alt="Inscripciones">
-              </div>
-              <div class="down-content">
-                <h4>Inscripciones</h4>
-                <p>Proceso de inscripción para nuevos estudiantes y reinscripciones para alumnos actuales.</p>
-                <div class="text-button">
-                  <a href="#">Más información <i class="fa fa-arrow-right"></i></a>
-                </div>
-              </div>
-            </div>
-            
-            <div class="item">
-              <div class="icon">
-                <img src="assets/images/service-icon-02.png" alt="Portal del Alumno">
-              </div>
-              <div class="down-content">
-                <h4>Portal del Alumno</h4>
-                <p>Acceso al sistema de gestión académica para estudiantes matriculados en la universidad.</p>
-                <div class="text-button">
-                  <a href="#">Ingresar <i class="fa fa-arrow-right"></i></a>
-                </div>
-              </div>
-            </div>
-            
-            <div class="item">
-              <div class="icon">
-                <img src="assets/images/service-icon-03.png" alt="SIAXX">
-              </div>
-              <div class="down-content">
-                <h4>SIAXX</h4>
-                <p>Sistema Integral de Administración Académica para trámites y servicios universitarios.</p>
-                <div class="text-button">
-                  <a href="#">Acceder <i class="fa fa-arrow-right"></i></a>
-                </div>
-              </div>
-            </div>
-            
-            <div class="item">
-              <div class="icon">
-                <img src="assets/images/service-icon-02.png" alt="Somos Halcones">
-              </div>
-              <div class="down-content">
-                <h4>Somos Halcones</h4>
-                <p>Conoce nuestra historia, misión, visión y mensaje de la Rectora de la universidad.</p>
-                <div class="text-button">
-                  <a href="#">Descubrir <i class="fa fa-arrow-right"></i></a>
-                </div>
-              </div>
-            </div>
-            
-            <div class="item">
-              <div class="icon">
-                <img src="assets/images/service-icon-03.png" alt="Accesibilidad">
-              </div>
-              <div class="down-content">
-                <h4>Accesibilidad</h4>
-                <p>Herramientas y recursos para garantizar el acceso a la información para todos los usuarios.</p>
-                <div class="text-button">
-                  <a href="#">Opciones <i class="fa fa-arrow-right"></i></a>
+                  <div class="main-button"><span class="btn-bienvenidos">BIENVENIDOS</span></div>
+                  <h2>UNIVERSIDAD POLITÉCNICA DE BAJA CALIFORNIA</h2>
+                  <p>Formando profesionales de excelencia con una educación integral y de calidad para contribuir al desarrollo sostenible de nuestra región y del país.</p>
+                  <div class="main-button">
+                      <div class="scroll-to-section"><a href="#apply">¡INSCRÍBETE AHORA!</a></div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -224,7 +236,89 @@
         </div>
       </div>
     </div>
-  </section>
+
+    <!-- ***** Service Carousel Start ***** -->
+    <div class="services">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="owl-service-item owl-carousel">
+                  <div class="item">
+                    <div class="icon">
+                      <img src="assets/images/service-icon-01.png" alt="Inscripciones">
+                    </div>
+                    <div class="down-content">
+                      <h4>Inscripciones</h4>
+                      <p>Proceso de inscripción para nuevos estudiantes y reinscripciones para alumnos actuales.</p>
+                      <div class="text-button">
+                        <a href="#">Más información <i class="fa fa-arrow-right"></i></a>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div class="item">
+                    <div class="icon">
+                      <img src="assets/images/service-icon-02.png" alt="Portal del Alumno">
+                    </div>
+                    <div class="down-content">
+                      <h4>Portal del Alumno</h4>
+                      <p>Acceso al sistema de gestión académica para estudiantes matriculados en la universidad.</p>
+                      <div class="text-button">
+                        <a href="#">Ingresar <i class="fa fa-arrow-right"></i></a>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div class="item">
+                    <div class="icon">
+                      <img src="assets/images/service-icon-03.png" alt="SIAXX">
+                    </div>
+                    <div class="down-content">
+                      <h4>SIAXX</h4>
+                      <p>Sistema Integral de Administración Académica para trámites y servicios universitarios.</p>
+                      <div class="text-button">
+                        <a href="#">Acceder <i class="fa fa-arrow-right"></i></a>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div class="item">
+                    <div class="icon">
+                      <img src="assets/images/service-icon-02.png" alt="Somos Halcones">
+                    </div>
+                    <div class="down-content">
+                      <h4>Somos Halcones</h4>
+                      <p>Conoce nuestra historia, misión, visión y mensaje de la Rectora de la universidad.</p>
+                      <div class="text-button">
+                        <a href="#">Descubrir <i class="fa fa-arrow-right"></i></a>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div class="item">
+                    <div class="icon">
+                      <img src="assets/images/service-icon-03.png" alt="Accesibilidad">
+                    </div>
+                    <div class="down-content">
+                      <h4>Accesibilidad</h4>
+                      <p>Herramientas y recursos para garantizar el acceso a la información para todos los usuarios.</p>
+                      <div class="text-button">
+                        <a href="#">Opciones <i class="fa fa-arrow-right"></i></a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- ***** Service Carousel End ***** -->
+
+</section>
+<!-- ***** Main Banner Area End ***** -->
 
   <section class="upcoming-meetings" id="meetings">
     <div class="container">

@@ -820,25 +820,33 @@ services
   outline: none;
   position: absolute;
   left: -80px;
+  opacity: 1;
+  transition: all .5s;
 }
 
 .services .owl-nav .owl-prev span,
 .services .owl-nav .owl-next span {
-  opacity: 0;
+  display: none;
+}
+
+.services .owl-nav .owl-prev:hover:before,
+.services .owl-nav .owl-next:hover:before {
+  background-color: #735d7c;
 }
 
 .services .owl-nav .owl-prev:before {
   display: inline-block;
   font-family: 'FontAwesome';
-  color: #1e1e1e;
+  color: #fff;
   font-size: 25px;
   font-weight: 700;
   content: '\f104';
-  background-color: #fff;
+  background-color: #602b82;
   width: 50px;
   height: 50px;
   border-radius: 50%;
   line-height: 50px;
+  transition: all 0.3s ease;
 }
 
 .services .owl-nav .owl-prev {
@@ -851,33 +859,27 @@ services
 }
 
 .services .owl-nav .owl-next {
-  opacity: 1;
-  transition: all .5s;
-}
-
-.services .owl-nav .owl-next:hover {
-  opacity: 0.9;
-}
-
-.services .owl-nav .owl-next{
   margin-left: 10px;
   outline: none;
   position: absolute;
   right: -85px;
+  opacity: 1;
+  transition: all .5s;
 }
 
 .services .owl-nav .owl-next:before {
   display: inline-block;
   font-family: 'FontAwesome';
-  color: #1e1e1e;
+  color: #fff;
   font-size: 25px;
   font-weight: 700;
   content: '\f105';
-  background-color: #fff;
+  background-color: #602b82;
   width: 50px;
   height: 50px;
   border-radius: 50%;
   line-height: 50px;
+  transition: all 0.3s ease;
 }
 
 
@@ -1106,14 +1108,81 @@ courses
 --------------------------------------------- 
 */
 
+/* Estilos del carrusel de Vida Universitaria */
 section.our-courses {
-  background-image: url(../images/meetings-bg.jpg);
-  background-position: center center;
-  background-attachment: fixed;
-  background-repeat: no-repeat;
-  background-size: cover;
-  padding-top: 140px;
-  padding-bottom: 130px;
+  padding: 60px 0;
+  background: #fff;
+}
+
+.our-courses .item {
+  background: #fff;
+  border-radius: 30px;
+  box-shadow: 0 4px 20px rgba(96,43,130,0.08);
+  margin: 15px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease-in-out;
+  border: 1px solid rgba(96,43,130,0.05);
+  height: 100%;
+}
+
+.our-courses .item img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.our-courses .item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 30px rgba(96,43,130,0.15);
+}
+
+.our-courses .item:hover img {
+  transform: scale(1.05);
+}
+
+.our-courses .down-content {
+  padding: 25px;
+  text-align: left;
+}
+
+.our-courses .down-content h4 {
+  color: #602b82;
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 15px;
+  transition: color 0.3s ease;
+}
+
+.our-courses .down-content p {
+  color: #666;
+  font-size: 15px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.our-courses .text-button a {
+  color: #cd8b47;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.our-courses .text-button a:hover {
+  color: #602b82;
+}
+
+.our-courses .text-button a i {
+  font-size: 14px;
+  transition: transform 0.3s ease;
+}
+
+.our-courses .text-button a:hover i {
+  transform: translateX(3px) !important;
 }
 
 .our-courses .item .down-content {
@@ -1170,7 +1239,7 @@ section.our-courses {
   transition: all .5s;
   width: 7px;
   height: 7px;
-  background-color: #fff;
+  background-color: rgba(96,43,130,0.3);
   margin: 0px 5px;
   border-radius: 50%;
   outline: none;
@@ -1180,13 +1249,12 @@ section.our-courses {
   width: 24px;
   height: 8px;
   border-radius: 4px;
+  background-color: #602b82;
 }
-    
-.our-courses .owl-nav .owl-prev{
-  margin-right: 10px;
-  outline: none;
-  position: absolute;
-  left: -80px;
+
+.our-courses .owl-nav .owl-prev:hover:before,
+.our-courses .owl-nav .owl-next:hover:before {
+  background-color: #735d7c;
 }
 
 .our-courses .owl-nav .owl-prev span,
@@ -1197,15 +1265,16 @@ section.our-courses {
 .our-courses .owl-nav .owl-prev:before {
   display: inline-block;
   font-family: 'FontAwesome';
-  color: #1e1e1e;
+  color: #fff;
   font-size: 25px;
   font-weight: 700;
   content: '\f104';
-  background-color: #fff;
+  background-color: #602b82;
   width: 50px;
   height: 50px;
   border-radius: 50%;
   line-height: 50px;
+  transition: all 0.3s ease;
 }
 
 .our-courses .owl-nav .owl-prev {
@@ -1213,20 +1282,14 @@ section.our-courses {
   transition: all .5s;
 }
 
-.our-courses .owl-nav .owl-prev:hover {
-  opacity: 0.9;
+.our-courses .owl-nav .owl-prev {
+  margin-right: 10px;
+  outline: none;
+  position: absolute;
+  left: -80px;
 }
 
 .our-courses .owl-nav .owl-next {
-  opacity: 1;
-  transition: all .5s;
-}
-
-.our-courses .owl-nav .owl-next:hover {
-  opacity: 0.9;
-}
-
-.our-courses .owl-nav .owl-next{
   margin-left: 10px;
   outline: none;
   position: absolute;
@@ -1236,15 +1299,16 @@ section.our-courses {
 .our-courses .owl-nav .owl-next:before {
   display: inline-block;
   font-family: 'FontAwesome';
-  color: #1e1e1e;
+  color: #fff;
   font-size: 25px;
   font-weight: 700;
   content: '\f105';
-  background-color: #fff;
+  background-color: #602b82;
   width: 50px;
   height: 50px;
   border-radius: 50%;
   line-height: 50px;
+  transition: all 0.3s ease;
 }
 
 

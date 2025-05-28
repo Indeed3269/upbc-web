@@ -1,0 +1,188 @@
+/* ========================================
+   ESTILOS DE LAYOUT GENERAL
+   ======================================== */
+
+/**
+ * Este archivo contiene estilos para la estructura general
+ * del sitio, incluyendo el banner principal, secciones, etc.
+ */
+
+/* ===== BANNER PRINCIPAL ===== */
+
+/* Contenedor del banner */
+section.main-banner {
+  position: relative;
+  min-height: 950px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background-color: var(--upbc-purple);
+}
+
+/* Capa de superposición con gradiente */
+section.main-banner:after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: linear-gradient(135deg, rgba(96, 43, 130, 0.8) 0%, rgba(205, 139, 71, 0.8) 100%);
+  z-index: 1;
+}
+
+/* Contenido del banner */
+.header-text {
+  position: absolute;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 0 100px;
+}
+
+/* Título principal */
+.header-text h2 {
+  color: var(--upbc-white);
+  font-size: 46px;
+  font-weight: 800;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+/* Subtítulo */
+.header-text h6 {
+  color: var(--upbc-white);
+  font-size: 17px;
+  font-weight: 400;
+  margin-bottom: 30px;
+  line-height: 1.7;
+  max-width: 600px;
+}
+
+/* Ajustes para la sección de noticias */
+section.upcoming-meetings {
+  padding-top: 80px;     /* Espacio superior reducido para compensar el nuevo posicionamiento del carrusel */
+  position: relative;    /* Posicionamiento relativo para mantener el flujo correcto */
+  z-index: 8;            /* Z-index menor que el carrusel para asegurar el orden correcto */
+  background-color: #fafafa; /* Fondo sutil */
+}
+
+/* ===== SECCIONES GENERALES ===== */
+
+/* Cabecera de sección */
+.section-heading {
+  margin-bottom: 40px;
+}
+
+/* Título de sección */
+.section-heading h2 {
+  font-size: 30px;
+  font-weight: 700;
+  color: var(--upbc-purple);
+  text-transform: uppercase;
+  margin-bottom: 15px;
+}
+
+/* Descripción de sección */
+.section-heading p {
+  font-size: 15px;
+  color: var(--upbc-gray);
+  line-height: 1.7;
+}
+
+/* Línea decorativa debajo de los títulos */
+.section-heading h2:after {
+  content: '';
+  position: absolute;
+  width: 60px;
+  height: 3px;
+  background-color: var(--upbc-gold);
+  bottom: 0;
+  left: 0;
+}
+
+/* Centrar títulos cuando están en contenedores centrados */
+.text-center .section-heading h2:after {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* ===== SECCIÓN DE NOTICIAS ===== */
+
+/* Tarjeta de noticia */
+.upcoming-meetings .meeting-item {
+  background-color: var(--upbc-white);
+  border-radius: 20px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  margin-bottom: 30px;
+}
+
+/* Contenedor de la imagen */
+.upcoming-meetings .meeting-item .thumb {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Imagen de la noticia */
+.upcoming-meetings .meeting-item .thumb img {
+  width: 100%;
+  height: auto;
+}
+
+.meeting-item .down-content {
+  padding: 25px;
+}
+
+.meeting-item .down-content h4 {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--upbc-purple);
+  margin-bottom: 15px;
+  transition: all 0.3s ease;
+}
+
+.meeting-item:hover .down-content h4 {
+  color: var(--upbc-gold);
+}
+
+/* Ajustes para dispositivos móviles */
+@media (max-width: 767px) {
+  section.upcoming-meetings {
+    padding-top: 100px;   /* Menos espacio superior en móviles */
+  }
+  
+  .main-banner h2 {
+    font-size: 36px;      /* Título más pequeño en móviles */
+  }
+  
+  .main-banner h6 {
+    font-size: 16px;      /* Subtítulo más pequeño en móviles */
+  }
+  
+  .section-heading h2 {
+    font-size: 28px;      /* Títulos de sección más pequeños en móviles */
+  }
+  
+  .container {
+    padding: 0 15px;      /* Menos padding en contenedores para móviles */
+  }
+}
+
+/* Ajustes para tablets */
+@media (min-width: 768px) and (max-width: 991px) {
+  .main-banner h2 {
+    font-size: 42px;      /* Título adaptado para tablets */
+  }
+  
+  .section-heading h2 {
+    font-size: 30px;      /* Títulos de sección adaptados para tablets */
+  }
+}

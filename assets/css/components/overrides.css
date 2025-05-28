@@ -1,0 +1,360 @@
+/* ========================================
+   SOBRESCRITURAS DE ESTILOS DEL TEMPLATE
+   ======================================== */
+
+/**
+ * Este archivo contiene sobrescrituras específicas para resolver
+ * conflictos de colores y estilos con el template original.
+ * Tiene mayor especificidad para asegurar que nuestros estilos
+ * tengan prioridad.
+ */
+
+/* Colores principales */
+:root {
+  --primary-color: var(--upbc-purple);
+  --secondary-color: var(--upbc-gold);
+  --text-color: var(--upbc-gray);
+  --background-color: var(--upbc-white);
+  --accent-color: var(--upbc-dark-purple);
+}
+
+/* ===== CARRUSEL DE SERVICIOS ===== */
+
+/* Contenedor del carrusel */
+.services .owl-carousel {
+  position: relative;
+  z-index: 10;
+}
+
+/* Contenedor de los ítems del carrusel */
+.owl-service-item {
+  padding: 0 15px;
+}
+
+/* Tarjeta individual del carrusel */
+.owl-service-item .item {
+  background-color: var(--upbc-white) !important;
+  background-image: none !important;
+  border-radius: 10px !important;
+  text-align: center;
+  padding: 30px;
+  box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.08) !important;
+  transition: all 0.3s ease !important;
+}
+
+/* Títulos en las tarjetas */
+.services .item h4 {
+  color: var(--upbc-purple) !important;
+  font-weight: 600 !important;
+  margin-top: 15px !important;
+  margin-bottom: 10px !important;
+}
+
+/* Párrafos en las tarjetas */
+.services .item p {
+  color: var(--upbc-gray) !important;
+  font-size: 14px !important;
+  line-height: 1.6 !important;
+}
+
+/* Enlaces en las tarjetas */
+.services .item a {
+  color: var(--upbc-gold) !important;
+  font-weight: 500 !important;
+  transition: all 0.3s ease !important;
+}
+
+/* ===== HEADER Y NAVEGACIÓN ===== */
+
+/* Sub-header superior */
+.sub-header {
+  background-color: var(--upbc-purple) !important;
+  padding: 10px 0 !important;
+}
+
+.sub-header .left-content p {
+  color: var(--upbc-white) !important;
+  font-size: 14px !important;
+  margin-bottom: 0 !important;
+}
+
+.sub-header .left-content em {
+  color: var(--upbc-gold) !important;
+  font-style: normal !important;
+  font-weight: 500 !important;
+}
+
+.sub-header .right-icons ul li {
+  margin-left: 15px !important;
+}
+
+.sub-header .right-icons ul li a {
+  color: var(--upbc-white) !important;
+  font-size: 14px !important;
+  transition: all 0.3s ease !important;
+}
+
+.sub-header .right-icons ul li a:hover {
+  color: var(--upbc-gold) !important;
+}
+
+/* Menú de navegación */
+.header-area {
+  background-color: var(--upbc-white) !important;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1) !important;
+}
+
+.header-area .main-nav .nav li a {
+  color: var(--upbc-gray) !important;
+  font-weight: 500 !important;
+  text-transform: uppercase !important;
+  font-size: 14px !important;
+}
+
+.header-area .main-nav .nav li:hover a,
+.header-area .main-nav .nav li.active a {
+  color: var(--upbc-purple) !important;
+}
+
+/* ===== BOTONES ===== */
+
+/* Botón principal */
+.main-button a {
+  background-color: var(--upbc-gold) !important;
+  color: var(--upbc-white) !important;
+  border: 1px solid var(--upbc-gold) !important;
+  border-radius: 30px !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.5px !important;
+  transition: all 0.3s ease !important;
+  box-shadow: 0 4px 10px rgba(205, 139, 71, 0.3) !important;
+  text-transform: uppercase !important;
+}
+
+.main-button a:hover {
+  background-color: transparent !important;
+  color: var(--upbc-gold) !important;
+  transform: translateY(-3px) !important;
+  box-shadow: 0 6px 15px rgba(205, 139, 71, 0.4) !important;
+}
+
+/* Botón BIENVENIDOS */
+.btn-bienvenidos {
+  display: inline-block !important;
+  background-color: var(--upbc-gold) !important;
+  color: var(--upbc-white) !important;
+  font-size: 14px !important;
+  font-weight: 600 !important;
+  padding: 8px 20px !important;
+  border-radius: 30px !important;
+  margin-bottom: 15px !important;
+  letter-spacing: 0.5px !important;
+}
+
+/* Botón secundario */
+.main-button-red a {
+  background-color: var(--upbc-purple) !important;
+  color: var(--upbc-white) !important;
+  border: 1px solid var(--upbc-purple) !important;
+  border-radius: 30px !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.5px !important;
+  transition: all 0.3s ease !important;
+  box-shadow: 0 4px 10px rgba(96, 43, 130, 0.3) !important;
+}
+
+.main-button-red a:hover {
+  background-color: transparent !important;
+  color: var(--upbc-purple) !important;
+  transform: translateY(-3px) !important;
+  box-shadow: 0 6px 15px rgba(96, 43, 130, 0.4) !important;
+}
+
+/* ===== TÍTULOS Y TEXTOS ===== */
+
+/* Títulos de secciones */
+.section-heading h2 {
+  color: var(--upbc-purple) !important;
+  font-weight: 700 !important;
+  position: relative !important;
+  padding-bottom: 15px !important;
+}
+
+.section-heading h2:after {
+  content: '' !important;
+  position: absolute !important;
+  width: 50px !important;
+  height: 3px !important;
+  background-color: var(--upbc-gold) !important;
+  bottom: 0 !important;
+  left: 0 !important;
+}
+
+.text-center .section-heading h2:after {
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+}
+
+/* Enlaces generales */
+a {
+  color: var(--upbc-purple) !important;
+  transition: all 0.3s ease !important;
+}
+
+a:hover {
+  color: var(--upbc-gold) !important;
+}
+
+/* Textos generales */
+p {
+  color: var(--upbc-gray) !important;
+  line-height: 1.7 !important;
+}
+
+/* ===== SECCIONES ESPECÍFICAS ===== */
+
+/* Banner principal */
+.main-banner {
+  position: relative !important;
+  overflow: hidden !important;
+  padding-top: 20px !important; /* Espacio mínimo para que el menú no tape el contenido */
+}
+
+/* Hacer que el overlay del video permita ver el contenido */
+.video-overlay {
+  background: rgba(96, 43, 130, 0.3) !important; /* Fondo semitransparente para que se vea el contenido */
+}
+
+/* Ajustar la alineación del video */
+#bg-video {
+  position: absolute !important;
+  min-width: 100% !important;
+  min-height: 100% !important;
+  width: auto !important;
+  height: auto !important;
+  z-index: 1 !important;
+  overflow: hidden !important;
+  top: 55% !important; /* Desplazar el video aún más hacia abajo */
+  left: 50% !important;
+  transform: translate(-50%, -50%) !important;
+  object-fit: cover !important;
+}
+
+/* Ajustar la estructura para que el carrusel aparezca dentro del banner principal */
+.main-banner {
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+  min-height: 600px !important; /* Altura mínima para asegurar que se vea el contenido */
+}
+
+.main-banner .caption {
+  padding-bottom: 80px !important; /* Espacio para el carrusel */
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  color: var(--upbc-white) !important;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5) !important;
+  position: relative !important;
+  z-index: 20 !important;
+}
+
+.services {
+  position: relative;
+  padding: 30px 0;
+  z-index: 10;
+}
+
+.owl-carousel .owl-stage-outer {
+  overflow: visible !important;
+}
+
+.services .item {
+  margin-top: -30px !important;
+}
+
+.main-banner:before {
+  content: '' !important;
+  position: absolute !important;
+  width: 100% !important;
+  height: 100% !important;
+  top: 0 !important;
+  left: 0 !important;
+  background: none !important; /* Eliminado completamente el overlay */
+  z-index: 2 !important;
+}
+
+.main-banner .caption {
+  position: relative !important;
+  z-index: 3 !important;
+}
+
+.main-banner .caption h6 {
+  color: var(--upbc-gold) !important;
+  font-weight: 500 !important;
+  font-size: 18px !important;
+  text-transform: uppercase !important;
+}
+
+.main-banner .caption h2 {
+  color: var(--upbc-white) !important;
+  font-size: 50px !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  margin-top: 10px !important;
+  margin-bottom: 20px !important;
+}
+
+.main-banner .caption p {
+  color: var(--upbc-white) !important;
+  font-size: 16px !important;
+  line-height: 1.7 !important;
+  margin-bottom: 30px !important;
+}
+
+/* Sección de noticias */
+section.upcoming-meetings {
+  padding-top: 80px !important;
+  position: relative !important;
+  z-index: 8 !important;
+  background-color: #2a2a2a !important;
+  border-top: 0 !important;
+}
+
+section.upcoming-meetings .container {
+  padding-top: 120px !important; /* Espacio adicional en la parte superior del contenedor */
+}
+
+section.upcoming-meetings .section-heading {
+  text-align: center !important;
+  margin-bottom: 60px !important; /* Aumentado el margen inferior */
+  padding-top: 40px !important; /* Espacio adicional arriba del título */
+}
+
+section.upcoming-meetings .section-heading h2 {
+  color: var(--upbc-purple) !important;
+  font-size: 36px !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 1px !important;
+}
+
+/* Sección de banner */
+.main-banner {
+  position: relative !important;
+}
+
+/* ===== MEDIA QUERIES ===== */
+
+/* Ajustes para dispositivos móviles */
+@media (max-width: 767px) {
+  .services {
+    margin-top: -90px !important;
+  }
+  
+  section.upcoming-meetings {
+    padding-top: 60px !important;
+  }
+  section.upcoming-meetings {
+    margin-top: -210px !important; /* Margen negativo ajustado a -200px */
+  }
+}

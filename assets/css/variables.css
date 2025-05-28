@@ -1,0 +1,52 @@
+/* ========================================
+   VARIABLES CSS GLOBALES
+   ======================================== */
+
+:root {
+  /* Colores UPBC - Valores oficiales */
+  --upbc-purple: #602b82;      /* Color principal morado - C=26% R=96 M=67% G=43 Y=0% B=130 K=49% PANTONE P 93-16 C */
+  --upbc-gold: #cd8b47;        /* Color dorado/naranja - C=17% R=205 M=48% G=139 Y=86% B=71 K=2% */
+  --upbc-gray: #7b8082;        /* Color gris - C=55% R=123 M=42% G=128 Y=42% B=130 K=7% */
+  --upbc-dark-purple: #735d7c; /* Color morado oscuro - C=60% R=115 M=68% G=93 Y=31% B=124 K=9% */
+  --upbc-white: #ffffff;       /* Blanco para contraste */
+  --upbc-light-gray: #f5f5f5;  /* Gris claro para fondos */
+  --upbc-red: #a12c2f;         /* Color rojo para el carrusel */
+  
+  /* Espaciados */
+  --spacing-xs: 5px;
+  --spacing-sm: 10px;
+  --spacing-md: 15px;
+  --spacing-lg: 20px;
+  --spacing-xl: 30px;
+  --spacing-xxl: 50px;
+  
+  /* Bordes */
+  --border-radius-sm: 5px;
+  --border-radius-md: 10px;
+  --border-radius-lg: 20px;
+  --border-radius-xl: 30px;
+  
+  /* Sombras */
+  --shadow-sm: 0 2px 5px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 5px 15px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.15);
+  
+  /* Transiciones */
+  --transition-fast: all 0.2s ease;
+  --transition-normal: all 0.3s ease;
+  --transition-slow: all 0.5s ease;
+  
+  /* Fuentes */
+  --font-size-xs: 12px;
+  --font-size-sm: 13px;
+  --font-size-md: 14px;
+  --font-size-lg: 16px;
+  --font-size-xl: 18px;
+  --font-size-xxl: 24px;
+  
+  /* Pesos de fuente */
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+}

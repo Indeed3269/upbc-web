@@ -1,0 +1,158 @@
+/* ========================================
+   ARCHIVO CSS PRINCIPAL UPBC
+   ======================================== */
+
+/* Importar variables globales */
+@import url('./variables.css');
+
+/* Importar componentes */
+@import url('./components/layout.css');
+@import url('./components/carousel.css');
+
+/* Importar sobrescrituras (debe ser el último para tener prioridad) */
+@import url('./components/overrides.css');
+
+/* ========================================
+   RESET DE ESTILOS DEL TEMPLATE
+   ======================================== */
+
+/* Este bloque anula los estilos del template que causan conflictos */
+.services {
+  background-color: transparent !important;
+}
+
+.services .item {
+  background-color: var(--upbc-white) !important;
+  background-image: none !important;
+  color: var(--upbc-gray) !important;
+}
+
+/* ========================================
+   SOBREESCRITURAS ESPECÍFICAS UPBC
+   ======================================== */
+
+/* Header y navegación */
+.header-area {
+  background-color: var(--upbc-white);
+  position: absolute;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  -webkit-transition: all .5s ease 0s;
+  -moz-transition: all .5s ease 0s;
+  -o-transition: all .5s ease 0s;
+  transition: all .5s ease 0s;
+}
+
+.header-area .main-nav {
+  background: transparent;
+  display: flex;
+}
+
+.header-area .main-nav .logo {
+  line-height: 80px;
+  color: var(--upbc-white);
+  font-size: 28px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  float: left;
+  -webkit-transition: all 0.3s ease 0s;
+  -moz-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+}
+
+.header-area.header-sticky {
+  background-color: var(--upbc-white);
+  box-shadow: var(--shadow-sm);
+}
+
+.header-area.header-sticky .main-nav .logo,
+.header-area.header-sticky .main-nav ul li a {
+  color: var(--upbc-gray);
+}
+
+/* Botones */
+.main-button-red a {
+  background-color: var(--upbc-purple);
+  border: 1px solid var(--upbc-purple);
+  border-radius: var(--border-radius-xl);
+  font-weight: var(--font-weight-semibold);
+  color: var(--upbc-white);
+  padding: 12px 30px;
+  display: inline-block;
+  transition: var(--transition-normal);
+}
+
+.main-button-red a:hover {
+  background-color: transparent;
+  color: var(--upbc-purple);
+}
+
+/* Botones en fondos oscuros */
+.main-button a {
+  background-color: var(--upbc-gold);
+  color: var(--upbc-white);
+  font-weight: var(--font-weight-semibold);
+  border-radius: var(--border-radius-xl);
+  padding: 12px 30px;
+  display: inline-block;
+  transition: var(--transition-normal);
+}
+
+.main-button a:hover {
+  background-color: var(--upbc-white);
+  color: var(--upbc-gold);
+}
+
+/* Secciones */
+.section-heading h2 {
+  color: var(--upbc-purple);
+  font-weight: var(--font-weight-bold);
+}
+
+/* Enlaces y elementos destacados */
+a {
+  color: var(--upbc-purple);
+  transition: var(--transition-normal);
+}
+
+a:hover {
+  color: var(--upbc-gold);
+}
+
+/* Elementos de acento */
+.accent-color {
+  color: var(--upbc-gold);
+}
+
+/* Fondos de secciones */
+.section-background-dark {
+  background-color: var(--upbc-purple);
+  color: var(--upbc-white);
+}
+
+.section-background-light {
+  background-color: var(--upbc-light-gray);
+}
+
+/* Elementos de navegación */
+.header-area .main-nav .nav li:hover a {
+  color: var(--upbc-purple);
+}
+
+.header-area .main-nav .nav li.active a {
+  color: var(--upbc-purple);
+}
+
+/* Ajustes para dispositivos móviles */
+@media (max-width: 991px) {
+  .header-area .main-nav {
+    justify-content: space-between;
+  }
+  
+  .header-area .main-nav .logo {
+    line-height: 50px;
+  }
+}

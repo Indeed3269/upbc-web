@@ -1,0 +1,108 @@
+/* ========================================
+   ESTILOS DEL CARRUSEL DE SERVICIOS
+   ======================================== */
+
+/* Configuración principal del contenedor del carrusel */
+.services {
+  margin-top: 670px;
+  position: relative;
+  width: 100%;
+  z-index: 9;
+  padding: 50px 0 0 0;
+  background: none;
+}
+
+/* Estilos para cada tarjeta individual del carrusel */
+.services .item {
+  background-color: var(--upbc-white);
+  border-radius: 30px;
+  box-shadow: 0 4px 20px rgba(96,43,130,0.08);
+  padding: 30px 20px;
+  min-width: 280px;
+  max-width: 320px;
+  box-sizing: border-box;
+  margin: 0 10px;
+  text-align: center;
+  transition: all 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Estilos para los iconos dentro de las tarjetas */
+.services .item .icon {
+  max-width: 60px;
+  margin: 0 auto 15px;
+  transition: transform 0.3s ease;
+}
+
+/* Efecto hover en las tarjetas */
+.services .item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 30px rgba(96,43,130,0.15);
+}
+
+.services .item:hover .icon {
+  transform: scale(1.1);
+}
+
+/* Estilos para los títulos */
+.services .item h4 {
+  color: var(--upbc-purple);
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 15px;
+  transition: color 0.3s ease;
+}
+
+/* Estilos para los párrafos */
+.services .item p {
+  color: var(--upbc-gray);
+  font-size: 15px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+/* Estilos para los enlaces */
+.services .item a {
+  color: var(--upbc-gold);
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.services .item a:hover {
+  color: var(--upbc-purple);
+}
+
+/* Estilos para los iconos en enlaces */
+.services .item a i {
+  font-size: 14px;
+  transition: transform 0.3s ease;
+}
+
+.services .item a:hover i {
+  transform: translateX(3px);
+}
+
+.services .item .text-button i {
+  margin-left: 5px;     /* Espacio entre el texto del enlace y el icono */
+  transition: all 0.3s; /* Transición suave para el efecto hover */
+}
+
+/* Efecto hover para los iconos de los enlaces */
+.services .item .text-button a:hover i {
+  margin-left: 8px;     /* Aumenta el espacio al pasar el cursor, creando efecto de movimiento */
+}
+
+/* Ajustes para dispositivos móviles */
+@media (max-width: 767px) {
+  .services {
+    margin-top: -90px;    /* Menos desplazamiento hacia arriba en móviles */
+  }
+}
