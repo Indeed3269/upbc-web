@@ -2,12 +2,14 @@
    ARCHIVO CSS PRINCIPAL UPBC
    ======================================== */
 
-/* Importar variables globales */
+/* Importar variables globales primero */
 @import url('./variables.css');
 
-/* Importar componentes */
+/* Importar componentes en orden de prioridad */
 @import url('./components/layout.css');
 @import url('./components/carousel.css');
+@import url('./upbc-logo.css');
+@import url('./upbc-colors.css');
 
 /* Importar sobrescrituras (debe ser el último para tener prioridad) */
 @import url('./components/overrides.css');

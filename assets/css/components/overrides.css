@@ -217,12 +217,18 @@ p {
 .main-banner {
   position: relative !important;
   overflow: hidden !important;
-  padding-top: 20px !important; /* Espacio mínimo para que el menú no tape el contenido */
+  padding-top: 120px !important; /* Espacio para que el menú no tape el contenido */
+  min-height: 800px !important;
 }
 
 /* Hacer que el overlay del video permita ver el contenido */
 .video-overlay {
-  background: rgba(96, 43, 130, 0.3) !important; /* Fondo semitransparente para que se vea el contenido */
+  background: transparent !important; /* Eliminado el fondo semitransparente */
+  position: relative !important;
+  z-index: 5 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
 }
 
 /* Ajustar la alineación del video */
@@ -234,7 +240,7 @@ p {
   height: auto !important;
   z-index: 1 !important;
   overflow: hidden !important;
-  top: 55% !important; /* Desplazar el video aún más hacia abajo */
+  top: 50% !important;
   left: 50% !important;
   transform: translate(-50%, -50%) !important;
   object-fit: cover !important;
@@ -243,8 +249,8 @@ p {
 /* Ajustar la estructura para que el carrusel aparezca dentro del banner principal */
 .main-banner {
   margin-bottom: 0 !important;
-  padding-bottom: 0 !important;
-  min-height: 600px !important; /* Altura mínima para asegurar que se vea el contenido */
+  padding-bottom: 100px !important;
+  min-height: 800px !important; /* Altura mínima para asegurar que se vea el contenido */
 }
 
 .main-banner .caption {
@@ -261,7 +267,7 @@ p {
 .services {
   position: relative;
   padding: 30px 0;
-  z-index: 10;
+  z-index: 15;
 }
 
 .owl-carousel .owl-stage-outer {
@@ -269,7 +275,7 @@ p {
 }
 
 .services .item {
-  margin-top: -30px !important;
+  margin-top: 0 !important;
 }
 
 .main-banner:before {
@@ -348,13 +354,19 @@ section.upcoming-meetings .section-heading h2 {
 /* Ajustes para dispositivos móviles */
 @media (max-width: 767px) {
   .services {
-    margin-top: -90px !important;
+    margin-top: 30px !important;
   }
   
   section.upcoming-meetings {
     padding-top: 60px !important;
+    margin-top: 0 !important;
   }
-  section.upcoming-meetings {
-    margin-top: -210px !important; /* Margen negativo ajustado a -200px */
+  
+  .main-banner {
+    min-height: 700px !important;
+  }
+  
+  .header-text {
+    padding: 0 15px !important;
   }
 }
