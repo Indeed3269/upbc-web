@@ -129,24 +129,34 @@
 
 
 	$('.owl-service-item').owlCarousel({
-		items:3,
-		loop:true,
+		loop: true,
 		dots: true,
 		nav: true,
 		autoplay: true,
-		margin:30,
-		  responsive:{
-			  0:{
-				  items:1
-			  },
-			  600:{
-				  items:2
-			  },
-			  1000:{
-				  items:3
-			  }
-		  }
-	  })
+		autoplayTimeout: 5000,
+		autoplayHoverPause: true,
+		margin: 30,
+		center: false,
+		responsive: {
+			0: {
+				items: 1,
+				margin: 20,
+				center: true
+			},
+			480: {
+				items: 2,
+				margin: 20
+			},
+			768: {
+				items: 3,
+				margin: 25
+			},
+			992: {
+				items: 4,
+				margin: 30
+			}
+		}
+	})
 
 	$('.owl-courses-item').owlCarousel({
 		items:4,

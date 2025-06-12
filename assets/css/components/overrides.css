@@ -29,17 +29,87 @@
 /* Contenedor de los ítems del carrusel */
 .owl-service-item {
   padding: 0 15px;
+  margin-top: 0;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Controles de navegación */
+.owl-service-item .owl-nav button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  border-radius: 50% !important;
+  background-color: rgba(96, 43, 130, 0.7) !important;
+  color: white !important;
+  font-size: 20px !important;
+  line-height: 40px !important;
+  text-align: center;
+  transition: all 0.3s ease;
+  opacity: 0.7;
+  z-index: 10;
+}
+
+.owl-service-item .owl-nav button:hover {
+  background-color: rgba(96, 43, 130, 0.9) !important;
+  opacity: 1;
+}
+
+.owl-service-item .owl-nav button.owl-prev {
+  left: 0px;
+}
+
+.owl-service-item .owl-nav button.owl-next {
+  right: 0px;
+}
+
+@media (max-width: 767px) {
+  .owl-service-item .owl-nav button {
+    width: 36px;
+    height: 36px;
+    font-size: 18px !important;
+    line-height: 36px !important;
+  }
+}
+
+/* Puntos de navegación */
+.owl-service-item .owl-dots {
+  text-align: center;
+  margin-top: 15px;
+}
+
+.owl-service-item .owl-dots .owl-dot {
+  width: 10px;
+  height: 10px;
+  margin: 0 4px;
+  border-radius: 50%;
+  background-color: rgba(96, 43, 130, 0.3) !important;
+  transition: all 0.3s ease;
+}
+
+.owl-service-item .owl-dots .owl-dot.active {
+  background-color: rgba(96, 43, 130, 0.8) !important;
+  transform: scale(1.2);
 }
 
 /* Tarjeta individual del carrusel */
 .owl-service-item .item {
   background-color: var(--upbc-white) !important;
   background-image: none !important;
-  border-radius: 10px !important;
+  border-radius: 15px !important;
   text-align: center;
-  padding: 30px;
+  padding: 20px 15px;
   box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.08) !important;
   transition: all 0.3s ease !important;
+  border: 1px solid rgba(96, 43, 130, 0.05);
+  margin: 10px 5px;
+  height: 200px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-between !important;
 }
 
 /* Títulos en las tarjetas */

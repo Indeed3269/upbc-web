@@ -8,6 +8,7 @@
 /* Importar componentes en orden de prioridad */
 @import url('./components/layout.css');
 @import url('./components/carousel.css');
+@import url('./components/mini-carousel.css');
 @import url('./upbc-logo.css');
 @import url('./upbc-colors.css');
 

@@ -1,0 +1,250 @@
+/* Estilos para el banner principal reestructurado */
+
+/* Sección hero optimizada */
+.upbc-hero-section {
+  padding: 15px 0 5px;
+  margin-bottom: 0;
+}
+
+/* Contenedor principal del logo */
+.upbc-banner-logo {
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  padding: 25px 15px;
+  margin-bottom: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Estilos para el logo grande */
+.upbc-logo-container {
+  text-align: center;
+  margin-bottom: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Estilos para la imagen del logo principal */
+.upbc-main-logo {
+  max-width: 100%;
+  height: auto;
+  max-height: 120px;
+  display: block;
+  margin: 0 auto;
+}
+
+.upbc-logo-text {
+  font-size: 72px;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: 1px;
+  display: inline-block;
+}
+
+.upbc-logo-text .up {
+  color: #602b82;
+}
+
+.upbc-logo-text .bc {
+  color: #cd8b47;
+}
+
+.upbc-logo-subtitle {
+  font-size: 16px;
+  color: #ffffff;
+  margin-top: 10px;
+  font-weight: 400;
+}
+
+/* Estilos para los logos asociados */
+.upbc-logos-strip {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.partner-logo {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  padding: 12px 15px;
+  text-align: center;
+  min-width: 100px;
+  transition: all 0.3s ease;
+}
+
+.partner-logo:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-3px);
+}
+
+.partner-logo-name {
+  font-size: 20px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 4px;
+}
+
+.partner-logo-desc {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.8);
+  margin: 0;
+}
+
+/* Estilos para la columna de texto */
+.upbc-banner-text {
+  padding: 15px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  padding: 25px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+.upbc-responsive-heading {
+  margin-top: 10px;
+  margin-bottom: 20px;
+  font-size: 2.2rem;
+  line-height: 1.2;
+  font-weight: 700;
+  color: #fff;
+}
+
+.upbc-responsive-text {
+  margin-bottom: 25px;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.upbc-cta-button {
+  display: inline-block;
+  font-weight: 600;
+  padding: 12px 25px;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+  background-color: #cd8b47;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  box-shadow: 0 5px 15px rgba(205, 139, 71, 0.3);
+}
+
+.upbc-cta-button:hover {
+  background-color: #602b82;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(96, 43, 130, 0.4);
+}
+
+/* Ajustes responsivos */
+@media (max-width: 1199px) {
+  .upbc-responsive-heading {
+    font-size: 1.9rem;
+  }
+  
+  .upbc-main-logo {
+    max-height: 110px;
+  }
+}
+
+@media (max-width: 991px) {
+  .upbc-logo-text {
+    font-size: 60px;
+  }
+  
+  .upbc-banner-logo {
+    margin-bottom: 0;
+    padding: 20px 15px;
+  }
+  
+  .upbc-banner-text {
+    padding: 20px;
+  }
+  
+  .upbc-responsive-heading {
+    font-size: 1.7rem;
+    margin-bottom: 15px;
+  }
+  
+  .upbc-responsive-text {
+    font-size: 1rem;
+    margin-bottom: 20px;
+  }
+  
+  .upbc-main-logo {
+    max-height: 90px;
+  }
+}
+
+@media (max-width: 767px) {
+  .upbc-hero-section {
+    padding: 10px 0;
+  }
+  
+  .upbc-logo-text {
+    font-size: 50px;
+  }
+  
+  .upbc-main-logo {
+    max-height: 80px;
+  }
+  
+  .upbc-banner-logo {
+    padding: 15px 10px;
+  }
+  
+  .upbc-banner-text {
+    padding: 15px;
+  }
+  
+  .upbc-responsive-heading {
+    font-size: 1.5rem;
+    margin-bottom: 12px;
+  }
+  
+  .upbc-responsive-text {
+    font-size: 0.95rem;
+    margin-bottom: 15px;
+  }
+  
+  .partner-logo {
+    min-width: 80px;
+    padding: 10px;
+  }
+  
+  .partner-logo-name {
+    font-size: 18px;
+  }
+  
+  .upbc-cta-button {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 575px) {
+  .upbc-main-logo {
+    max-height: 70px;
+  }
+  
+  .upbc-responsive-heading {
+    font-size: 1.3rem;
+  }
+  
+  .upbc-responsive-text {
+    font-size: 0.9rem;
+  }
+  
+  .upbc-banner-logo,
+  .upbc-banner-text {
+    padding: 12px;
+  }
+}
