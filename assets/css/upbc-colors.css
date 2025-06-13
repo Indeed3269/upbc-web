@@ -32,16 +32,26 @@ body {
   align-items: center !important;
   justify-content: space-between !important;
   padding: 10px 0 !important;
+  position: relative !important;
 }
 
 .header-area .main-nav .logo {
   display: flex !important;
   align-items: center !important;
-  justify-content: center !important;
+  justify-content: flex-start !important;
   line-height: 40px !important;
-  float: none !important;
+  float: left !important;
   margin: 0 !important;
   padding: 0 !important;
+}
+
+/* Estilos para la imagen del logo en la barra de navegación */
+.navbar-logo-img {
+  height: 60px;
+  width: auto;
+  object-fit: contain;
+  margin: 5px 0;
+  transition: all 0.3s ease;
 }
 
 .header-area .main-nav .logo .logo-text {
@@ -59,10 +69,10 @@ body {
 }
 
 .header-area .main-nav .nav {
-  float: none !important;
+  float: right !important;
   display: flex !important;
   align-items: center !important;
-  justify-content: center !important;
+  justify-content: flex-end !important;
   margin: 0 !important;
   padding: 0 !important;
 }
@@ -122,6 +132,7 @@ body {
   background-color: var(--upbc-purple) !important;
 }
 
+/* Ajuste del logo cuando el header está en modo sticky */
 .background-header .main-nav .logo {
   line-height: 55px !important;
 }
@@ -199,6 +210,11 @@ body.menu-open {
   
   .header-area .main-nav .nav.active {
     right: 0 !important;
+  }
+  
+  /* Mostrar el logo del menú móvil solo cuando el menú está activo */
+  .header-area .main-nav .nav.active .mobile-menu-logo {
+    display: flex !important;
   }
   
   .header-area .main-nav .nav li {
@@ -282,19 +298,43 @@ body.menu-open {
     transform: rotate(-45deg) !important;
   }
   
-  /* Logo en el menú móvil */
+  /* Logo en el menú móvil - solo visible en modo móvil */
   .mobile-menu-logo {
+    display: none !important; /* Oculto por defecto */
+    align-items: center;
+    justify-content: space-between;
     text-align: left !important;
     padding: 15px 20px !important;
     margin-bottom: 20px !important;
-    border-bottom: 1px solid #eee !important;
-    position: absolute !important;
-    top: 0 !important;
-    left: 0 !important;
-    width: 100% !important;
-    display: flex !important;
+    background-color: var(--upbc-white) !important;
+    border-bottom: 1px solid rgba(96,43,130,0.1) !important;
+    position: relative !important;
+    z-index: 1 !important;
     align-items: center !important;
-    justify-content: space-between !important;
+  }
+  
+  /* Estilos para el logo en modo sticky */
+  .background-header .navbar-logo-img {
+    height: 50px;
+  }
+  
+  /* Estilos responsivos para el logo */
+  @media (max-width: 991px) {
+    .navbar-logo-img {
+      height: 50px;
+    }
+  }
+  
+  @media (max-width: 767px) {
+    .navbar-logo-img {
+      height: 45px;
+    }
+  }
+  
+  /* Agregar logo al menú móvil */
+  .mobile-menu-logo img.navbar-logo-img {
+    height: 40px;
+    margin-right: 10px;
   }
   
   .mobile-menu-logo .logo-text {

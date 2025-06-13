@@ -30,11 +30,13 @@
 
 /* Estilos para la imagen del logo principal */
 .upbc-main-logo {
-  max-width: 100%;
+  width: auto;
   height: auto;
-  max-height: 120px;
+  max-width: 100%;
+  max-height: 220px; /* Aumentado de 160px */
   display: block;
   margin: 0 auto;
+  object-fit: contain;
 }
 
 .upbc-logo-text {
@@ -151,7 +153,9 @@
   }
   
   .upbc-main-logo {
-    max-height: 110px;
+    max-height: 200px; /* Aumentado de 140px */
+    width: auto;
+    object-fit: contain;
   }
 }
 
@@ -180,7 +184,9 @@
   }
   
   .upbc-main-logo {
-    max-height: 90px;
+    max-height: 180px; /* Aumentado de 120px */
+    width: auto;
+    object-fit: contain;
   }
 }
 
@@ -194,7 +200,9 @@
   }
   
   .upbc-main-logo {
-    max-height: 80px;
+    max-height: 160px; /* Aumentado de 110px */
+    width: auto;
+    object-fit: contain;
   }
   
   .upbc-banner-logo {
@@ -232,7 +240,9 @@
 
 @media (max-width: 575px) {
   .upbc-main-logo {
-    max-height: 70px;
+    max-height: 140px; /* Aumentado de 100px */
+    width: auto;
+    object-fit: contain;
   }
   
   .upbc-responsive-heading {
