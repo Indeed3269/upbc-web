@@ -47,11 +47,12 @@ body {
 
 /* Estilos para la imagen del logo en la barra de navegación */
 .navbar-logo-img {
-  height: 60px;
+  height: 45px;
   width: auto;
   object-fit: contain;
   margin: 5px 0;
   transition: all 0.3s ease;
+  max-width: 220px;
 }
 
 .header-area .main-nav .logo .logo-text {
@@ -315,25 +316,29 @@ body.menu-open {
   
   /* Estilos para el logo en modo sticky */
   .background-header .navbar-logo-img {
-    height: 50px;
+    height: 40px;
+    max-width: 200px;
   }
   
   /* Estilos responsivos para el logo */
   @media (max-width: 991px) {
     .navbar-logo-img {
-      height: 50px;
+      height: 40px;
+      max-width: 180px;
     }
   }
   
   @media (max-width: 767px) {
     .navbar-logo-img {
-      height: 45px;
+      height: 35px;
+      max-width: 160px;
     }
   }
   
   /* Agregar logo al menú móvil */
   .mobile-menu-logo img.navbar-logo-img {
-    height: 40px;
+    height: 35px;
+    max-width: 170px;
     margin-right: 10px;
   }
   

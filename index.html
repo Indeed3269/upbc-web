@@ -150,14 +150,14 @@
                   <nav class="main-nav">
                       <!-- ***** Logo Start ***** -->
                       <a href="index.html" class="logo">
-                          <img src="assets/images/logos/UPBC_Logotipo_Oficial_Escudo.png" alt="Logo UPBC" class="navbar-logo-img">
+                          <img src="assets/images/logos/UPBC_Logotipo_Oficial_horizontal_Original.png" alt="Logo UPBC" class="navbar-logo-img">
                       </a>
                       <!-- ***** Logo End ***** -->
                       <!-- ***** Menu Start ***** -->
                       <ul class="nav">
                           <!-- Logo móvil solo visible en menú móvil -->
                           <div class="mobile-menu-logo" style="display: none;">
-                              <img src="assets/images/logos/UPBC_Logotipo_Oficial_Escudo.png" alt="Logo UPBC" class="navbar-logo-img">
+                              <img src="assets/images/logos/UPBC_Logotipo_Oficial_horizontal_Original.png" alt="Logo UPBC" class="navbar-logo-img">
                               <div class="mobile-menu-close"></div>
                           </div>
                           <li class="scroll-to-section"><a href="#top" class="active">Inicio</a></li>
@@ -223,26 +223,22 @@
           <div class="container">
             <!-- Primera sección optimizada para todos los dispositivos -->
             <div class="row upbc-hero-section">
-              <!-- Columna izquierda: Logo grande y logos asociados -->
+              <!-- Columna izquierda: Carrusel de imágenes -->
               <div class="col-lg-5 col-md-6 mb-md-0 mb-4">
-                <div class="upbc-banner-logo">
-                  <!-- Logo grande de la universidad -->
-                  <div class="upbc-logo-container">
-                    <img src="assets/images/logos/UPBC_Logotipo_Oficial_horizontal_Original.png" alt="Logo UPBC" class="upbc-main-logo">
-                  </div>
-                  
-                  <!-- Logos asociados en mini carrusel -->
-                  <div class="upbc-logos-carousel">
-                    <div class="owl-logos-item owl-carousel">
-                      <div class="partner-logo">
-                        <div class="logo-text">SEP</div>
-                      </div>
-                      <div class="partner-logo">
-                        <div class="logo-text">ANUIES</div>
-                      </div>
-                      <div class="partner-logo">
-                        <div class="logo-text">CONACYT</div>
-                      </div>
+                <div class="upbc-banner-carousel">
+                  <!-- Carrusel principal de imágenes -->
+                  <div class="owl-main-carousel owl-carousel">
+                    <div class="carousel-item">
+                      <img src="assets/images/carousel/slide1.jpg" alt="Imagen de la Universidad UPBC" class="carousel-image">
+                    </div>
+                    <div class="carousel-item">
+                      <img src="assets/images/carousel/slide2.jpg" alt="Estudiantes en el campus" class="carousel-image">
+                    </div>
+                    <div class="carousel-item">
+                      <img src="assets/images/carousel/slide3.jpg" alt="Instalaciones de la universidad" class="carousel-image">
+                    </div>
+                    <div class="carousel-item">
+                      <img src="assets/images/carousel/slide4.jpg" alt="Eventos académicos" class="carousel-image">
                     </div>
                   </div>
                 </div>
@@ -780,6 +776,7 @@
     <script src="assets/js/slick-slider.js"></script>
     <script src="assets/js/custom.js"></script>
     <script src="assets/js/mini-carousel.js"></script>
+    <script src="assets/js/main-carousel.js"></script>
     <script>
         //according to loftblog tut
         $('.nav li:first').addClass('active');
