@@ -159,3 +159,27 @@ a:hover {
     line-height: 50px;
   }
 }
+
+/* Estilos para la sección principal del banner con fondo gris */
+.main-banner {
+  background-color: var(--upbc-gray);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.main-banner .header-text {
+  position: relative;
+  width: 100%;
+  z-index: 2;
+  padding: 60px 0;
+}
+
+/* Estilos para la sección principal del banner */
+.upbc-hero-section {
+  padding-top: 120px;
+  padding-bottom: 60px;
+}

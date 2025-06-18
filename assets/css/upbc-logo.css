@@ -31,9 +31,10 @@
 .carousel-image {
   width: 100%;
   height: 300px;
-  object-fit: cover;
+  object-fit: contain;
   border-radius: 5px;
   display: block;
+  background-color: #fff;
 }
 
 /* Contenedor principal del logo */
