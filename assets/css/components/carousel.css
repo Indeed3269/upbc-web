@@ -300,11 +300,11 @@
 }
 
 .services .owl-nav button.owl-prev {
-  left: -80px;
+  left: -150px !important;
 }
 
 .services .owl-nav button.owl-next {
-  right: -80px;
+  right: -150px !important;
 }
 
 /* Ocultar las tarjetas que no están visibles en el carrusel */
