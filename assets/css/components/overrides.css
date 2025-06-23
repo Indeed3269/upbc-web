@@ -287,9 +287,20 @@ p {
 .main-banner {
   position: relative !important;
   overflow: hidden !important;
-  padding-top: 0px !important; /* Espacio para que el menú no tape el contenido */
-  min-height: 800px !important;
-  background-color: var(--upbc-gray) !important; /* Añadido fondo gris */
+  padding-top: 10px !important; /* Espacio para que el menú no tape el contenido */
+  padding-bottom: 30px !important;
+  min-height: auto !important;
+  background-color: var(--upbc-gray) !important; /* Fondo gris */
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-between !important;
+}
+
+/* Ajuste del padding superior para móviles */
+@media (max-width: 991px) {
+  .main-banner {
+    padding-top: 60px !important;
+  }
 }
 
 
@@ -310,10 +321,11 @@ p {
 }
 
 /* Ajustar la estructura para que el carrusel aparezca dentro del banner principal */
-.main-banner {
-  margin-bottom: 0 !important;
-  padding-bottom: 100px !important;
-  min-height: 800px !important; /* Altura mínima para asegurar que se vea el contenido */
+.header-text {
+  width: 100% !important;
+  padding: 0 !important;
+  z-index: 10 !important;
+  position: relative !important;
 }
 
 .main-banner .caption {
@@ -321,16 +333,16 @@ p {
   display: block !important;
   visibility: visible !important;
   opacity: 1 !important;
-  color: var(--upbc-white) !important;
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5) !important;
+  color: var(--upbc-dark) !important;
   position: relative !important;
   z-index: 20 !important;
 }
 
 .services {
   position: relative;
-  padding: 30px 0;
+  padding: 0;
   z-index: 15;
+  margin-top: 0;
 }
 
 .owl-carousel .owl-stage-outer {
@@ -350,6 +362,12 @@ p {
   left: 0 !important;
   background-color: var(--upbc-gray) !important; /* Cambiado a fondo gris */
   z-index: 2 !important;
+}
+
+.upbc-hero-section {
+  margin-bottom: 0;
+  display: flex;
+  align-items: center;
 }
 
 .main-banner .caption {
@@ -378,6 +396,20 @@ p {
   font-size: 16px !important;
   line-height: 1.7 !important;
   margin-bottom: 30px !important;
+}
+
+.upbc-banner-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 15px 15px rgba(0, 0, 0, 0.1);
+  margin-left: 15px;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1/1; /* Misma proporción que el carrusel */
 }
 
 /* Sección de noticias */

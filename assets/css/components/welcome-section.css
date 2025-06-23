@@ -2,7 +2,7 @@
 
 /* Título principal */
 .upbc-responsive-heading {
-  color: white;
+  color: var(--upbc-purple);
   font-size: 1.6rem;
   font-weight: 700;
   margin-bottom: 10px;
@@ -11,7 +11,7 @@
 
 /* Texto descriptivo */
 .upbc-responsive-text {
-  color: white;
+  color: #333;
   font-size: 0.9rem;
   line-height: 1.4;
   margin-bottom: 15px;
