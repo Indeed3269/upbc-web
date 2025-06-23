@@ -4,12 +4,12 @@
 
 /* Configuración principal del contenedor del carrusel */
 .services {
-  margin-top: -50px;
   position: relative;
   width: 100%;
   z-index: 15;
-  padding: 0;
+  padding: 30px 0;
   background: none;
+  overflow: hidden;
 }
 
 /* Clase auxiliar para eliminar margen superior cuando sea necesario */
@@ -21,46 +21,50 @@
 .services .item {
   background-color: var(--upbc-white);
   border-radius: 20px;
-  box-shadow: 0 4px 20px rgba(96,43,130,0.08);
-  padding: 15px 15px;
-  width: 100%; /* Ancho relativo para adaptarse al contenedor */
-  height: 200px; /* Altura fija para todos los dispositivos */
+  box-shadow: 0 8px 30px rgba(96,43,130,0.1);
+  padding: 30px 20px;
+  width: 280px; /* Ancho ligeramente mayor para mejor proporción */
+  height: 230px; /* Altura ligeramente mayor */
   box-sizing: border-box;
-  margin: 5px auto;
-  transition: all 0.3s ease-in-out;
+  margin: 15px 15px;
+  transition: all 0.4s ease-in-out;
   position: relative;
   overflow: hidden;
   text-align: center;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  border: 1px solid rgba(96,43,130,0.05); /* Borde sutil para un aspecto más refinado */
 }
 
 /* Estilos para los iconos dentro de las tarjetas */
 .services .item .icon {
-  max-width: 50px;
-  margin: 0 auto 12px;
-  transition: transform 0.3s ease;
+  max-width: 60px;
+  margin: 0 auto 15px;
+  transition: transform 0.4s ease;
+  filter: drop-shadow(0 4px 6px rgba(96,43,130,0.1)); /* Sombra sutil para los iconos */
 }
 
 /* Efecto hover en las tarjetas */
 .services .item:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 30px rgba(96,43,130,0.15);
+  transform: translateY(-8px);
+  box-shadow: 0 15px 35px rgba(96,43,130,0.2);
+  border-color: rgba(96,43,130,0.1);
 }
 
 .services .item:hover .icon {
-  transform: scale(1.1);
+  transform: scale(1.15);
 }
 
 /* Estilos para los títulos */
 .services .item h4 {
   color: var(--upbc-purple);
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 600;
-  margin-bottom: 15px;
+  margin-bottom: 18px;
   transition: color 0.3s ease;
-  min-height: 22px;
+  min-height: 24px;
+  letter-spacing: -0.2px; /* Mejora la legibilidad */
 }
 
 /* Estilos para los párrafos - ocultos según requerimiento */
@@ -73,11 +77,13 @@
   color: var(--upbc-gold);
   font-weight: 500;
   text-decoration: none;
-  transition: color 0.3s ease;
+  transition: all 0.3s ease;
   display: inline-flex;
   align-items: center;
-  gap: 5px;
-  margin-top: 5px;
+  gap: 8px;
+  margin-top: 10px;
+  padding: 5px 0;
+  position: relative;
 }
 
 .services .item a:hover {
@@ -221,4 +227,110 @@
   .services .item a {
     font-size: 13px;
   }
+}
+
+/* Estilos para el contenedor del carrusel */
+.services .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.services .row {
+  margin: 0;
+}
+
+/* Estilos para el contenedor de las tarjetas */
+.carousel-fixed-width {
+  width: 980px !important; /* Ancho para 3 tarjetas (280px * 3) + márgenes (50px * 2) */
+  max-width: 980px;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden; /* Ocultar cualquier contenido que se desborde */
+}
+
+/* Asegurarse de que el carrusel no se expanda más allá del ancho fijo */
+.services .owl-carousel {
+  margin: 0 auto;
+  position: relative;
+}
+
+/* Estilos para los botones de navegación del carrusel */
+.services .owl-nav {
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  display: flex;
+  justify-content: space-between;
+  pointer-events: none;
+  z-index: 20; /* Asegurar que los botones estén por encima de las tarjetas */
+}
+
+.services .owl-nav button.owl-prev,
+.services .owl-nav button.owl-next {
+  width: 50px;
+  height: 50px;
+  background-color: var(--upbc-purple) !important;
+  color: white !important;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  opacity: 0.8;
+  transition: all 0.3s ease;
+  pointer-events: auto;
+  position: absolute;
+  box-shadow: 0 4px 15px rgba(96,43,130,0.2);
+}
+
+.services .owl-nav button.owl-prev span,
+.services .owl-nav button.owl-next span {
+  font-size: 28px;
+  line-height: 0.6;
+  font-weight: bold;
+}
+
+.services .owl-nav button.owl-prev:hover,
+.services .owl-nav button.owl-next:hover {
+  opacity: 1;
+  background-color: var(--upbc-gold) !important;
+}
+
+.services .owl-nav button.owl-prev {
+  left: -80px;
+}
+
+.services .owl-nav button.owl-next {
+  right: -80px;
+}
+
+/* Ocultar las tarjetas que no están visibles en el carrusel */
+.services .owl-stage-outer {
+  overflow: hidden;
+  clip-path: inset(0); /* Asegura que el contenido fuera del contenedor se recorte */
+}
+
+/* Ajustar el contenedor del carrusel para que solo muestre 3 tarjetas */
+.carousel-fixed-width .owl-stage {
+  display: flex;
+  justify-content: center;
+}
+
+.carousel-fix.services .col-lg-12 {
+  display: flex;
+  justify-content: center;
+  padding: 0 !important;
+  width: 100%;
+}
+
+/* Clase personalizada para el contenedor exterior del carrusel */
+.owl-stage-outer-fixed {
+  overflow: hidden !important;
+  max-width: 980px !important;
+  margin: 0 auto;
+  clip-path: inset(0) !important; /* Recorta cualquier contenido fuera del contenedor */
+  padding: 10px 0; /* Añadir espacio vertical para las sombras */
 }

@@ -133,27 +133,39 @@
 		dots: true,
 		nav: true,
 		autoplay: true,
-		autoplayTimeout: 5000,
+		autoplayTimeout: 6000,
 		autoplayHoverPause: true,
-		margin: 30,
+		margin: 50,
 		center: false,
+		items: 3,
+		touchDrag: true,
+		mouseDrag: true,
+		pullDrag: true,
+		freeDrag: false,
+		stageClass: 'owl-stage-fixed',
+		stageOuterClass: 'owl-stage-outer-fixed',
+		smartSpeed: 800, // Velocidad de transición más suave
+		navSpeed: 500,
 		responsive: {
 			0: {
 				items: 1,
-				margin: 20,
+				margin: 10,
 				center: true
 			},
 			480: {
 				items: 2,
-				margin: 20
+				margin: 15,
+				center: false
 			},
 			768: {
 				items: 3,
-				margin: 25
+				margin: 20,
+				center: false
 			},
 			992: {
-				items: 4,
-				margin: 30
+				items: 3,
+				margin: 20,
+				center: false
 			}
 		}
 	})
