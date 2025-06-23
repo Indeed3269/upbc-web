@@ -9,7 +9,7 @@
   z-index: 15;
   padding: 30px 0;
   background: none;
-  overflow: hidden;
+  overflow: visible !important;
 }
 
 /* Clase auxiliar para eliminar margen superior cuando sea necesario */
@@ -246,7 +246,7 @@
   max-width: 980px;
   margin: 0 auto;
   position: relative;
-  overflow: hidden; /* Ocultar cualquier contenido que se desborde */
+  overflow: visible; /* Permitir que los botones sean visibles fuera del contenedor */
 }
 
 /* Asegurarse de que el carrusel no se expanda más allá del ancho fijo */
@@ -260,30 +260,30 @@
   position: absolute;
   width: 100%;
   top: 50%;
-  left: 0;
   transform: translateY(-50%);
   display: flex;
   justify-content: space-between;
   pointer-events: none;
-  z-index: 20; /* Asegurar que los botones estén por encima de las tarjetas */
+  z-index: 9999; /* Aumentar z-index para asegurar visibilidad */
+  overflow: visible !important;
 }
 
 .services .owl-nav button.owl-prev,
 .services .owl-nav button.owl-next {
-  width: 50px;
-  height: 50px;
+  width: 60px;
+  height: 60px;
   background-color: var(--upbc-purple) !important;
   color: white !important;
   border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 22px;
-  opacity: 0.8;
-  transition: all 0.3s ease;
-  pointer-events: auto;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
   position: absolute;
-  box-shadow: 0 4px 15px rgba(96,43,130,0.2);
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 1;
+  transition: all 0.3s;
+  z-index: 9999 !important;
+  display: block !important;
+  pointer-events: auto !important;
 }
 
 .services .owl-nav button.owl-prev span,
@@ -300,17 +300,18 @@
 }
 
 .services .owl-nav button.owl-prev {
-  left: -150px !important;
+  left: -70px !important;
 }
 
 .services .owl-nav button.owl-next {
-  right: -150px !important;
+  right: -70px !important;
 }
 
 /* Ocultar las tarjetas que no están visibles en el carrusel */
 .services .owl-stage-outer {
   overflow: hidden;
   clip-path: inset(0); /* Asegura que el contenido fuera del contenedor se recorte */
+  overflow-x: visible !important; /* Permitir que los botones sean visibles */
 }
 
 /* Ajustar el contenedor del carrusel para que solo muestre 3 tarjetas */
