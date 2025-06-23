@@ -1,0 +1,74 @@
+/* Estilos específicos para el componente de bienvenida */
+
+/* Título principal */
+.upbc-responsive-heading {
+  color: white;
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  line-height: 1.2;
+}
+
+/* Texto descriptivo */
+.upbc-responsive-text {
+  color: white;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  margin-bottom: 15px;
+  max-height: 80px;
+  overflow-y: auto;
+}
+
+/* Botón de bienvenida */
+.btn-bienvenidos {
+  background-color: var(--upbc-orange);
+  color: white;
+  padding: 5px 15px;
+  border-radius: 20px;
+  font-weight: 600;
+  display: inline-block;
+  margin-bottom: 12px;
+  font-size: 0.85rem;
+}
+
+/* Botón de CTA */
+.upbc-cta-button {
+  background-color: var(--upbc-purple);
+  color: white;
+  padding: 8px 20px;
+  border-radius: 25px;
+  font-weight: 600;
+  display: inline-block;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+}
+
+.upbc-cta-button:hover {
+  background-color: var(--upbc-orange);
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Ajustes responsive */
+@media (max-width: 991px) {
+  .upbc-responsive-heading {
+    font-size: 1.4rem;
+  }
+  
+  .upbc-responsive-text {
+    font-size: 0.8rem;
+    max-height: 50px;
+  }
+  
+  .upbc-banner-text {
+    margin-left: 0;
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 767px) {
+  .upbc-responsive-heading {
+    font-size: 1.8rem;
+  }
+}
