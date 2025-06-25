@@ -53,7 +53,7 @@
 }
 
 .header-area .main-nav .logo {
-  line-height: 80px;
+  line-height: 65px;
   color: var(--upbc-white);
   font-size: 28px;
   font-weight: 700;
@@ -182,4 +182,12 @@ a:hover {
 .upbc-hero-section {
   padding-top: 120px;
   padding-bottom: 60px;
+}
+
+/* Reducir espacio en dispositivos móviles */
+@media (max-width: 767px) {
+  .upbc-hero-section {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
 }

@@ -141,21 +141,44 @@
 		touchDrag: true,
 		mouseDrag: true,
 		pullDrag: true,
-		freeDrag: false,
+		freeDrag: true, // Permitir arrastre libre para mejor efecto de inercia
 		stageClass: 'owl-stage-fixed',
 		stageOuterClass: 'owl-stage-outer-fixed',
-		smartSpeed: 800, // Velocidad de transición más suave
-		navSpeed: 500,
+		smartSpeed: 450, // Velocidad moderada para transiciones
+		navSpeed: 400,
+		fluidSpeed: true, // Habilitar velocidad fluida
+		dragEndSpeed: true, // Mantener la velocidad al final del arrastre
 		responsive: {
 			0: {
 				items: 1,
 				margin: 10,
-				center: true
+				center: true,
+				dots: true,
+				nav: false,
+				autoplayTimeout: 4000,
+				stageClass: '',
+				stageOuterClass: '',
+				touchDrag: true,
+				mouseDrag: true,
+				freeDrag: true,
+				fluidSpeed: true,
+				dragEndSpeed: true,
+				smartSpeed: 350
 			},
 			480: {
+				items: 1,
+				margin: 15,
+				center: true,
+				nav: false,
+				autoplayTimeout: 4000,
+				stageClass: '',
+				stageOuterClass: ''
+			},
+			576: {
 				items: 2,
 				margin: 15,
-				center: false
+				center: false,
+				nav: false
 			},
 			768: {
 				items: 3,

@@ -68,10 +68,14 @@
 
 @media (max-width: 767px) {
   .owl-service-item .owl-nav button {
-    width: 36px;
-    height: 36px;
-    font-size: 18px !important;
-    line-height: 36px !important;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    font-size: 10px;
+  }
+  
+  .owl-service-item .owl-nav {
+    display: none !important;
   }
 }
 
@@ -368,6 +372,27 @@ p {
   margin-bottom: 0;
   display: flex;
   align-items: center;
+}
+
+/* Añadir margen entre columnas */
+.upbc-hero-section .col-lg-6:first-child {
+  padding-right: 30px;
+}
+
+.upbc-hero-section .col-lg-6:last-child {
+  padding-left: 30px;
+}
+
+/* Ajuste para dispositivos móviles */
+@media (max-width: 991px) {
+  .upbc-hero-section .col-lg-6:first-child {
+    padding-right: 15px;
+    margin-bottom: 20px;
+  }
+  
+  .upbc-hero-section .col-lg-6:last-child {
+    padding-left: 15px;
+  }
 }
 
 .main-banner .caption {
