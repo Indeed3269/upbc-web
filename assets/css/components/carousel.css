@@ -22,18 +22,18 @@
   background-color: var(--upbc-white);
   border-radius: 20px;
   box-shadow: 0 8px 30px rgba(96,43,130,0.1);
-  padding: 30px 20px;
+  padding: 25px 20px 60px; /* Ajustado el padding para mejor distribución */
   width: 280px; /* Ancho ligeramente mayor para mejor proporción */
-  height: 230px; /* Altura ligeramente mayor */
+  height: 220px; /* Altura ajustada para el contenido actual */
   box-sizing: border-box;
-  margin: 15px auto;
+  margin: 15px auto 35px; /* Aumentado el margen inferior */
   transition: all 0.4s ease-in-out;
   position: relative;
   overflow: hidden;
   text-align: center;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start; /* Alineación desde arriba */
   border: 1px solid rgba(96,43,130,0.05); /* Borde sutil para un aspecto más refinado */
 }
 
@@ -41,18 +41,18 @@
 @media (max-width: 576px) {
   .services .item {
     width: 260px;
-    height: 220px;
-    padding: 25px 15px;
-    margin: 10px auto;
+    height: 280px; /* Altura aumentada */
+    padding: 25px 15px 50px; /* Aumentado el padding inferior */
+    margin: 10px auto 30px; /* Aumentado el margen inferior */
   }
 }
 
 @media (max-width: 400px) {
   .services .item {
     width: 240px;
-    height: 210px;
-    padding: 20px 15px;
-    margin: 5px auto;
+    height: 270px; /* Altura aumentada */
+    padding: 20px 15px 45px; /* Aumentado el padding inferior */
+    margin: 5px auto 25px; /* Aumentado el margen inferior */
   }
   
   .services .item .icon {
@@ -91,10 +91,11 @@
 
 /* Estilos para los iconos dentro de las tarjetas */
 .services .item .icon {
-  max-width: 60px;
-  margin: 0 auto 15px;
+  max-width: 50px;
+  margin: 0 auto 15px; /* Ajustado el margen inferior */
   transition: transform 0.4s ease;
   filter: drop-shadow(0 4px 6px rgba(96,43,130,0.1)); /* Sombra sutil para los iconos */
+  padding-top: 0; /* Eliminado padding superior */
 }
 
 /* Efecto hover en las tarjetas */
@@ -111,12 +112,14 @@
 /* Estilos para los títulos */
 .services .item h4 {
   color: var(--upbc-purple);
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 600;
-  margin-bottom: 18px;
+  margin-bottom: 15px; /* Ajustado el margen inferior */
+  margin-top: 0; /* Elimina el margen superior */
   transition: color 0.3s ease;
-  min-height: 24px;
+  min-height: 22px;
   letter-spacing: -0.2px; /* Mejora la legibilidad */
+  padding: 0 5px; /* Añadido padding lateral */
 }
 
 /* Estilos para los párrafos - ocultos según requerimiento */
@@ -134,7 +137,7 @@
   align-items: center;
   gap: 8px;
   margin-top: 10px;
-  padding: 5px 0;
+  padding: 8px 0;
   position: relative;
 }
 
@@ -152,6 +155,18 @@
   transform: translateX(3px);
 }
 
+/* Estilos específicos para el contenedor del botón */
+.services .item .text-button {
+  position: absolute;
+  bottom: 20px; /* Ajustada la posición desde el fondo */
+  left: 0;
+  right: 0;
+  text-align: center;
+  width: 100%;
+  margin-top: 15px; /* Ajustado el margen superior */
+  padding: 0 15px; /* Añadido padding lateral */
+}
+
 .services .item .text-button i {
   margin-left: 5px;     /* Espacio entre el texto del enlace y el icono */
   transition: all 0.3s; /* Transición suave para el efecto hover */
@@ -163,6 +178,9 @@
   flex-direction: column;
   align-items: center;
   width: 100%;
+  position: relative; /* Para posicionamiento relativo */
+  padding-bottom: 40px; /* Ajustado el espacio para el botón */
+  margin-top: 10px; /* Ajustado el margen superior */
 }
 
 /* Efecto hover para los iconos de los enlaces */
@@ -286,6 +304,7 @@
   max-width: 1200px;
   margin: 0 auto;
   position: relative;
+  padding-bottom: 20px; /* Añadido padding inferior al contenedor */
 }
 
 .services .row {
@@ -362,8 +381,9 @@
 /* Ocultar las tarjetas que no están visibles en el carrusel */
 .services .owl-stage-outer {
   overflow: hidden;
-  clip-path: inset(0); /* Asegura que el contenido fuera del contenedor se recorte */
+  clip-path: inset(0 0 -50px 0); /* Modificado para evitar recorte en la parte inferior */
   overflow-x: visible !important; /* Permitir que los botones sean visibles */
+  padding-bottom: 30px; /* Añadido padding inferior */
 }
 
 /* Ajustar el contenedor del carrusel para que solo muestre 3 tarjetas */
@@ -385,5 +405,5 @@
   max-width: 100% !important;
   margin: 0 auto;
   clip-path: none !important; /* Eliminado para evitar recortes */
-  padding: 10px 0; /* Añadir espacio vertical para las sombras */
+  padding: 10px 0 40px; /* Aumentado el padding inferior para las sombras y evitar recortes */
 }
