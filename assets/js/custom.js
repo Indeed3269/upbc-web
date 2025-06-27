@@ -226,6 +226,78 @@
 			$('body').toggleClass('menu-open');
 		});
 		
+		// ===== NUEVA IMPLEMENTACIÓN DEL MENÚ =====
+		// Ocultamos todos los submenús inicialmente
+		$('.sub-menu').hide();
+		
+		// Variable para rastrear el estado del menú
+		var menuState = {
+			firstRowActive: false,
+			activeItem: null
+		};
+		
+		// Función para cerrar todos los submenús
+		function closeAllSubmenus() {
+			$('.has-sub').removeClass('active');
+			$('.sub-menu').hide();
+			$('.menu-row-2').show();
+			menuState.firstRowActive = false;
+			menuState.activeItem = null;
+		}
+		
+		// Manejo de hover en elementos con submenús (en lugar de clics)
+		$('.has-sub').on('mouseenter', function() {
+			var $parent = $(this);
+			var $subMenu = $parent.find('> .sub-menu').first();
+			var isFirstRow = $parent.closest('.menu-row-1').length > 0;
+			
+			// Cerramos todos los submenús primero
+			$('.has-sub').removeClass('active');
+			$('.sub-menu').hide();
+			
+			// Si es un elemento de la primera fila
+			if (isFirstRow) {
+				// Ocultamos la segunda fila
+				$('.menu-row-2').hide();
+				menuState.firstRowActive = true;
+			} else {
+				// Es un elemento de la segunda fila
+				menuState.firstRowActive = false;
+			}
+			
+			// Mostramos el submenú actual
+			$subMenu.show();
+			$parent.addClass('active');
+			menuState.activeItem = $parent;
+		});
+		
+		// Mantener el enlace principal funcionando
+		$('.has-sub > a').on('click', function(e) {
+			// No prevenimos el evento por defecto para permitir la navegación normal
+			// Solo prevenimos en móvil
+			if (isMobile) {
+				e.preventDefault();
+			}
+		});
+		
+		// Cerrar submenús al salir del área del menú principal
+		$('.header-area .main-nav').on('mouseleave', function() {
+			closeAllSubmenus();
+		});
+		
+		// Cerrar submenús al hacer clic fuera del menú
+		$(document).on('click', function(e) {
+			if (!$(e.target).closest('.has-sub').length && 
+				!$(e.target).closest('.sub-menu').length) {
+				closeAllSubmenus();
+			}
+		});
+		
+		// Prevenir que los clics dentro del submenú cierren el menú
+		$('.sub-menu').on('click', function(e) {
+			e.stopPropagation();
+		});
+		
 		// Cerrar menú móvil al hacer clic en el botón de cierre
 		$(".mobile-menu-close").on('click', function() {
 			$('.menu-trigger').removeClass('active');
