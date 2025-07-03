@@ -1,33 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
   <head>
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="Template Mo">
-    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+    <meta name="description" content="Sitio oficial de la Universidad Politécnica de Baja California">
+    <meta name="author" content="UPBC">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
-    <title>Education Template - Meeting Detail Page</title>
+    <title>Universidad Politécnica de Baja California - Detalles de Eventos</title>
 
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
 
     <!-- Additional CSS Files -->
-    <link rel="stylesheet" href="assets/css/upbc-main.css">
-    <link rel="stylesheet" href="assets/css/upbc-modules/fontawesome.css">
-    <link rel="stylesheet" href="assets/css/upbc-modules/templatemo-edu-meeting.css">
-    <link rel="stylesheet" href="assets/css/upbc-modules/owl.css">
-    <link rel="stylesheet" href="assets/css/upbc-modules/lightbox.css">
-<!--
-
-TemplateMo 569 Edu Meeting
-
-https://templatemo.com/tm-569-edu-meeting
-
--->
+    <link rel="stylesheet" href="assets/css/fontawesome.css">
+    <link rel="stylesheet" href="assets/css/owl.css">
+    <link rel="stylesheet" href="assets/css/lightbox.css">
+    <link rel="stylesheet" href="assets/css/templatemo-edu-meeting.css">
+    <!-- UPBC CSS Modular Structure (cargado al final para tener prioridad) -->
+    <link rel="stylesheet" href="assets/css/upbc-main.css?v=1.1">
+    <link rel="stylesheet" href="assets/css/main-carousel.css?v=1.1">
+    <link rel="stylesheet" href="assets/css/components/custom-spacing.css?v=1.1">
+    <link rel="stylesheet" href="assets/css/components/welcome-section.css">
   </head>
 
 <body>
@@ -40,16 +37,17 @@ https://templatemo.com/tm-569-edu-meeting
       <div class="row">
         <div class="col-lg-8 col-sm-8">
           <div class="left-content">
-            <p>This is an educational <em>HTML CSS</em> template by TemplateMo website.</p>
+            <p>Bienvenidos a la <em>Universidad Politécnica de Baja California</em> - Formando profesionales de excelencia</p>
           </div>
         </div>
         <div class="col-lg-4 col-sm-4">
           <div class="right-icons">
             <ul>
-              <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-              <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-              <li><a href="#"><i class="fa fa-behance"></i></a></li>
-              <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+              <li><a href="https://www.facebook.com/UPBCUNIVERSIDAD" target="_blank" title="Facebook"><i class="fa fa-facebook"></i></a></li>
+              <li><a href="https://www.instagram.com/upbcuniversidad/" target="_blank" title="Instagram"><i class="fa fa-instagram"></i></a></li>
+              <li><a href="https://www.youtube.com/channel/UCCROxBHIXoVourok76BnXNA" target="_blank" title="YouTube"><i class="fa fa-youtube"></i></a></li>
+              <li><a href="https://www2.upbc.edu.mx/alumnos/siaax/" target="_blank" title="SIAAX Alumnos"><i class="fa fa-user"></i></a></li>
+              <li><a href="https://www2.upbc.edu.mx/siaax/Defaultx.aspx" target="_blank" title="SIAAX"><i class="fa fa-graduation-cap"></i></a></li>
             </ul>
           </div>
         </div>
@@ -65,24 +63,56 @@ https://templatemo.com/tm-569-edu-meeting
                   <nav class="main-nav">
                       <!-- ***** Logo Start ***** -->
                       <a href="index.html" class="logo">
-                          <img src="assets/images/logos/UPBC_Logotipo_Oficial_Escudo.png" alt="Logo UPBC" class="navbar-logo-img">
+                          <img src="assets/images/logos/UPBC_FullColor-H-FondoClaro.png" alt="Logo UPBC" class="navbar-logo-img">
                       </a>
                       <!-- ***** Logo End ***** -->
                       <!-- ***** Menu Start ***** -->
-                      <ul class="nav">
-                          <li><a href="index.html">Home</a></li>
-                          <li><a href="meetings.html" class="active">Meetings</a></li>
-                          <li><a href="index.html">Apply Now</a></li>
-                          <li class="has-sub">
-                              <a href="javascript:void(0)">Pages</a>
-                              <ul class="sub-menu">
-                                  <li><a href="meetings.html">Upcoming Meetings</a></li>
-                                  <li><a href="meeting-details.html">Meeting Details</a></li>
+                      <div class="menu-container">
+                          <!-- Contenedor principal del menú con una sola fila -->
+                          <div class="menu-wrapper">
+                              <!-- Menú en una sola fila -->
+                              <ul class="nav single-row-menu">
+                                  <!-- Logo móvil solo visible en menú móvil -->
+                                  <div class="mobile-menu-logo" style="display: none;">
+                                      <img src="assets/images/logos/UPBC_FullColor-H-FondoClaro.png" alt="Logo UPBC" class="navbar-logo-img">
+                                      <div class="mobile-menu-close"></div>
+                                  </div>
+                                  <li class="scroll-to-section"><a href="index.html">Inicio</a></li>
+                                  <li class="has-sub">
+                                      <a href="javascript:void(0)">Universidad</a>
+                                      <ul class="sub-menu">
+                                          <li><a href="#">Historia</a></li>
+                                          <li><a href="#">Misión y visión</a></li>
+                                          <li><a href="#">Directorio</a></li>
+                                          <li><a href="#">Instalaciones</a></li>
+                                          <li><a href="#">Normatividad</a></li>
+                                      </ul>
+                                  </li>
+                                  <li class="has-sub">
+                                      <a href="javascript:void(0)">Oferta Educativa</a>
+                                      <ul class="sub-menu">
+                                          <li><a href="#">Ingeniería en Software</a></li>
+                                          <li><a href="#">Ingeniería Mecatrónica</a></li>
+                                          <li><a href="#">Ingeniería en Energía</a></li>
+                                          <li><a href="#">Licenciatura en Administración y Gestión</a></li>
+                                          <li><a href="#">Licenciatura en Educación</a></li>
+                                      </ul>
+                                  </li>
+                                  <li class="has-sub">
+                                      <a href="javascript:void(0)">Estudiantes</a>
+                                      <ul class="sub-menu">
+                                          <li><a href="#">Calendario escolar</a></li>
+                                          <li><a href="#">Becas</a></li>
+                                          <li><a href="#">Servicios escolares</a></li>
+                                          <li><a href="meetings.html" class="active">Eventos</a></li>
+                                          <li><a href="#">Biblioteca</a></li>
+                                      </ul>
+                                  </li>
+                                  <li><a href="#">Admisiones</a></li>
+                                  <li><a href="#">Contacto</a></li>
                               </ul>
-                          </li>
-                          <li><a href="index.html">Courses</a></li> 
-                          <li><a href="index.html">Contact Us</a></li> 
-                      </ul>        
+                          </div>
+                      </div>
                       <a class='menu-trigger'>
                           <span>Menu</span>
                       </a>
@@ -98,8 +128,8 @@ https://templatemo.com/tm-569-edu-meeting
     <div class="container">
       <div class="row">
         <div class="col-lg-12">
-          <h6>Get all details</h6>
-          <h2>Online Teaching and Learning Tools</h2>
+          <h6>Detalles del evento</h6>
+          <h2>Conferencia sobre Innovación Educativa</h2>
         </div>
       </div>
     </div>
@@ -114,49 +144,51 @@ https://templatemo.com/tm-569-edu-meeting
               <div class="meeting-single-item">
                 <div class="thumb">
                   <div class="price">
-                    <span>$14.00</span>
+                    <span>Gratuito</span>
                   </div>
                   <div class="date">
-                    <h6>Nov <span>12</span></h6>
+                    <h6>Sep <span>15</span></h6>
                   </div>
-                  <a href="meeting-details.html"><img src="assets/images/single-meeting.jpg" alt=""></a>
+                  <a href="meeting-details.html"><img src="assets/images/single-meeting.jpg" alt="Conferencia sobre Innovación Educativa"></a>
                 </div>
                 <div class="down-content">
-                  <a href="meeting-details.html"><h4>Online Teaching and Learning Tools</h4></a>
-                  <p>Recreio dos Bandeirantes, Rio de Janeiro - RJ, 22795-008, Brazil</p>
+                  <a href="meeting-details.html"><h4>Conferencia sobre Innovación Educativa</h4></a>
+                  <p>Auditorio Principal, Universidad Politécnica de Baja California - Mexicali, B.C.</p>
                   <p class="description">
-                    This is an edu meeting HTML CSS template provided by <a href="https://templatemo.com/" target="_blank" rel="nofollow">TemplateMo website</a>. This is a Bootstrap v5.1.3 layout. If you need more free website templates like this one, please visit our website TemplateMo. Please tell your friends about our website. Thank you. If you want to get the latest collection of HTML CSS templates for your websites, you may visit <a rel="nofollow" href="https://www.toocss.com/" target="_blank">Too CSS website</a>. If you need a working contact form script, please visit <a href="https://templatemo.com/contact" target="_parent">our contact page</a> for more info.
+                    La Universidad Politécnica de Baja California se complace en invitar a toda la comunidad universitaria a la conferencia magistral sobre "Innovación Educativa y Nuevas Tecnologías en la Educación Superior", impartida por reconocidos especialistas en el ámbito educativo.
                     
-                    <br><br>You are allowed to use this edu meeting CSS template for your school or university or business. You can feel free to modify or edit this layout. You are not allowed to redistribute the template ZIP file on any other template website. Please contact us for more information.
+                    <br><br>Esta conferencia abordará temas fundamentales como la implementación de metodologías activas, el uso de herramientas digitales en el aula, y estrategias para fomentar el pensamiento crítico y creativo en los estudiantes. Los participantes tendrán la oportunidad de conocer casos de éxito y buenas prácticas que pueden ser aplicadas en diferentes contextos educativos.
+                    
+                    <br><br>El evento está dirigido a docentes, estudiantes, personal administrativo y público en general interesado en las tendencias actuales de la educación superior. Se otorgará constancia de participación a quienes asistan al evento completo.
                   </p>
                   <div class="row">
                     <div class="col-lg-4">
                       <div class="hours">
-                        <h5>Hours</h5>
-                        <p>Monday - Friday: 07:00 AM - 13:00 PM<br>Saturday- Sunday: 09:00 AM - 15:00 PM</p>
+                        <h5>Horario</h5>
+                        <p>15 de septiembre, 2025<br>10:00 AM - 13:00 PM</p>
                       </div>
                     </div>
                     <div class="col-lg-4">
                       <div class="location">
-                        <h5>Location</h5>
-                        <p>Recreio dos Bandeirantes, 
-                        <br>Rio de Janeiro - RJ, 22795-008, Brazil</p>
+                        <h5>Ubicación</h5>
+                        <p>Auditorio Principal, 
+                        <br>Universidad Politécnica de Baja California<br>Mexicali, B.C.</p>
                       </div>
                     </div>
                     <div class="col-lg-4">
                       <div class="book now">
-                        <h5>Book Now</h5>
-                        <p>010-020-0340<br>090-080-0760</p>
+                        <h5>Inscripciones</h5>
+                        <p>(686) 123-4567<br>eventos@upbc.edu.mx</p>
                       </div>
                     </div>
                     <div class="col-lg-12">
                       <div class="share">
-                        <h5>Share:</h5>
+                        <h5>Compartir:</h5>
                         <ul>
-                          <li><a href="#">Facebook</a>,</li>
-                          <li><a href="#">Twitter</a>,</li>
-                          <li><a href="#">Linkedin</a>,</li>
-                          <li><a href="#">Behance</a></li>
+                          <li><a href="https://www.facebook.com/UPBCUNIVERSIDAD" target="_blank">Facebook</a>,</li>
+                          <li><a href="https://twitter.com/upbcuniversidad" target="_blank">Twitter</a>,</li>
+                          <li><a href="https://www.instagram.com/upbcuniversidad/" target="_blank">Instagram</a>,</li>
+                          <li><a href="https://www.youtube.com/channel/UCCROxBHIXoVourok76BnXNA" target="_blank">YouTube</a></li>
                         </ul>
                       </div>
                     </div>
@@ -166,23 +198,197 @@ https://templatemo.com/tm-569-edu-meeting
             </div>
             <div class="col-lg-12">
               <div class="main-button-red">
-                <a href="meetings.html">Back To Meetings List</a>
+                <a href="meetings.html">Volver a la lista de eventos</a>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <div class="footer">
-      <p>Copyright © 2022 Edu Meeting Co., Ltd. All Rights Reserved. 
-          <br>
-          Design: <a href="https://templatemo.com" target="_parent" title="free css templates">TemplateMo</a>
-          <br>
-          Distibuted By: <a href="https://themewagon.com" target="_blank" title="Build Better UI, Faster">ThemeWagon</a>
-        </p>
     </div>
   </section>
 
+  <!-- ***** Footer Start ***** -->
+  <footer id="footer">
+    <div class="container">
+      <div class="row">
+        <!-- Columna 1: Logo y descripción -->
+        <div class="col-lg-3 col-md-6 col-sm-12">
+          <div class="footer-logo">
+            <img src="assets/images/logos/UPBC_FullColor-H-FondoClaro.png" alt="Logo UPBC" class="img-fluid mb-3" style="max-width: 200px;">
+            <p>Universidad Politécnica de Baja California - Formando profesionales de excelencia desde 2006.</p>
+          </div>
+        </div>
+        
+        <!-- Columna 2: Enlaces útiles -->
+        <div class="col-lg-3 col-md-6 col-sm-12">
+          <h4>Enlaces útiles</h4>
+          <ul class="footer-links">
+            <li><a href="#">Directorio</a></li>
+            <li><a href="#">Aviso de privacidad</a></li>
+            <li><a href="#">Términos y condiciones</a></li>
+            <li><a href="#">Preguntas frecuentes</a></li>
+            <li><a href="#">Mapa del sitio</a></li>
+          </ul>
+        </div>
+        
+        <!-- Columna 3: Contacto -->
+        <div class="col-lg-3 col-md-6 col-sm-12">
+          <h4>Contacto</h4>
+          <ul class="footer-contact">
+            <li><i class="fa fa-map-marker"></i> Calle Universidad 1000, Mexicali, B.C.</li>
+            <li><i class="fa fa-phone"></i> (686) 123-4567</li>
+            <li><i class="fa fa-envelope"></i> info@upbc.edu.mx</li>
+            <li><i class="fa fa-clock-o"></i> Lun - Vie: 8:00 AM - 5:00 PM</li>
+          </ul>
+        </div>
+        
+        <!-- Columna 4: Redes sociales y mapa -->
+        <div class="col-lg-3 col-md-6 col-sm-12">
+          <h4>Síguenos</h4>
+          <div class="footer-social">
+            <a href="https://www.facebook.com/UPBCUNIVERSIDAD" target="_blank" aria-label="Facebook"><i class="fa fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/upbcuniversidad/" target="_blank" aria-label="Instagram"><i class="fa fa-instagram"></i></a>
+            <a href="https://www.youtube.com/channel/UCCROxBHIXoVourok76BnXNA" target="_blank" aria-label="YouTube"><i class="fa fa-youtube-play"></i></a>
+            <a href="https://twitter.com/upbcuniversidad" target="_blank" aria-label="Twitter"><i class="fa fa-twitter"></i></a>
+            <a href="https://siax.upbc.edu.mx" target="_blank" aria-label="SIAX"><i class="fa fa-graduation-cap"></i></a>
+          </div>
+          
+          <!-- Mapa de Google -->
+          <div class="footer-map mt-3">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3357.9616345082066!2d-115.4476138!3d32.6512646!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80d77aae0a9c3d55%3A0x40eb4705efb1e0a!2sUniversidad%20Polit%C3%A9cnica%20de%20Baja%20California!5e0!3m2!1ses-419!2smx!4v1656955420000!5m2!1ses-419!2smx" width="100%" height="150" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Línea divisoria -->
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="copyright-text">
+            <hr>
+            <p>&copy; 2025 Universidad Politécnica de Baja California. Todos los derechos reservados.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- ***** Footer End ***** -->
+
+  <!-- Estilos adicionales para el footer -->
+  <style>
+    footer {
+      background-color: #f8f9fa;
+      padding: 60px 0 30px;
+      color: #666;
+      font-size: 15px;
+      line-height: 1.7;
+    }
+
+    footer h4 {
+      color: #602b82;
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 20px;
+      position: relative;
+      padding-bottom: 10px;
+    }
+
+    footer h4:after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 50px;
+      height: 2px;
+      background-color: #602b82;
+    }
+
+    .footer-links {
+      list-style: none;
+      padding-left: 0;
+      margin-bottom: 25px;
+    }
+
+    .footer-links li {
+      margin-bottom: 10px;
+    }
+
+    .footer-links a {
+      color: #666;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      display: inline-block;
+    }
+
+    .footer-links a:hover {
+      color: #602b82;
+      transform: translateX(5px);
+    }
+
+    .footer-contact {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .footer-contact li {
+      margin-bottom: 10px;
+      display: flex;
+      align-items: flex-start;
+    }
+
+    .footer-contact li i {
+      color: #602b82;
+      margin-right: 10px;
+      font-size: 16px;
+      min-width: 20px;
+      margin-top: 5px;
+    }
+
+    .footer-social {
+      display: flex;
+      gap: 10px;
+    }
+
+    .footer-social a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      background-color: #fff;
+      color: #602b82;
+      border-radius: 50%;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    .footer-social a:hover {
+      background-color: #602b82;
+      color: #fff;
+      transform: translateY(-3px);
+    }
+
+    .copyright-text {
+      text-align: center;
+      margin-top: 30px;
+    }
+
+    .copyright-text hr {
+      margin-bottom: 20px;
+      border-color: rgba(0,0,0,0.05);
+    }
+
+    .copyright-text p {
+      font-size: 14px;
+      color: #888;
+    }
+
+    .footer-map iframe {
+      border-radius: 10px;
+      box-shadow: 0 3px 15px rgba(0,0,0,0.1);
+    }
+  </style>
 
   <!-- Scripts -->
   <!-- Bootstrap core JavaScript -->
@@ -243,8 +449,4 @@ https://templatemo.com/tm-569-edu-meeting
         });
     </script>
 </body>
-
-
-  </body>
-
 </html>

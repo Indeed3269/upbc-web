@@ -436,15 +436,61 @@
           <div class="container">
             <!-- Primera sección optimizada para todos los dispositivos -->
             <div class="row upbc-hero-section">
-              <!-- Columna izquierda: Texto -->
+              <!-- Columna izquierda: Texto con imagen -->
               <div class="col-lg-6 col-md-6">
-                <div class="upbc-banner-text">
-                  <div class="main-button"><span class="btn-bienvenidos">BIENVENIDOS</span></div>
-                  <h2 class="upbc-responsive-heading" style="color: var(--upbc-purple) !important;">UNIVERSIDAD POLITÉCNICA DE BAJA CALIFORNIA</h2>
-                  <p class="upbc-responsive-text" style="color: #333 !important;">Formando profesionales de excelencia con una educación integral y de calidad para contribuir al desarrollo sostenible de nuestra región y del país.</p>
-                  <div class="main-button">
-                      <div class="scroll-to-section"><a href="#apply" class="upbc-cta-button">¡INSCRÍBETE AHORA!</a></div>
+                <div class="upbc-banner-text position-relative" style="height: 100%; display: flex; flex-direction: column; justify-content: space-between; background-color: white; border-radius: 15px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.1); padding: 15px;">
+                  <!-- Imagen adaptada al contenedor con margen -->
+                  <div style="position: relative; width: 100%; height: 100%; padding: 0;">
+                    <img src="assets/images/imagen-inicio/UPBC_PAGWEB_fotoprincipal_1080x1080.png" alt="Universidad Politécnica de Baja California" class="img-fluid" style="width: 100%; height: auto; border-radius: 10px;">
                   </div>
+                  
+                  <!-- Botón debajo de la línea amarilla con estilo amarillo y flecha (estilo directo) -->
+                  <div style="position: absolute; bottom: 130px; left: 0; right: 0; z-index: 2; text-align: left; padding-left: 65px;">
+                    <div class="main-button">
+                      <div class="scroll-to-section">
+                        <a href="#apply" style="display: inline-flex; align-items: center; font-weight: 600; padding: 10px 20px; border-radius: 8px; transition: all 0.3s ease; background-color: #ffc107; color: #602b82 !important; text-transform: uppercase; font-size: 14px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); border: none; text-decoration: none;">
+                          <i class="fa fa-arrow-right" style="margin-right: 14px; background-color: white; color: #602b82; border-radius: 50%; width: 32px; height: 32px; display: inline-flex; align-items: center; justify-content: center; font-size: 16px;"></i>
+                          <span style="color: #602b82 !important;">¡INSCRÍBETE AHORA!</span>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <!-- Estilos personalizados para el botón amarillo con flecha y texto morado -->
+                  <style>
+                    .upbc-cta-button-custom {
+                      display: inline-flex;
+                      align-items: center;
+                      font-weight: 600;
+                      padding: 10px 20px;
+                      border-radius: 8px;
+                      transition: all 0.3s ease;
+                      background-color: #ffc107; /* Color amarillo */
+                      color: #602b82 !important; /* Texto morado forzado */
+                      text-transform: uppercase;
+                      font-size: 14px;
+                      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+                      border: none;
+                    }
+                    
+                    .upbc-cta-button-custom span {
+                      color: #602b82 !important; /* Asegurar que el texto es morado */
+                    }
+                    
+                    .upbc-cta-button-custom:hover {
+                      background-color: #ffcd38; /* Amarillo más claro al hacer hover */
+                      transform: translateY(-2px);
+                      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+                    }
+                    
+                    .upbc-cta-button-custom:hover i {
+                      transform: rotate(90deg);
+                    }
+                    
+                    .upbc-cta-button-custom i {
+                      transition: transform 0.3s ease;
+                    }
+                  </style>
                 </div>
               </div>
               
