@@ -37,10 +37,26 @@
   display: flex;
   align-items: center;
   height: 100%;
+  justify-content: space-between;
+  width: 100%;
+}
+
+/* Estilo para el logo */
+.logo {
+  display: inline-block;
+  margin-top: 0px;
+  margin-left: 0px;
+  flex-shrink: 0;
 }
 
 /* No modificamos el cintillo de bienvenida, solo ajustamos el navbar */
 /* El cintillo mantiene sus estilos originales del template */
+
+/* Ocultar flechas en el menú sticky después del scroll */
+.background-header .main-nav .nav li.has-sub:after {
+  content: none !important;
+  display: none !important;
+}
 
 /* Ajuste del padding del body solo para compensar el navbar sticky */
 body {
@@ -54,7 +70,8 @@ body {
   flex-grow: 1;
   justify-content: center;
   align-items: center;
-  margin-left: 20px;
+  margin-left: 0;
+  margin-right: 0;
 }
 
 /* Wrapper para el menú completo */
@@ -66,17 +83,72 @@ body {
   position: relative;
   z-index: 1;
   width: 100%;
+  padding: 0;
+  margin: 0;
 }
 
 /* Estilos para el menú en una sola fila */
 .single-row-menu {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
+  flex-wrap: wrap;
   padding: 0;
   margin: 0;
   width: 100%;
   margin-top: 0;
+  text-align: left;
+}
+
+/* Asegurar que cada elemento del menú tenga un ancho máximo para forzar el wrap */
+.single-row-menu > li {
+  flex: 0 1 auto;
+  margin-right: 10px;
+  text-align: left;
+}
+
+/* Reglas generales para forzar alineación izquierda en todos los elementos del menú */
+.single-row-menu {
+  justify-content: flex-start !important;
+  text-align: left !important;
+  display: flex !important;
+  flex-wrap: wrap !important;
+  width: 100% !important;
+}
+
+.single-row-menu > li {
+  text-align: left !important;
+  float: left !important;
+  clear: none !important;
+}
+
+/* Forzar que no haya float right en ningún elemento del menú */
+.nav li, .nav li a {
+  float: left !important;
+  text-align: left !important;
+}
+
+/* Mantener reglas específicas para pantallas medianas donde ocurre el wrap */
+@media (max-width: 1200px) and (min-width: 992px) {
+  .single-row-menu {
+    justify-content: flex-start !important;
+    text-align: left !important;
+    display: flex !important;
+    flex-wrap: wrap !important;
+    width: 100% !important;
+  }
+  
+  .single-row-menu > li {
+    text-align: left !important;
+    float: left !important;
+    clear: none !important;
+  }
+  
+  /* Forzar que no haya float right en ningún elemento del menú */
+  .nav li, .nav li a {
+    float: left !important;
+    text-align: left !important;
+  }
 }
 
 .menu-row-2 {
@@ -214,6 +286,8 @@ body {
   display: block; /* Aseguramos que esté visible por defecto */
 }
 
+
+
 .sub-menu li {
   display: block;
   width: 100%;
@@ -248,7 +322,7 @@ body {
   display: flex;
   align-items: center;
   height: 100%;
-  padding-right: 15px;
+  padding-right: 0px;
   margin-top: -10px; /* Ajuste vertical para alinear con el menú */
 }
 

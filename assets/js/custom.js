@@ -135,15 +135,13 @@
 		autoplay: true,
 		autoplayTimeout: 6000,
 		autoplayHoverPause: true,
-		margin: 50,
+		margin: 30,
 		center: false,
 		items: 3,
 		touchDrag: true,
 		mouseDrag: true,
 		pullDrag: true,
 		freeDrag: true, // Permitir arrastre libre para mejor efecto de inercia
-		stageClass: 'owl-stage-fixed',
-		stageOuterClass: 'owl-stage-outer-fixed',
 		smartSpeed: 450, // Velocidad moderada para transiciones
 		navSpeed: 400,
 		fluidSpeed: true, // Habilitar velocidad fluida
@@ -156,8 +154,6 @@
 				dots: true,
 				nav: false,
 				autoplayTimeout: 4000,
-				stageClass: '',
-				stageOuterClass: '',
 				touchDrag: true,
 				mouseDrag: true,
 				freeDrag: true,
