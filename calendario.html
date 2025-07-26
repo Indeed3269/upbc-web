@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="es">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Calendario Escolar 2025 - Universidad Politécnica de Baja California">
+    <meta name="author" content="UPBC">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <title>Calendario Escolar 2025 - Universidad Politécnica de Baja California</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="assets/css/fontawesome.css">
+    <link rel="stylesheet" href="assets/css/owl.css">
+    <link rel="stylesheet" href="assets/css/lightbox.css">
+    <link rel="stylesheet" href="assets/css/templatemo-edu-meeting.css">
+    <!-- UPBC CSS Modular Structure (cargado al final para tener prioridad) -->
+    <link rel="stylesheet" href="assets/css/upbc-main.css?v=1.1">
+    <link rel="stylesheet" href="assets/css/main-carousel.css?v=1.1">
+    <link rel="stylesheet" href="assets/css/components/custom-spacing.css?v=1.1">
+    <link rel="stylesheet" href="assets/css/components/welcome-section.css">
+    
+    <!-- PDF.js Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.min.js"></script>
+    <style>
+      /* Estilos específicos para la página del calendario */
+      .calendario-container {
+        background-color: #f8f9fa;
+        padding: 60px 0;
+        min-height: 80vh;
+      }
+      
+      .pdf-container {
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: 0 4px 20px rgba(96,43,130,0.08);
+        padding: 20px;
+        margin-bottom: 30px;
+        display: flex;
+        justify-content: center;
+      }
+      
+      .pdf-viewer {
+        width: 100%;
+        height: 800px;
+        border: none;
+      }
+      
+      .calendar-controls {
+        margin-bottom: 20px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        justify-content: center;
+      }
+      
+      .calendar-controls .btn {
+        margin: 5px;
+        padding: 8px 15px;
+        border-radius: 30px;
+        font-weight: 600;
+        font-size: 14px;
+        transition: all 0.3s;
+      }
+      
+      .btn-purple {
+        background-color: var(--upbc-purple);
+        color: white;
+      }
+      
+      .btn-purple:hover {
+        background-color: #4e2a6b;
+        color: white;
+      }
+      
+      .page-heading {
+        text-align: center;
+        margin-bottom: 40px;
+      }
+      
+      .page-heading h2 {
+        color: var(--upbc-purple);
+        font-weight: 700;
+      }
+      
+      .page-heading p {
+        color: #666;
+        max-width: 800px;
+        margin: 0 auto;
+      }
+      
+      /* Estilos responsivos */
+      @media (max-width: 768px) {
+        .pdf-viewer {
+          height: 500px;
+        }
+        
+        .calendario-container {
+          padding: 40px 0;
+        }
+      }
+    </style>
+  </head>
+
+<body>
+
+  <!-- Sub Header -->
+  <div class="sub-header">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-sm-8">
+          <div class="left-content">
+            <p>Bienvenidos a la <em>Universidad Politécnica de Baja California</em> - Formando profesionales de excelencia</p>
+          </div>
+        </div>
+        <div class="col-lg-4 col-sm-4">
+          <div class="right-icons">
+            <ul>
+              <li><a href="https://www.facebook.com/UPBCUNIVERSIDAD" target="_blank" title="Facebook"><i class="fa fa-facebook"></i></a></li>
+              <li><a href="https://www.instagram.com/upbcuniversidad/" target="_blank" title="Instagram"><i class="fa fa-instagram"></i></a></li>
+              <li><a href="https://www.youtube.com/channel/UCCROxBHIXoVourok76BnXNA" target="_blank" title="YouTube"><i class="fa fa-youtube"></i></a></li>
+              <li><a href="https://www2.upbc.edu.mx/alumnos/siaax/" target="_blank" title="SIAAX Alumnos"><i class="fa fa-user"></i></a></li>
+              <li><a href="https://www2.upbc.edu.mx/siaax/Defaultx.aspx" target="_blank" title="SIAAX"><i class="fa fa-graduation-cap"></i></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ***** Header Area Start ***** -->
+  <header class="header-area header-sticky">
+      <div class="container">
+          <div class="row">
+              <div class="col-12">
+                  <nav class="main-nav">
+                      <!-- ***** Logo Start ***** -->
+                      <a href="index.html" class="logo">
+                          <img src="assets/images/logos/UPBC_FullColor-H-FondoClaro.png" alt="Logo UPBC" class="navbar-logo-img">
+                      </a>
+                      <!-- ***** Logo End ***** -->
+                      <!-- ***** Menu Start ***** -->
+                       <div class="menu-container">
+                           <!-- Contenedor principal del menú con una sola fila -->
+                           <div class="menu-wrapper">
+                                <!-- Menú en una sola fila -->
+                                <ul class="nav single-row-menu">
+                                    <!-- Logo móvil solo visible en menú móvil -->
+                                    <div class="mobile-menu-logo" style="display: none;">
+                                        <img src="assets/images/logos/UPBC_FullColor-H-FondoClaro.png" alt="Logo UPBC" class="navbar-logo-img">
+                                        <div class="mobile-menu-close"></div>
+                                    </div>
+                                    <li class="scroll-to-section"><a href="index.html">Inicio</a></li>
+                                    <li class="has-sub">
+                                        <a href="javascript:void(0)">Universidad</a>
+                                        <ul class="sub-menu">
+                                            <li><a href="#">Historia</a></li>
+                                            <li><a href="#">Misión y visión</a></li>
+                                            <li><a href="#">Directorio</a></li>
+                                            <li><a href="#">Instalaciones</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="has-sub">
+                                        <a href="javascript:void(0)">Oferta educativa</a>
+                                        <ul class="sub-menu">
+                                            <li><a href="#">Carreras</a></li>
+                                            <li><a href="#">Posgrados</a></li>
+                                            <li><a href="#">Educación continua</a></li>
+                                            <li><a href="#">Modalidades especiales</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="has-sub">
+                                        <a href="javascript:void(0)">Admisiones</a>
+                                        <ul class="sub-menu">
+                                            <li><a href="#">Requisitos</a></li>
+                                            <li><a href="#">Proceso de inscripción</a></li>
+                                            <li><a href="calendario.html" class="active">Calendario escolar</a></li>
+                                            <li><a href="#">Costos</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="has-sub">
+                                        <a href="javascript:void(0)">Vida universitaria</a>
+                                        <ul class="sub-menu">
+                                            <li><a href="#">Eventos</a></li>
+                                            <li><a href="#">Deportes</a></li>
+                                            <li><a href="#">Cultura</a></li>
+                                            <li><a href="#">Comunidad estudiantil</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="has-sub">
+                                        <a href="javascript:void(0)">Servicios</a>
+                                        <ul class="sub-menu">
+                                            <li><a href="#">Biblioteca</a></li>
+                                            <li><a href="#">Laboratorios</a></li>
+                                            <li><a href="#">Servicios escolares</a></li>
+                                            <li><a href="#">Apoyo estudiantil</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="scroll-to-section"><a href="#contact">Contacto</a></li>
+                                    
+                                    <!-- Buscador móvil (solo visible en móvil) -->
+                                    <div class="mobile-search">
+                                        <div class="search-container-mobile">
+                                            <input type="text" class="search-input-mobile" placeholder="Buscar...">
+                                            <button class="search-button-mobile"><i class="fa fa-search"></i></button>
+                                        </div>
+                                    </div>
+                                </ul>
+                            </div>
+                        </div>
+                      <!-- ***** Menu End ***** -->
+                      <!-- Buscador y botones rápidos (escritorio) -->
+                      <div class="search-wrapper">
+                          <div class="search-container">
+                              <input type="text" class="search-input" placeholder="Buscar...">
+                              <button class="search-button"><i class="fa fa-search"></i></button>
+                          </div>
+                          <div class="quick-buttons-dropdown">
+                              <div class="quick-buttons-grid">
+                                  <a href="calendario.html" class="quick-button" title="Calendario Escolar"><i class="fa fa-calendar"></i></a>
+                                  <a href="#" class="quick-button" title="Becas"><i class="fa fa-graduation-cap"></i></a>
+                                  <a href="#" class="quick-button" title="SIAAX"><i class="fa fa-user"></i></a>
+                                  <a href="#" class="quick-button" title="Inscripciones"><i class="fa fa-pencil"></i></a>
+                              </div>
+                          </div>
+                      </div>
+                      <!-- Botón para menú móvil -->
+                      <a class='menu-trigger'>
+                          <span>Menu</span>
+                      </a>
+                  </nav>
+              </div>
+          </div>
+      </div>
+  </header>
+  <!-- ***** Header Area End ***** -->
+
+  <!-- ***** Calendario Area Start ***** -->
+  <section class="calendario-container">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="page-heading">
+            <h2>Calendario Escolar 2025</h2>
+            <p>Consulta las fechas importantes del ciclo escolar, periodos de inscripción, vacaciones y eventos académicos.</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="calendar-controls">
+            <a href="assets/pdfs/UPBC_Calendario2025.pdf" download class="btn btn-purple">
+              <i class="fa fa-download"></i> Descargar PDF
+            </a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="pdf-container">
+            <!-- Utilizamos PDF.js para mostrar el PDF de manera interactiva -->
+            <div id="pdf-viewer-container">
+              <canvas id="pdf-renderer"></canvas>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ***** Calendario Area End ***** -->
+
+  <!-- ***** Footer Start ***** -->
+  <footer id="footer">
+    <div class="container">
+      <div class="row">
+        <!-- Columna 1: Logo y descripción -->
+        <div class="col-lg-3 col-md-6 col-sm-12">
+          <div class="footer-logo">
+            <img src="assets/images/logos/UPBC_FullColor-H-FondoClaro.png" alt="Logo UPBC" class="img-fluid mb-3" style="max-width: 200px;">
+            <p>Universidad Politécnica de Baja California - Formando profesionales de excelencia desde 2006.</p>
+          </div>
+        </div>
+        
+        <!-- Columna 2: Enlaces útiles -->
+        <div class="col-lg-3 col-md-6 col-sm-12">
+          <h4>Enlaces útiles</h4>
+          <ul class="footer-links">
+            <li><a href="#">Directorio</a></li>
+            <li><a href="#">Aviso de privacidad</a></li>
+            <li><a href="#">Términos y condiciones</a></li>
+            <li><a href="#">Preguntas frecuentes</a></li>
+            <li><a href="#">Mapa del sitio</a></li>
+          </ul>
+        </div>
+        
+        <!-- Columna 3: Contacto -->
+        <div class="col-lg-3 col-md-6 col-sm-12">
+          <h4>Contacto</h4>
+          <ul class="footer-contact">
+            <li><i class="fa fa-map-marker"></i> Calle Universidad 1000, Mexicali, B.C.</li>
+            <li><i class="fa fa-phone"></i> (686) 123-4567</li>
+            <li><i class="fa fa-envelope"></i> info@upbc.edu.mx</li>
+            <li><i class="fa fa-clock-o"></i> Lun - Vie: 8:00 AM - 5:00 PM</li>
+          </ul>
+        </div>
+        
+        <!-- Columna 4: Redes sociales y mapa -->
+        <div class="col-lg-3 col-md-6 col-sm-12">
+          <h4>Síguenos</h4>
+          <div class="footer-social">
+            <a href="https://www.facebook.com/UPBCUNIVERSIDAD" target="_blank" aria-label="Facebook"><i class="fa fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/upbcuniversidad/" target="_blank" aria-label="Instagram"><i class="fa fa-instagram"></i></a>
+            <a href="https://www.youtube.com/channel/UCCROxBHIXoVourok76BnXNA" target="_blank" aria-label="YouTube"><i class="fa fa-youtube-play"></i></a>
+            <a href="https://twitter.com/upbcuniversidad" target="_blank" aria-label="Twitter"><i class="fa fa-twitter"></i></a>
+            <a href="https://siax.upbc.edu.mx" target="_blank" aria-label="SIAX"><i class="fa fa-graduation-cap"></i></a>
+          </div>
+          
+          <!-- Mapa de Google -->
+          <div class="footer-map mt-3">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3357.9616345082066!2d-115.4476138!3d32.6512646!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80d77aae0a9c3d55%3A0x40eb4705efb1e0a!2sUniversidad%20Polit%C3%A9cnica%20de%20Baja%20California!5e0!3m2!1ses-419!2smx!4v1656955420000!5m2!1ses-419!2smx" width="100%" height="150" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Línea divisoria -->
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="copyright-text">
+            <hr>
+            <p>&copy; 2025 Universidad Politécnica de Baja California. Todos los derechos reservados.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- ***** Footer End ***** -->
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <script src="assets/js/isotope.min.js"></script>
+  <script src="assets/js/owl-carousel.js"></script>
+  <script src="assets/js/lightbox.js"></script>
+  <script src="assets/js/tabs.js"></script>
+  <script src="assets/js/video.js"></script>
+  <script src="assets/js/slick-slider.js"></script>
+  <script src="assets/js/custom.js"></script>
+  
+  <!-- PDF.js para visualizar el PDF -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.min.js"></script>
+  <script>
+    // Configuración de PDF.js
+    pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.worker.min.js';
+    
+    let pdfDoc = null,
+        pageNum = 1,
+        pageRendering = false,
+        pageNumPending = null,
+        scale = 1.0,
+        canvas = document.getElementById('pdf-renderer'),
+        ctx = canvas.getContext('2d');
+    
+    // Cargar el PDF
+    function loadPDF(url) {
+      pdfjsLib.getDocument(url).promise.then(function(pdf) {
+        pdfDoc = pdf;
+        
+        // Renderizar la primera página
+        renderPage(pageNum);
+      }).catch(function(error) {
+        console.error('Error al cargar el PDF:', error);
+        const container = document.getElementById('pdf-viewer-container');
+        container.innerHTML = '<div class="alert alert-danger">Error al cargar el PDF. Por favor, intente más tarde.</div>';
+      });
+    }
+    
+    // Renderizar la página especificada
+    function renderPage(num) {
+      pageRendering = true;
+      
+      // Obtener la página
+      pdfDoc.getPage(num).then(function(page) {
+        const viewport = page.getViewport({ scale: scale });
+        canvas.height = viewport.height;
+        canvas.width = viewport.width;
+        
+        // Ajustar el contenedor al tamaño del PDF
+        const pdfContainer = document.getElementById('pdf-viewer-container');
+        pdfContainer.style.width = viewport.width + 'px';
+        pdfContainer.style.height = viewport.height + 'px';
+        
+        // Renderizar PDF en el canvas
+        const renderContext = {
+          canvasContext: ctx,
+          viewport: viewport
+        };
+        
+        const renderTask = page.render(renderContext);
+        
+        // Esperar a que termine el renderizado
+        renderTask.promise.then(function() {
+          pageRendering = false;
+          
+          if (pageNumPending !== null) {
+            // Hay una página pendiente, renderizarla
+            renderPage(pageNumPending);
+            pageNumPending = null;
+          }
+        });
+      });
+      
+      // Ya no es necesario actualizar el estado de los botones de navegación
+    }
+    
+    // Estas funciones se han eliminado ya que no se necesitan los botones de navegación y zoom
+    
+    // Poner en cola el renderizado de página
+    function queueRenderPage(num) {
+      if (pageRendering) {
+        pageNumPending = num;
+      } else {
+        renderPage(num);
+      }
+    }
+    
+    // Los eventos de los botones se han eliminado ya que los botones no existen más
+    
+    // Cargar el PDF cuando la página esté lista
+    document.addEventListener('DOMContentLoaded', function() {
+      loadPDF('assets/pdfs/UPBC_Calendario2025.pdf');
+    });
+  </script>
+</body>
+</html>
