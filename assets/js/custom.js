@@ -1,6 +1,7 @@
 (function ($) {
 	
 	"use strict";
+	// Función para cerrar el código correctamente
 
 	// Configuración del navbar al cargar la página
 	$(document).ready(function() {
@@ -33,23 +34,170 @@
 	  $(window).scroll(handleScroll);
 	});
 	
+	// Menú móvil lateral para dispositivos móviles
+	$(document).ready(function() {
+		// Detectar si estamos en vista móvil
+		var isMobile = window.matchMedia("(max-width: 991px)").matches;
+		
+		// Variable para rastrear el estado del menú
+		var menuState = {
+			activeItem: null
+		};
+		
+		// Función para cerrar todos los submenús
+		function closeAllSubmenus() {
+			$('.has-sub').removeClass('active');
+			$('.sub-menu').hide();
+			menuState.activeItem = null;
+		}
+		
+		// Función para cerrar el menú móvil
+		function closeMenu() {
+			$('.menu-trigger').removeClass('active');
+			$('.header-area .nav, .single-row-menu').removeClass('active');
+			$('.mobile-menu-overlay').removeClass('active');
+			$('body').removeClass('menu-open');
+			// Ocultar el logo móvil cuando se cierra el menú
+			$('.mobile-menu-logo').css('display', 'none');
+		}
+		
+		// Abrir menú móvil al hacer clic en el botón hamburguesa
+		$(".menu-trigger").on('click', function(e) {
+			e.preventDefault();
+			e.stopPropagation();
+			console.log('Menu trigger clicked');
+			$(this).toggleClass('active');
+			$('.header-area .main-nav .nav').toggleClass('active');
+			$('.single-row-menu').toggleClass('active');
+			$('.mobile-menu-overlay').toggleClass('active');
+			$('body').toggleClass('menu-open');
+			// Mostrar el logo móvil cuando se abre el menú
+			if ($(this).hasClass('active')) {
+				$('.mobile-menu-logo').css('display', 'flex');
+			} else {
+				$('.mobile-menu-logo').css('display', 'none');
+			}
+		});
+		
+		// Ocultamos todos los submenús inicialmente
+		$('.sub-menu').hide();
+		
+		// En escritorio: Manejo de hover en elementos con submenús
+		$('.has-sub').on('mouseenter', function() {
+			if (!isMobile) {
+				var $parent = $(this);
+				var $subMenu = $parent.find('> .sub-menu').first();
+				
+				// Cerramos todos los submenús primero
+				$('.has-sub').removeClass('active');
+				$('.sub-menu').hide();
+				
+				// Mostramos el submenú actual
+				$subMenu.show();
+				$parent.addClass('active');
+				menuState.activeItem = $parent;
+			}
+		});
+		
+		// Mantener el enlace principal funcionando
+		$('.has-sub > a').on('click', function(e) {
+			// No prevenimos el evento por defecto para permitir la navegación normal
+			// Solo prevenimos en móvil
+			if (isMobile) {
+				e.preventDefault();
+			}
+		});
+		
+		// Cerrar submenús al salir del área del menú principal
+		$('.header-area .main-nav').on('mouseleave', function() {
+			if (!isMobile) {
+				closeAllSubmenus();
+			}
+		});
+		
+		// Cerrar submenús al hacer clic fuera del menú
+		$(document).on('click', function(e) {
+			if (!$(e.target).closest('.has-sub').length && 
+				!$(e.target).closest('.sub-menu').length) {
+				closeAllSubmenus();
+			}
+		});
+		
+		// Prevenir que los clics dentro del submenú cierren el menú
+		$('.sub-menu').on('click', function(e) {
+			e.stopPropagation();
+		});
+		
+		// Cerrar menú móvil al hacer clic en el botón de cierre
+		$(".mobile-menu-close").on('click', function() {
+			closeMenu();
+		});
+		
+		// Cerrar menú móvil al hacer clic en el overlay (fuera del menú)
+		$(".mobile-menu-overlay").on('click', function() {
+			closeMenu();
+		});
+		
+		// Cerrar menú al hacer clic en un enlace del menú
+		$('.header-area .main-nav .nav li a, .single-row-menu li a').on('click', function(e) {
+			// Si no es un elemento con submenú o si estamos en móvil
+			if (!$(this).parent().hasClass('has-sub') || !isMobile) {
+				closeMenu();
+			}
+		});
+		
+		// Manejar submenús en dispositivos móviles
+		$('.has-sub > a').on('click', function(e) {
+			if (isMobile) {
+				e.preventDefault();
+				var $parent = $(this).parent('.has-sub');
+				
+				// Alternar la clase 'open' para el icono de flecha
+				$parent.toggleClass('open');
+				
+				// Cerrar otros submenús abiertos
+				$('.has-sub').not($parent).removeClass('open');
+				$('.has-sub').not($parent).find('.sub-menu').slideUp(200);
+				
+				// Alternar el submenú actual
+				$parent.find('.sub-menu').slideToggle(200);
+			}
+		});
+		
+		// Actualizar el estado móvil cuando cambia el tamaño de la ventana
+		$(window).resize(function() {
+			isMobile = window.matchMedia("(max-width: 991px)").matches;
+			
+			// Restablecer menú en cambio de tamaño
+			if (!isMobile) {
+				$('.header-area .nav, .single-row-menu').removeClass('active');
+				$('.menu-trigger').removeClass('active');
+				$('.mobile-menu-overlay').removeClass('active');
+				$('body').removeClass('menu-open');
+				$('.has-sub').removeClass('open');
+				$('.sub-menu').removeAttr('style');
+				$('.mobile-menu-logo').css('display', 'none');
+			}
+		});
+	});
+	
 	$('.filters ul li').click(function(){
         $('.filters ul li').removeClass('active');
         $(this).addClass('active');
           
-          var data = $(this).attr('data-filter');
-          $grid.isotope({
-            filter: data
-          })
+        var data = $(this).attr('data-filter');
+        $grid.isotope({
+          filter: data
         });
+    });
 
-        var $grid = $(".grid").isotope({
-          itemSelector: ".all",
-          percentPosition: true,
-          masonry: {
-            columnWidth: ".all"
-          }
-        });
+    var $grid = $(".grid").isotope({
+      itemSelector: ".all",
+      percentPosition: true,
+      masonry: {
+        columnWidth: ".all"
+      }
+    });
 
 
 	const Accordion = {
@@ -187,7 +335,7 @@
 				center: false
 			}
 		}
-	})
+	});
 
 	$('.owl-courses-item').owlCarousel({
 		items:4,
@@ -196,223 +344,65 @@
 		nav: true,
 		autoplay: true,
 		margin:30,
-		  responsive:{
-			  0:{
-				  items:1
-			  },
-			  600:{
-				  items:2
-			  },
-			  1000:{
-				  items:4
-			  }
-		  }
-	  })
-	
-
-	// Menú móvil lateral para dispositivos móviles
-	$(document).ready(function() {
-		var isMobile = window.matchMedia("(max-width: 991px)").matches;
-		
-		// Abrir menú móvil al hacer clic en el botón hamburguesa
-		$(".menu-trigger").on('click', function() {	
-			$(this).toggleClass('active');
-			$('.header-area .nav').toggleClass('active');
-			$('.mobile-menu-overlay').toggleClass('active');
-			$('body').toggleClass('menu-open');
-		});
-		
-		// ===== NUEVA IMPLEMENTACIÓN DEL MENÚ =====
-		// Ocultamos todos los submenús inicialmente
-		$('.sub-menu').hide();
-		
-		// Variable para rastrear el estado del menú
-		var menuState = {
-			firstRowActive: false,
-			activeItem: null
-		};
-		
-		// Función para cerrar todos los submenús
-		function closeAllSubmenus() {
-			$('.has-sub').removeClass('active');
-			$('.sub-menu').hide();
-			$('.menu-row-2').show();
-			menuState.firstRowActive = false;
-			menuState.activeItem = null;
-		}
-		
-		// Manejo de hover en elementos con submenús (en lugar de clics)
-		$('.has-sub').on('mouseenter', function() {
-			var $parent = $(this);
-			var $subMenu = $parent.find('> .sub-menu').first();
-			var isFirstRow = $parent.closest('.menu-row-1').length > 0;
-			
-			// Cerramos todos los submenús primero
-			$('.has-sub').removeClass('active');
-			$('.sub-menu').hide();
-			
-			// Si es un elemento de la primera fila
-			if (isFirstRow) {
-				// Ocultamos la segunda fila
-				$('.menu-row-2').hide();
-				menuState.firstRowActive = true;
-			} else {
-				// Es un elemento de la segunda fila
-				menuState.firstRowActive = false;
-			}
-			
-			// Mostramos el submenú actual
-			$subMenu.show();
-			$parent.addClass('active');
-			menuState.activeItem = $parent;
-		});
-		
-		// Mantener el enlace principal funcionando
-		$('.has-sub > a').on('click', function(e) {
-			// No prevenimos el evento por defecto para permitir la navegación normal
-			// Solo prevenimos en móvil
-			if (isMobile) {
-				e.preventDefault();
-			}
-		});
-		
-		// Cerrar submenús al salir del área del menú principal
-		$('.header-area .main-nav').on('mouseleave', function() {
-			closeAllSubmenus();
-		});
-		
-		// Cerrar submenús al hacer clic fuera del menú
-		$(document).on('click', function(e) {
-			if (!$(e.target).closest('.has-sub').length && 
-				!$(e.target).closest('.sub-menu').length) {
-				closeAllSubmenus();
-			}
-		});
-		
-		// Prevenir que los clics dentro del submenú cierren el menú
-		$('.sub-menu').on('click', function(e) {
-			e.stopPropagation();
-		});
-		
-		// Cerrar menú móvil al hacer clic en el botón de cierre
-		$(".mobile-menu-close").on('click', function() {
-			$('.menu-trigger').removeClass('active');
-			$('.header-area .nav').removeClass('active');
-			$('.mobile-menu-overlay').removeClass('active');
-			$('body').removeClass('menu-open');
-		});
-		
-		// Cerrar menú móvil al hacer clic en el overlay (fuera del menú)
-		$(".mobile-menu-overlay").on('click', function() {
-			closeMenu();
-		});
-		
-		// Función para cerrar el menú
-		function closeMenu() {
-			$('.menu-trigger').removeClass('active');
-			$('.header-area .nav').removeClass('active');
-			$('.mobile-menu-overlay').removeClass('active');
-			$('body').removeClass('menu-open');
-		}
-		
-		// Cerrar menú al hacer clic en un enlace del menú
-		$('.header-area .main-nav .nav li a').on('click', function(e) {
-			// Si no es un elemento con submenú o si estamos en móvil
-			if (!$(this).parent().hasClass('has-sub') || !isMobile) {
-				closeMenu();
-			}
-		});
-		
-		// Manejar submenús en dispositivos móviles
-		$('.header-area .main-nav .nav li.has-sub > a').on('click', function(e) {
-			if (isMobile) {
-				e.preventDefault();
-				var $parent = $(this).parent('li');
-				
-				// Alternar la clase 'open' para el icono de flecha
-				$parent.toggleClass('open');
-				
-				// Cerrar otros submenús abiertos
-				$('.header-area .main-nav .nav li.has-sub').not($parent).removeClass('open');
-				$('.header-area .main-nav .nav li.has-sub').not($parent).find('ul.sub-menu').slideUp(200);
-				
-				// Alternar el submenú actual
-				$parent.find('ul.sub-menu').slideToggle(200);
-			}
-		});
-		
-		// Actualizar el estado móvil cuando cambia el tamaño de la ventana
-		$(window).resize(function() {
-			isMobile = window.matchMedia("(max-width: 991px)").matches;
-			
-			// Restablecer menú en cambio de tamaño
-			if (!isMobile) {
-				$('.header-area .nav').removeClass('active');
-				$('.menu-trigger').removeClass('active');
-				$('.mobile-menu-overlay').removeClass('active');
-				$('body').removeClass('menu-open');
-				$('.header-area .main-nav .nav li.has-sub').removeClass('open');
-				$('.header-area .main-nav .nav li.has-sub ul.sub-menu').removeAttr('style');
-			}
-		});
-	})
-
-
-	// Menu elevator animation
-	$('.scroll-to-section a[href*=\\#]:not([href=\\#])').on('click', function() {
-		if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
-			var target = $(this.hash);
-			target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
-			if (target.length) {
-				var width = $(window).width();
-				if(width < 991) {
-					$('.menu-trigger').removeClass('active');
-					$('.header-area .nav').slideUp(200);	
-				}				
-				$('html,body').animate({
-					scrollTop: (target.offset().top) - 80
-				}, 700);
-				return false;
+		responsive:{
+			0:{
+				items:1
+			},
+			600:{
+				items:2
+			},
+			1000:{
+				items:4
 			}
 		}
 	});
+	
+	// Función unificada de scroll suave se implementa más abajo
 
 	$(document).ready(function () {
 	    $(document).on("scroll", onScroll);
 	    
-	    //smoothscroll
+	    // Smooth scroll mejorado
 	    $('.scroll-to-section a[href^="#"]').on('click', function (e) {
 	        e.preventDefault();
 	        $(document).off("scroll");
 	        
 	        $('.scroll-to-section a').each(function () {
 	            $(this).removeClass('active');
-	        })
+	        });
 	        $(this).addClass('active');
 	      
-	        var target = this.hash,
-	        menu = target;
-	       	var target = $(this.hash);
-	        $('html, body').stop().animate({
-	            scrollTop: (target.offset().top) - 79
-	        }, 500, 'swing', function () {
-	            window.location.hash = target;
-	            $(document).on("scroll", onScroll);
-	        });
+	        var target = this.hash;
+	        var $target = $(this.hash);
+	        
+	        if ($target.length) {
+	            $('html, body').stop().animate({
+	                scrollTop: ($target.offset().top) - 79
+	            }, 500, 'swing', function () {
+	                window.location.hash = target;
+	                $(document).on("scroll", onScroll);
+	            });
+	        }
 	    });
 	});
 
 	function onScroll(event){
 	    var scrollPos = $(document).scrollTop();
-	    $('.nav a').each(function () {
+	    $('.nav a[href^="#"]').each(function () {
 	        var currLink = $(this);
-	        var refElement = $(currLink.attr("href"));
-	        if (refElement.position().top <= scrollPos && refElement.position().top + refElement.height() > scrollPos) {
-	            $('.nav ul li a').removeClass("active");
-	            currLink.addClass("active");
-	        }
-	        else{
-	            currLink.removeClass("active");
+	        var href = currLink.attr("href");
+	        
+	        // Verificar que href existe y es un selector válido
+	        if (href && href !== '#') {
+	            var refElement = $(href);
+	            if (refElement.length > 0) {
+	                if (refElement.position().top <= scrollPos && refElement.position().top + refElement.height() > scrollPos) {
+	                    $('.nav ul li a').removeClass("active");
+	                    currLink.addClass("active");
+	                } else {
+	                    currLink.removeClass("active");
+	                }
+	            }
 	        }
 	    });
 	}
@@ -511,7 +501,7 @@
                 });
             });
         }
-    })
+    });
 
 
 })(window.jQuery);

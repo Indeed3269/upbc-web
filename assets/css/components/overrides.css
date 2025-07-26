@@ -32,6 +32,26 @@
   overflow: visible; /* Aseguramos que los elementos que sobresalen sean visibles */
 }
 
+/* Overlay para el menú móvil */
+.mobile-menu-overlay {
+  display: none !important;
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  background-color: rgba(0,0,0,0.5) !important;
+  z-index: 98 !important;
+  opacity: 0 !important;
+  transition: opacity 0.3s ease !important;
+}
+
+.mobile-menu-overlay.active {
+  display: block !important;
+  opacity: 1 !important;
+  visibility: visible;
+}
+
 /* Ajuste para el contenedor principal del navbar */
 .header-area .main-nav {
   display: flex;
@@ -98,6 +118,194 @@ body {
   width: 100%;
   margin-top: 0;
   text-align: left;
+}
+
+/* Estilos específicos para el menú móvil */
+@media (max-width: 991px) {
+  /* Ocultar el menú normal en móvil */
+  .header-area .main-nav .nav {
+    display: none !important;
+  }
+  
+  /* Mostrar el menú móvil cuando está activo */
+  .header-area .main-nav .nav.active {
+    display: block !important;
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 80% !important;
+    max-width: 320px !important;
+    height: 100vh !important;
+    background-color: white !important;
+    z-index: 999 !important;
+    padding: 20px !important;
+    overflow-y: auto !important;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2) !important;
+    transition: all 0.3s ease !important;
+  }
+  
+  /* Estilos para el menú en una sola fila en móvil */
+  .single-row-menu {
+    display: block !important;
+    width: 100% !important;
+    margin-top: 20px !important;
+  }
+  
+  .single-row-menu.active {
+    display: block !important;
+  }
+
+  .mobile-menu-logo {
+    display: flex !important;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eee;
+  }
+
+  .mobile-menu-close {
+    width: 30px;
+    height: 30px;
+    position: relative;
+    cursor: pointer;
+  }
+
+  .mobile-menu-close:before,
+  .mobile-menu-close:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: var(--upbc-purple);
+    top: 50%;
+    left: 0;
+  }
+
+  .mobile-menu-close:before {
+    transform: rotate(45deg);
+  }
+
+  .mobile-menu-close:after {
+    transform: rotate(-45deg);
+  }
+  
+  /* Estilos para los submenús en móvil */
+  .single-row-menu > li {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 10px;
+    position: relative;
+  }
+  
+  .single-row-menu > li > a {
+    display: block;
+    width: 100%;
+    padding: 10px 0;
+    color: var(--upbc-purple);
+    font-weight: 600;
+  }
+  
+  .has-sub {
+    position: relative;
+  }
+  
+  .has-sub.open > a {
+    color: var(--upbc-gold);
+  }
+  
+  .has-sub > .sub-menu {
+    display: none;
+    position: static;
+    width: 100%;
+    background: #f9f9f9;
+    box-shadow: none;
+    border-radius: 5px;
+    padding: 10px;
+    margin-top: 5px;
+  }
+  
+  .has-sub.open > .sub-menu {
+    display: block;
+  }
+  
+  .sub-menu > li {
+    margin-bottom: 8px;
+  }
+  
+  .sub-menu > li > a {
+    padding: 5px 10px;
+    display: block;
+    color: var(--upbc-gray);
+    font-size: 0.9em;
+  }
+  
+  .sub-menu > li > a:hover {
+    color: var(--upbc-gold);
+  }
+  
+  /* Estilos para el botón hamburguesa */
+  .menu-trigger {
+    display: block !important;
+    cursor: pointer !important;
+    position: relative !important;
+    width: 30px !important;
+    height: 25px !important;
+    margin-left: auto !important;
+    z-index: 999 !important;
+    float: right !important;
+    margin-top: 20px !important;
+  }
+  
+  .menu-trigger span {
+    display: block !important;
+    position: absolute !important;
+    height: 3px !important;
+    width: 100% !important;
+    background: var(--upbc-purple) !important;
+    border-radius: 3px !important;
+    opacity: 1 !important;
+    left: 0 !important;
+    transform: rotate(0deg) !important;
+    transition: .25s ease-in-out !important;
+  }
+  
+  .menu-trigger span:nth-child(1) {
+    top: 0px !important;
+  }
+  
+  .menu-trigger span:nth-child(2) {
+    top: 8px !important;
+  }
+  
+  .menu-trigger span:nth-child(3) {
+    top: 16px !important;
+  }
+  
+  .menu-trigger span:nth-child(4) {
+    top: 24px !important;
+  }
+  
+  .menu-trigger.active span:nth-child(1) {
+    top: 8px !important;
+    width: 0% !important;
+    left: 50% !important;
+  }
+  
+  .menu-trigger.active span:nth-child(2) {
+    transform: rotate(45deg) !important;
+  }
+  
+  .menu-trigger.active span:nth-child(3) {
+    transform: rotate(-45deg) !important;
+  }
+  
+  .menu-trigger.active span:nth-child(4) {
+    top: 8px !important;
+    width: 0% !important;
+    left: 50% !important;
+  }
 }
 
 /* Asegurar que cada elemento del menú tenga un ancho máximo para forzar el wrap */
