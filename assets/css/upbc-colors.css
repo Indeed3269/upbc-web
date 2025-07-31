@@ -756,12 +756,14 @@ body.menu-open {
 
 .apply-now .accordions {
   background-color: rgba(255, 255, 255, 0.05) !important;
-  border-radius: 10px !important;
+  border-radius: 15px !important;
   overflow: hidden !important;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1) !important;
-  backdrop-filter: blur(5px) !important;
-  -webkit-backdrop-filter: blur(5px) !important;
-  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15) !important;
+  backdrop-filter: blur(10px) !important;
+  -webkit-backdrop-filter: blur(10px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  padding: 0 !important;
+  margin-left: 30px !important;
 }
 
 .apply-now .accordions .accordion {
@@ -774,24 +776,33 @@ body.menu-open {
 
 .apply-now .accordions .accordion .accordion-head {
   background-color: var(--upbc-gold) !important;
-  padding: 20px !important;
+  padding: 18px 25px !important;
   cursor: pointer !important;
   transition: all 0.3s ease !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2) !important;
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
 }
 
 .apply-now .accordions .accordion .accordion-head:hover {
   background-color: rgba(205, 139, 71, 0.9) !important;
 }
 
-.apply-now .accordions .accordion .accordion-head span {
+.apply-now .accordions .accordion .accordion-head span:first-child {
   color: var(--upbc-white) !important;
-  font-weight: 600 !important;
+  font-weight: 700 !important;
   font-size: 18px !important;
+  letter-spacing: 0.5px !important;
+}
+
+.apply-now .accordions .accordion .accordion-head .icon {
+  transition: transform 0.3s ease !important;
 }
 
 .apply-now .accordions .accordion .accordion-head .icon i {
   color: var(--upbc-white) !important;
-  transition: all 0.3s ease !important;
+  font-size: 16px !important;
 }
 
 .apply-now .accordions .accordion.active .accordion-head .icon i {
@@ -800,34 +811,41 @@ body.menu-open {
 
 .apply-now .accordions .accordion .accordion-body {
   background-color: var(--upbc-white) !important;
-  padding: 25px !important;
+  padding: 0 !important;
+  transition: all 0.3s ease-in-out !important;
 }
 
 .apply-now .accordions .accordion .accordion-body .content {
   color: var(--upbc-gray) !important;
-  font-size: 15px !important;
+  font-size: 16px !important;
   line-height: 1.7 !important;
+  padding: 25px 30px !important;
 }
 
 .apply-now .accordions .accordion .accordion-body .content ul {
-  padding-left: 20px !important;
+  padding-left: 0 !important;
   margin-top: 10px !important;
   margin-bottom: 10px !important;
+  list-style-type: none !important;
 }
 
 .apply-now .accordions .accordion .accordion-body .content ul li {
-  margin-bottom: 8px !important;
+  margin-bottom: 12px !important;
   position: relative !important;
   color: var(--upbc-gray) !important;
+  padding-left: 22px !important;
+  font-size: 16px !important;
 }
 
 .apply-now .accordions .accordion .accordion-body .content ul li:before {
   content: '•' !important;
   color: var(--upbc-purple) !important;
   font-weight: bold !important;
+  font-size: 18px !important;
   display: inline-block !important;
-  width: 1em !important;
-  margin-left: -1em !important;
+  position: absolute !important;
+  left: 0 !important;
+  top: -2px !important;
 }
 
 /* Sección de Vida Universitaria */
