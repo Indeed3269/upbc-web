@@ -208,7 +208,7 @@
   <!-- Scripts -->
   <!-- Bootstrap core JavaScript -->
   <script src="../vendor/jquery/jquery.min.js"></script>
-  <!-- Verificar si bootstrap.bundle.min.js existe en la ruta esperada, si no, usar CDN -->
+  <!-- Verificar si bootstrap.min.js existe en la ruta esperada, si no, usar CDN -->
   <script>
     // Función para verificar si un archivo existe
     function fileExists(url) {
@@ -219,8 +219,8 @@
     }
     
     // Verificar si el archivo local existe
-    var bootstrapLocalPath = '../vendor/bootstrap/js/bootstrap.bundle.min.js';
-    var bootstrapCDN = 'https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js';
+    var bootstrapLocalPath = '../vendor/bootstrap/js/bootstrap.min.js';
+    var bootstrapCDN = 'https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js';
     
     // Crear el elemento script
     var script = document.createElement('script');
