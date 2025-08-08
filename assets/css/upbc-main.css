@@ -47,6 +47,39 @@
   transition: all .5s ease 0s;
 }
 
+/* Estilos para el sub-header (cinturillo morado) */
+.sub-header {
+  background-color: var(--upbc-purple);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 101;
+  -webkit-transition: all .3s ease 0s;
+  -moz-transition: all .3s ease 0s;
+  -o-transition: all .3s ease 0s;
+  transition: all .3s ease 0s;
+}
+
+/* Clase para ocultar el sub-header al hacer scroll */
+.hidden-sub-header {
+  transform: translateY(-100%);
+  opacity: 0;
+}
+
+/* Cuando el header se vuelve sticky (fijo) */
+.background-header {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0;
+  right: 0;
+  box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.1);
+  -webkit-transition: all .3s ease 0s;
+  -moz-transition: all .3s ease 0s;
+  -o-transition: all .3s ease 0s;
+  transition: all .3s ease 0s;
+}
+
 .header-area .main-nav {
   background: transparent;
   display: flex;

@@ -22,7 +22,13 @@
   <link rel="stylesheet" href="../assets/css/upbc-main.css?v=1.1">
   <style>
     .news-content {
-      padding: 60px 0;
+      padding: 120px 0 60px 0;
+    }
+    
+    /* Asegurar que la barra morada se vea correctamente */
+    .sub-header {
+      display: block;
+      width: 100%;
     }
     
     .news-header {
@@ -132,142 +138,10 @@
 
 <body>
 
-  <!-- Sub Header -->
-  <div class="sub-header">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-8 col-sm-8">
-          <div class="left-content">
-            <p>Bienvenidos a la <em>Universidad Politécnica de Baja California</em> - Formando profesionales de excelencia</p>
-          </div>
-        </div>
-        <div class="col-lg-4 col-sm-4">
-          <div class="right-icons">
-            <ul>
-              <li><a href="https://www.facebook.com/UPBCUNIVERSIDAD" target="_blank" title="Facebook"><i class="fa fa-facebook"></i></a></li>
-              <li><a href="https://www.instagram.com/upbcuniversidad/" target="_blank" title="Instagram"><i class="fa fa-instagram"></i></a></li>
-              <li><a href="https://www.youtube.com/channel/UCCROxBHIXoVourok76BnXNA" target="_blank" title="YouTube"><i class="fa fa-youtube"></i></a></li>
-              <li><a href="https://www2.upbc.edu.mx/alumnos/siaax/" target="_blank" title="SIAAX Alumnos"><i class="fa fa-user"></i></a></li>
-              <li><a href="https://www2.upbc.edu.mx/siaax/Defaultx.aspx" target="_blank" title="SIAAX"><i class="fa fa-graduation-cap"></i></a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- ***** Header Area Start ***** -->
-  <header class="header-area header-sticky">
-      <div class="container">
-          <div class="row">
-              <div class="col-12">
-                  <nav class="main-nav">
-                      <!-- ***** Logo Start ***** -->
-                      <a href="../index.html" class="logo">
-                          <img src="../assets/images/logos/UPBC_FullColor-H-FondoClaro.png" alt="Logo UPBC" class="navbar-logo-img">
-                      </a>
-                      <!-- ***** Logo End ***** -->
-                                            <!-- ***** Menu Start ***** -->
-                       <div class="menu-container">
-                           <!-- Contenedor principal del menú con una sola fila -->
-                           <div class="menu-wrapper">
-                               <!-- Menú en una sola fila -->
-                               <ul class="nav single-row-menu">
-                                   <!-- Logo móvil solo visible en menú móvil -->
-                                   <div class="mobile-menu-logo" style="display: none;">
-                                       <img src="../assets/images/logos/UPBC_FullColor-H-FondoClaro.png" alt="Logo UPBC" class="navbar-logo-img">
-                                       <div class="mobile-menu-close"></div>
-                                   </div>
-                                   <li class="scroll-to-section"><a href="../index.html">Inicio</a></li>
-                                   <li class="has-sub">
-                                       <a href="javascript:void(0)">Universidad</a>
-                                       <ul class="sub-menu">
-                                           <li><a href="#">Historia</a></li>
-                                           <li><a href="#">Misión y visión</a></li>
-                                           <li><a href="#">Directorio</a></li>
-                                           <li><a href="#">Instalaciones</a></li>
-                                       </ul>
-                                   </li>
-                                   <li class="has-sub">
-                                       <a href="javascript:void(0)">Oferta educativa</a>
-                                       <ul class="sub-menu">
-                                           <li><a href="#">Carreras</a></li>
-                                           <li><a href="#">Posgrados</a></li>
-                                           <li><a href="#">Educación continua</a></li>
-                                           <li><a href="#">Modalidades especiales</a></li>
-                                       </ul>
-                                   </li>
-                                   <li class="has-sub">
-                                       <a href="javascript:void(0)">Admisiones</a>
-                                       <ul class="sub-menu">
-                                           <li><a href="#">Requisitos</a></li>
-                                           <li><a href="#">Proceso de inscripción</a></li>
-                                            <li><a href="../calendario.html">Calendario escolar</a></li>
-                                           <li><a href="#">Costos</a></li>
-                                       </ul>
-                                   </li>
-                                   <li class="has-sub">
-                                       <a href="javascript:void(0)">Vida universitaria</a>
-                                       <ul class="sub-menu">
-                                           <li><a href="#">Eventos</a></li>
-                                           <li><a href="#">Deportes</a></li>
-                                           <li><a href="#">Cultura</a></li>
-                                           <li><a href="#">Comunidad estudiantil</a></li>
-                                       </ul>
-                                   </li>
-                                   <li class="has-sub">
-                                       <a href="javascript:void(0)">Servicios</a>
-                                       <ul class="sub-menu">
-                                           <li><a href="#">Biblioteca</a></li>
-                                           <li><a href="#">Laboratorios</a></li>
-                                           <li><a href="#">Servicios escolares</a></li>
-                                           <li><a href="#">Apoyo estudiantil</a></li>
-                                       </ul>
-                                   </li>
-                                    <li class="scroll-to-section"><a href="../index.html#contact">Contacto</a></li>
-                                   
-                                   <!-- Buscador móvil (solo visible en móvil) -->
-                                   <div class="mobile-search">
-                                       <div class="search-container-mobile">
-                                           <form action="#" method="get">
-                                               <input type="text" class="search-input-mobile" placeholder="Buscar...">
-                                               <button type="submit" class="search-button-mobile"><i class="fa fa-search"></i></button>
-                                           </form>
-                                       </div>
-                                   </div>
-                               </ul>
-                           </div>
+  <!-- Contenedor para cargar el navbar dinámicamente -->
+  <div id="navbar-container"></div>
                            
-                            </div>
-                       
-                       <!-- Buscador y botones rápidos (escritorio) -->
-                       <div class="search-wrapper">
-                           <div class="search-container">
-                               <input type="text" class="search-input" placeholder="Buscar...">
-                               <button class="search-button"><i class="fa fa-search"></i></button>
-                           </div>
-                           <div class="quick-buttons-dropdown">
-                               <div class="quick-buttons-grid">
-                                   <a href="../calendario.html" class="quick-button" title="Calendario Escolar"><i class="fa fa-calendar"></i></a>
-                                   <a href="#" class="quick-button" title="Becas"><i class="fa fa-graduation-cap"></i></a>
-                                   <a href="#" class="quick-button" title="SIAAX"><i class="fa fa-user"></i></a>
-                                   <a href="#" class="quick-button" title="Inscripciones"><i class="fa fa-pencil"></i></a>
-                               </div>
-                           </div>
-                       </div>
-                      <!-- ***** Menu End ***** -->
-                      
-                      <!-- Botón de menú móvil -->
-                      <a class='menu-trigger'>
-                          <span>Menu</span>
-                      </a>
-                      <!-- ***** Menu End ***** -->
-                  </nav>
-              </div>
-          </div>
-      </div>
-  </header>
-  <!-- ***** Header Area End ***** -->
+ 
 
   <!-- ***** News Content Area Start ***** -->
   <section class="news-content">
@@ -328,76 +202,35 @@
   </section>
   <!-- ***** News Content Area End ***** -->
 
-  <!-- ***** Footer Start ***** -->
-  <footer id="footer">
-    <div class="container">
-      <div class="row">
-        <!-- Columna 1: Logo y descripción -->
-        <div class="col-lg-3 col-md-6 col-sm-12">
-          <div class="footer-logo">
-            <img src="../assets/images/logos/UPBC_FullColor-H-FondoClaro.png" alt="Logo UPBC" class="img-fluid mb-3" style="max-width: 200px;">
-            <p>Universidad Politécnica de Baja California - Formando profesionales de excelencia desde 2006.</p>
-          </div>
-        </div>
-        
-        <!-- Columna 2: Enlaces útiles -->
-        <div class="col-lg-3 col-md-6 col-sm-12">
-          <h4>Enlaces útiles</h4>
-          <ul class="footer-links">
-            <li><a href="#">Directorio</a></li>
-            <li><a href="#">Aviso de privacidad</a></li>
-            <li><a href="#">Términos y condiciones</a></li>
-            <li><a href="#">Preguntas frecuentes</a></li>
-            <li><a href="#">Mapa del sitio</a></li>
-          </ul>
-        </div>
-        
-        <!-- Columna 3: Contacto -->
-        <div class="col-lg-3 col-md-6 col-sm-12">
-          <h4>Contacto</h4>
-          <ul class="footer-contact">
-            <li><i class="fa fa-map-marker"></i> Calle Universidad 1000, Mexicali, B.C.</li>
-            <li><i class="fa fa-phone"></i> (686) 123-4567</li>
-            <li><i class="fa fa-envelope"></i> info@upbc.edu.mx</li>
-            <li><i class="fa fa-clock-o"></i> Lun - Vie: 8:00 AM - 5:00 PM</li>
-          </ul>
-        </div>
-        
-        <!-- Columna 4: Redes sociales y mapa -->
-        <div class="col-lg-3 col-md-6 col-sm-12">
-          <h4>Síguenos</h4>
-          <div class="footer-social">
-            <a href="https://www.facebook.com/UPBCUNIVERSIDAD" target="_blank" aria-label="Facebook"><i class="fa fa-facebook-f"></i></a>
-            <a href="https://www.instagram.com/upbcuniversidad/" target="_blank" aria-label="Instagram"><i class="fa fa-instagram"></i></a>
-            <a href="https://www.youtube.com/channel/UCCROxBHIXoVourok76BnXNA" target="_blank" aria-label="YouTube"><i class="fa fa-youtube-play"></i></a>
-            <a href="https://twitter.com/upbcuniversidad" target="_blank" aria-label="Twitter"><i class="fa fa-twitter"></i></a>
-            <a href="https://siax.upbc.edu.mx" target="_blank" aria-label="SIAX"><i class="fa fa-graduation-cap"></i></a>
-          </div>
-          
-          <!-- Mapa de Google -->
-          <div class="footer-map mt-3">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3357.9616345082066!2d-115.4476138!3d32.6512646!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80d77aae0a9c3d55%3A0x40eb4705efb1e0a!2sUniversidad%20Polit%C3%A9cnica%20de%20Baja%20California!5e0!3m2!1ses-419!2smx!4v1656955420000!5m2!1ses-419!2smx" width="100%" height="150" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-          </div>
-        </div>
-      </div>
-      
-      <!-- Línea divisoria -->
-      <div class="row">
-        <div class="col-lg-12">
-          <div class="copyright-text">
-            <hr>
-            <p>&copy; 2025 Universidad Politécnica de Baja California. Todos los derechos reservados.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </footer>
-  <!-- ***** Footer End ***** -->
+  <!-- Contenedor para cargar el footer dinámicamente -->
+  <div id="footer-container"></div>
 
   <!-- Scripts -->
   <!-- Bootstrap core JavaScript -->
   <script src="../vendor/jquery/jquery.min.js"></script>
-  <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <!-- Verificar si bootstrap.bundle.min.js existe en la ruta esperada, si no, usar CDN -->
+  <script>
+    // Función para verificar si un archivo existe
+    function fileExists(url) {
+      var http = new XMLHttpRequest();
+      http.open('HEAD', url, false);
+      http.send();
+      return http.status != 404;
+    }
+    
+    // Verificar si el archivo local existe
+    var bootstrapLocalPath = '../vendor/bootstrap/js/bootstrap.bundle.min.js';
+    var bootstrapCDN = 'https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js';
+    
+    // Crear el elemento script
+    var script = document.createElement('script');
+    script.integrity = 'sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct';
+    script.crossOrigin = 'anonymous';
+    
+    // Usar CDN como fallback si el archivo local no existe
+    script.src = bootstrapCDN;
+    document.head.appendChild(script);
+  </script>
 
   <script src="../assets/js/isotope.min.js"></script>
   <script src="../assets/js/owl-carousel.js"></script>
@@ -432,5 +265,420 @@
       window.location.href = `mailto:?subject=${title}&body=Te comparto esta noticia: ${url}`;
     }
   </script>
+  
+  <!-- Script para cargar componentes con rutas relativas correctas para subdirectorios -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Cargar el navbar desde la ruta correcta para subdirectorios
+    loadComponent('../components/navbar.html', 'navbar-container')
+    .then(() => { 
+        // Corregir rutas relativas en el navbar
+        fixNavbarPaths();
+        // Reinicializar funciones específicas del navbar
+        reinitializeNavbarFunctions(); 
+    });
+    
+    // Cargar el footer desde la ruta correcta para subdirectorios
+    loadComponent('../components/footer.html', 'footer-container')
+    .then(() => { 
+        // Corregir rutas relativas en el footer
+        fixFooterPaths();
+        // Reinicializar funciones específicas del footer
+        reinitializeFooterFunctions(); 
+    });
+
+    function loadComponent(url, targetId) {
+        const target = document.getElementById(targetId);
+        if (!target) return Promise.resolve();
+        
+        return fetch(url)
+            .then(response => {
+                if (!response.ok) throw new Error(`Error al cargar ${url}: ${response.status}`);
+                return response.text();
+            })
+            .then(html => {
+                // Si estamos cargando el navbar, corregir las rutas antes de insertarlo en el DOM
+                if (targetId === 'navbar-container') {
+                    // Crear un elemento temporal para manipular el HTML
+                    const tempDiv = document.createElement('div');
+                    tempDiv.innerHTML = html;
+                    
+                    // Corregir rutas de imágenes
+                    tempDiv.querySelectorAll('img').forEach(img => {
+                        // Corregir la ruta del logo específicamente
+                        if (img.classList.contains('navbar-logo-img')) {
+                            // Usar ruta absoluta para el logo
+                            const logoPath = '../assets/images/logos/UPBC_FullColor-H-FondoClaro.png';
+                            img.setAttribute('src', logoPath);
+                            console.log('Corrigiendo ruta del logo a:', logoPath);
+                            
+                            // Precargar la imagen para verificar que existe
+                            const preloadImg = new Image();
+                            preloadImg.src = logoPath;
+                            preloadImg.onerror = function() {
+                                console.error('Error al cargar el logo desde:', logoPath);
+                                // Intentar con una ruta alternativa
+                                const altPath = 'https://www.upbc.edu.mx/assets/images/logos/UPBC_FullColor-H-FondoClaro.png';
+                                img.setAttribute('src', altPath);
+                                console.log('Intentando ruta alternativa para el logo:', altPath);
+                            };
+                        }
+                        // Corregir otras imágenes
+                        else if (img.getAttribute('src') && img.getAttribute('src').includes('/assets/')) {
+                            const newSrc = img.getAttribute('src').replace('/assets/', '../assets/');
+                            img.setAttribute('src', newSrc);
+                            console.log('Corrigiendo ruta de imagen de:', img.getAttribute('src'), 'a:', newSrc);
+                        }
+                    });
+                    
+                    // Corregir rutas de enlaces
+                    tempDiv.querySelectorAll('a').forEach(link => {
+                        const href = link.getAttribute('href');
+                        // No modificar enlaces externos o con rutas absolutas
+                        if (href && !href.startsWith('http') && !href.startsWith('mailto:') && !href.startsWith('#')) {
+                            // Si el enlace es a index.html o cualquier otra página en la raíz
+                            if (href === 'index.html' || 
+                                href === 'calendario.html' ||
+                                (!href.includes('/') && href.endsWith('.html'))) {
+                                link.setAttribute('href', '../' + href);
+                                console.log('Corrigiendo enlace en HTML:', href, 'a', '../' + href);
+                            }
+                        }
+                    });
+                    
+                    // Actualizar el HTML con las rutas corregidas
+                    html = tempDiv.innerHTML;
+                }
+                
+                target.innerHTML = html;
+                
+                // Activar scripts incluidos en el componente
+                const scripts = target.querySelectorAll('script');
+                scripts.forEach(script => {
+                    const newScript = document.createElement('script');
+                    Array.from(script.attributes).forEach(attr => {
+                        newScript.setAttribute(attr.name, attr.value);
+                    });
+                    newScript.textContent = script.textContent;
+                    script.parentNode.replaceChild(newScript, script);
+                });
+                
+                return Promise.resolve();
+            })
+            .catch(error => {
+                console.error(error);
+                return Promise.reject(error);
+            });
+    }
+    
+    // Función para corregir rutas relativas en el navbar
+    function fixNavbarPaths() {
+        const navbarContainer = document.getElementById('navbar-container');
+        if (!navbarContainer) return;
+        
+        // Corregir rutas de imágenes
+        const images = navbarContainer.querySelectorAll('img');
+        images.forEach(img => {
+            // Corregir la ruta del logo específicamente
+            if (img.classList.contains('navbar-logo-img')) {
+                // Usar ruta absoluta desde la raíz del sitio
+                img.src = '../assets/images/logos/UPBC_FullColor-H-FondoClaro.png';
+                // Asegurarse de que la imagen se cargue correctamente
+                img.onerror = function() {
+                    console.log('Error al cargar el logo, intentando ruta alternativa');
+                    this.src = '../assets/images/logos/UPBC_FullColor-H-FondoClaro.png';
+                };
+            }
+            // Corregir otras imágenes
+            else if (img.src.includes('/assets/')) {
+                img.src = img.src.replace('/assets/', '../assets/');
+            }
+        });
+        
+        // Corregir rutas de enlaces
+        const links = navbarContainer.querySelectorAll('a');
+        links.forEach(link => {
+            // No modificar enlaces externos o con rutas absolutas
+            if (link.href.startsWith('http') || link.href.startsWith('mailto:') || link.href.startsWith('#')) {
+                return;
+            }
+            
+            // Corregir enlaces a páginas en la raíz
+            const href = link.getAttribute('href');
+            if (href) {
+                // Si el enlace es a index.html o cualquier otra página en la raíz
+                if (href === 'index.html' || 
+                    href === 'calendario.html' ||
+                    (!href.includes('/') && href.endsWith('.html'))) {
+                    // Asegurarse de que la ruta sea relativa a la raíz del sitio
+                    // Usar ruta absoluta desde la raíz para evitar problemas
+                    link.setAttribute('href', '../' + href);
+                    console.log('Corrigiendo enlace:', href, 'a', '../' + href);
+                }
+            }
+        });
+        
+        // Añadir estilos específicos para el buscador
+        const styleElement = document.createElement('style');
+        styleElement.textContent = `
+            /* Estilos para el buscador */
+            .search-container {
+                position: relative;
+                display: flex;
+                align-items: center;
+            }
+            
+            .search-input {
+                border: 1px solid #e0e0e0;
+                border-radius: 30px;
+                padding: 8px 15px;
+                width: 200px;
+                transition: all 0.3s ease;
+                font-size: 14px;
+            }
+            
+            .search-input:focus {
+                width: 250px;
+                border-color: #602b82;
+                box-shadow: 0 0 5px rgba(96, 43, 130, 0.2);
+                outline: none;
+            }
+            
+            .search-button {
+                background: transparent;
+                border: none;
+                color: #602b82;
+                position: absolute;
+                right: 10px;
+                cursor: pointer;
+                transition: all 0.3s ease;
+            }
+            
+            .search-button:hover {
+                color: #cd8b47;
+            }
+        `;
+        document.head.appendChild(styleElement);
+    }
+    
+    // Función para corregir rutas relativas en el footer
+    function fixFooterPaths() {
+        const footerContainer = document.getElementById('footer-container');
+        if (!footerContainer) return;
+        
+        // Corregir rutas de imágenes
+        const images = footerContainer.querySelectorAll('img');
+        images.forEach(img => {
+            if (img.src.includes('/assets/')) {
+                img.src = img.src.replace('/assets/', '../assets/');
+            }
+        });
+        
+        // Corregir rutas de enlaces
+        const links = footerContainer.querySelectorAll('a');
+        links.forEach(link => {
+            // No modificar enlaces externos o con rutas absolutas
+            if (link.href.startsWith('http') || link.href.startsWith('mailto:') || link.href.startsWith('#')) {
+                return;
+            }
+            
+            // Corregir enlaces a páginas en la raíz
+            if (link.getAttribute('href') === 'index.html' || 
+                link.getAttribute('href') === 'calendario.html' ||
+                !link.getAttribute('href').includes('/')) {
+                link.href = '../' + link.getAttribute('href');
+            }
+        });
+    }
+});
+
+// Función para reinicializar funciones específicas del navbar
+function reinitializeNavbarFunctions() {
+    // Configuración del navbar al cargar la página
+    // Calcular la altura exacta del banner morado superior
+    var subHeaderHeight = $('.sub-header').outerHeight();
+    
+    // Configurar el header para que esté exactamente debajo del banner morado
+    $('.header-area').css('top', subHeaderHeight + 'px');
+    
+    // Ajustar el padding-top del main-banner para compensar la altura del navbar
+    var headerHeight = $('.header-area').outerHeight();
+    var totalOffset = subHeaderHeight + headerHeight;
+    
+    // Corregir la función visible para evitar errores cuando el elemento no existe
+    window.visible = function(partial) {
+        var $t = partial;
+        if (!$t || !$t.offset()) return false;
+        
+        var $w = jQuery(window),
+            viewTop = $w.scrollTop(),
+            viewBottom = viewTop + $w.height(),
+            _top = $t.offset().top,
+            _bottom = _top + $t.height(),
+            compareTop = partial === true ? _bottom : _top,
+            compareBottom = partial === true ? _top : _bottom;
+
+        return ((compareBottom <= viewBottom) && (compareTop >= viewTop) && $t.is(':visible'));
+    };
+    
+    // Función de manejo del scroll
+    function handleScroll() {
+        var scroll = $(window).scrollTop();
+        
+        // El navbar se vuelve fijo exactamente cuando el banner morado superior desaparece
+        if (scroll >= subHeaderHeight) {
+            $('header').addClass('background-header');
+            // Ocultar la barra morada cuando hacemos scroll
+            $('.sub-header').css('opacity', '0');
+            $('.sub-header').css('visibility', 'hidden');
+        } else {
+            $('header').removeClass('background-header');
+            // Mostrar la barra morada cuando volvemos arriba
+            $('.sub-header').css('opacity', '1');
+            $('.sub-header').css('visibility', 'visible');
+        }
+    }
+    
+    // Ejecutar al inicio para establecer el estado correcto
+    handleScroll();
+    
+    // Asignar el evento de scroll
+    $(window).scroll(handleScroll);
+    
+    // Menú móvil lateral para dispositivos móviles
+    // Detectar si estamos en vista móvil
+    var isMobile = window.matchMedia("(max-width: 991px)").matches;
+    
+    // Variable para rastrear el estado del menú
+    var menuState = {
+        activeItem: null
+    };
+    
+    // Función para cerrar todos los submenús
+    function closeAllSubmenus() {
+        $('.has-sub').removeClass('active');
+        $('.sub-menu').hide();
+        menuState.activeItem = null;
+    }
+    
+    // Función para cerrar el menú móvil
+    function closeMenu() {
+        $('.menu-trigger').removeClass('active');
+        $('.header-area .nav, .single-row-menu').removeClass('active');
+        $('.mobile-menu-overlay').removeClass('active');
+        $('body').removeClass('menu-open');
+        // Ocultar el logo móvil cuando se cierra el menú
+        $('.mobile-menu-logo').css('display', 'none');
+    }
+    
+    // Ocultamos todos los submenús inicialmente
+    $('.sub-menu').hide();
+    
+    // Abrir menú móvil al hacer clic en el botón hamburguesa
+    $(".menu-trigger").on('click', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        console.log('Menu trigger clicked');
+        $(this).toggleClass('active');
+        $('.header-area .main-nav .nav').toggleClass('active');
+        $('.single-row-menu').toggleClass('active');
+        $('.mobile-menu-overlay').toggleClass('active');
+        $('body').toggleClass('menu-open');
+        // Mostrar el logo móvil cuando se abre el menú
+        if ($(this).hasClass('active')) {
+            $('.mobile-menu-logo').css('display', 'flex');
+        } else {
+            $('.mobile-menu-logo').css('display', 'none');
+        }
+    });
+    
+    // En escritorio: Manejo de hover en elementos con submenús
+    $('.has-sub').on('mouseenter', function() {
+        if (!isMobile) {
+            var $parent = $(this);
+            var $subMenu = $parent.find('> .sub-menu').first();
+            
+            // Cerramos todos los submenús primero
+            $('.has-sub').removeClass('active');
+            $('.sub-menu').hide();
+            
+            // Mostramos el submenú actual
+            $subMenu.show();
+            $parent.addClass('active');
+            menuState.activeItem = $parent;
+        }
+    });
+    
+    // Mantener el enlace principal funcionando
+    $('.has-sub > a').on('click', function(e) {
+        // No prevenimos el evento por defecto para permitir la navegación normal
+        // Solo prevenimos en móvil
+        if (isMobile) {
+            e.preventDefault();
+            
+            var $parent = $(this).parent();
+            var $subMenu = $parent.find('> .sub-menu').first();
+            
+            // Si ya está activo, cerramos el submenú
+            if ($parent.hasClass('active')) {
+                $subMenu.slideUp(300);
+                $parent.removeClass('active');
+                menuState.activeItem = null;
+            } else {
+                // Cerramos todos los submenús primero
+                closeAllSubmenus();
+                
+                // Abrimos el submenú actual
+                $subMenu.slideDown(300);
+                $parent.addClass('active');
+                menuState.activeItem = $parent;
+            }
+        }
+    });
+    
+    // Cerrar submenús al salir del área del menú principal
+    $('.header-area .main-nav').on('mouseleave', function() {
+        if (!isMobile) {
+            closeAllSubmenus();
+        }
+    });
+    
+    // Cerrar submenús al hacer clic fuera del menú
+    $(document).on('click', function(e) {
+        if (!$(e.target).closest('.has-sub').length && 
+            !$(e.target).closest('.sub-menu').length) {
+            closeAllSubmenus();
+        }
+    });
+    
+    // Prevenir que los clics dentro del submenú cierren el menú
+    $('.sub-menu').on('click', function(e) {
+        e.stopPropagation();
+    });
+    
+    // Cerrar menú móvil al hacer clic en el botón de cierre
+    $(".mobile-menu-close").on('click', function() {
+        closeMenu();
+    });
+    
+    // Cerrar menú móvil al hacer clic en el overlay (fuera del menú)
+    $(".mobile-menu-overlay").on('click', function() {
+        closeMenu();
+    });
+    
+    // Cerrar menú al hacer clic en un enlace del menú
+    $('.header-area .main-nav .nav li a, .single-row-menu li a').on('click', function(e) {
+        // Si no es un elemento con submenú o si estamos en móvil
+        if (!$(this).parent().hasClass('has-sub') || !isMobile) {
+            closeMenu();
+        }
+    });
+}
+
+// Función para reinicializar funciones específicas del footer
+function reinitializeFooterFunctions() {
+    // Aquí puedes agregar cualquier inicialización específica del footer si es necesaria
+}
+</script>
 </body>
 </html>

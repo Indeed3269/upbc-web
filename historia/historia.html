@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Historia de la Universidad Politécnica de Baja California">
+  <meta name="author" content="UPBC">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <title>Historia - Universidad Politécnica de Baja California</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Additional CSS Files -->
+  <link rel="stylesheet" href="../assets/css/fontawesome.css">
+  <link rel="stylesheet" href="../assets/css/owl.css">
+  <link rel="stylesheet" href="../assets/css/lightbox.css">
+  <link rel="stylesheet" href="../assets/css/templatemo-edu-meeting.css">
+  <!-- UPBC CSS Modular Structure (cargado al final para tener prioridad) -->
+  <link rel="stylesheet" href="../assets/css/upbc-main.css?v=1.1">
+  <link rel="stylesheet" href="../assets/css/main-carousel.css?v=1.1">
+  <link rel="stylesheet" href="../assets/css/components/custom-spacing.css?v=1.1">
+  <link rel="stylesheet" href="../assets/css/components/welcome-section.css">
+  
+  <style>
+    /* Estilos específicos para la página de Historia */
+    .historia-section {
+      padding: 120px 0 60px 0;
+      background-color: #fff;
+    }
+    
+    .historia-header {
+      margin-bottom: 40px;
+      text-align: center;
+    }
+    
+    .historia-header h2 {
+      color: #602b82;
+      font-size: 36px;
+      font-weight: 700;
+      margin-bottom: 15px;
+    }
+    
+    .historia-content {
+      margin-bottom: 40px;
+    }
+    
+    .historia-content p {
+      color: #666;
+      font-size: 16px;
+      line-height: 1.8;
+      margin-bottom: 20px;
+    }
+    
+    .historia-image {
+      margin-bottom: 30px;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+    
+    .historia-image img {
+      width: 100%;
+      height: auto;
+      transition: transform 0.3s ease;
+    }
+    
+    .historia-image:hover img {
+      transform: scale(1.03);
+    }
+    
+    .timeline-section {
+      position: relative;
+      padding: 30px 0;
+    }
+    
+    .timeline-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 4px;
+      height: 100%;
+      background-color: #602b82;
+      opacity: 0.2;
+    }
+    
+    .timeline-item {
+      position: relative;
+      margin-bottom: 30px;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    }
+    
+    .timeline-item h3 {
+      color: #602b82;
+      font-size: 22px;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+    
+    .timeline-item p {
+      color: #666;
+      font-size: 15px;
+      line-height: 1.7;
+    }
+    
+    .timeline-date {
+      display: inline-block;
+      padding: 5px 15px;
+      background-color: #cd8b47;
+      color: #fff;
+      font-weight: 600;
+      border-radius: 20px;
+      margin-bottom: 10px;
+    }
+    
+    .rectores-section {
+      padding: 50px 0;
+      background-color: #f8f9fa;
+    }
+    
+    .rector-card {
+      background-color: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      margin-bottom: 30px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .rector-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    }
+    
+    .rector-image {
+      height: 250px;
+      overflow: hidden;
+    }
+    
+    .rector-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+    
+    .rector-card:hover .rector-image img {
+      transform: scale(1.05);
+    }
+    
+    .rector-info {
+      padding: 20px;
+      text-align: center;
+    }
+    
+    .rector-info h4 {
+      color: #602b82;
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 5px;
+    }
+    
+    .rector-info p {
+      color: #cd8b47;
+      font-weight: 500;
+      margin-bottom: 0;
+    }
+    
+    .section-divider {
+      height: 3px;
+      width: 80px;
+      background-color: #cd8b47;
+      margin: 0 auto 30px;
+    }
+    
+    /* Ajustes para dispositivos móviles */
+    @media (max-width: 767px) {
+      .historia-header h2 {
+        font-size: 28px;
+      }
+      
+      .timeline-section::before {
+        left: 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Contenedor para cargar el navbar -->
+  <div id="navbar-container"></div>
+
+  <!-- Contenido principal -->
+  <section class="historia-section">
+    <div class="container">
+      <div class="historia-header">
+        <h2>Historia de la UPBC</h2>
+        <div class="section-divider"></div>
+      </div>
+      
+      <div class="row">
+        <div class="col-lg-8">
+          <div class="historia-content">
+            <p>Las Universidades Politécnicas fueron creadas en 2001 con el objetivo de ofrecer, principalmente, carreras de ingeniería y estudios de posgrado a nivel de especialidad. Sus programas académicos poseen tres rasgos distintivos: docencia, investigación aplicada y vinculación.</p>
+            <p>Actualmente, existen 191 universidades politécnicas y tecnológicas en el país, entre las cuales se encuentra la Universidad Politécnica de Baja California (UPBC).</p>
+            <p>La creación de la UPBC fue establecida el 9 de enero de 2006 mediante decreto ejecutivo, como un organismo descentralizado del Estado de Baja California, con personalidad jurídica y patrimonio propios. Este decreto fue publicado el 13 de enero del mismo año en el Periódico Oficial del Estado.</p>
+            <p>Sin embargo, su fecha oficial de creación es el 29 de mayo de 2006, cuando inició operaciones como institución pública de educación superior, en la ciudad de Mexicali.</p>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="historia-image">
+            <img src="../Imagenes de Historia/UPBC-1.jpg" alt="Universidad Politécnica de Baja California">
+          </div>
+        </div>
+      </div>
+      
+      <div class="historia-content">
+        <p>Sus primeras instalaciones se ubicaron en la calle De la Industria número 298, en Mexicali, Baja California, facilitadas temporalmente por el ISEP. En este espacio se acondicionaron y equiparon seis aulas, dos laboratorios (uno de cómputo y otro de mediciones eléctricas y dimensionales), una sala de usos múltiples, un centro de autoacceso para la enseñanza del idioma inglés, oficinas administrativas y la Rectoría, donde se recibió a la primera generación de estudiantes.</p>
+        <p>Fue en estas instalaciones donde se impartieron clases en los tres programas académicos con los que inició la UPBC, en dos turnos. A un costado se alquiló un estacionamiento destinado a alumnos, personal académico y visitantes.</p>
+      </div>
+      
+      <div class="timeline-section">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="timeline-item">
+              <span class="timeline-date">18 de abril de 2006</span>
+              <h3>Primera Junta Directiva</h3>
+              <p>El 18 de abril de 2006 se celebró la Primera Sesión de la Junta Directiva en la sala de juntas del Instituto de Servicios Educativos y Pedagógicos del Estado (SEBS-ISEP), con la presencia de todos sus integrantes, nombrados conforme a la normatividad vigente y por su destacada influencia en la comunidad.</p>
+              <p><strong>Integrantes:</strong></p>
+              <ul>
+                <li>Lic. José Gabriel Posada Gallego – Presidente. Secretario de Educación y Bienestar Social del SEBS-ISEP.</li>
+                <li>Ing. Natasha Rocha Hernández, en representación del Ing. Sergio Tagliapietra Nassri, Secretario de Desarrollo Económico.</li>
+                <li>Lic. Manuel Bejarano Giacoman, en representación del Ing. Armando Arteaga King, Secretario de Planeación y Finanzas del Estado.</li>
+                <li>Dr. Enrique Fernández Fassnacht – Coordinador Nacional del Subsistema de Universidades Politécnicas.</li>
+                <li>Lic. Patricia Romero Cázares, en representación del Lic. Lamberto López López, Titular de la Oficina de Servicios Federales de Apoyo a la Educación en Baja California.</li>
+                <li>Dr. Leonel S. Cota Araiza – Director del Centro de Ciencias de la Materia Condensada (UNAM-Ensenada).</li>
+                <li>Dr. Federico Graef Ziehl – Director del CICESE.</li>
+                <li>Lic. Jonathan Díaz Castro – Presidente del Comité de Vinculación de Mexicali.</li>
+                <li>C. Humberto Jaramillo Rodríguez – Presidente del Comité de Vinculación de Tijuana.</li>
+                <li>C.P. Alfonso Morales Rodríguez, en representación del C.P. Carlos Alberto Cerda Arizmendi, Director de Control y Evaluación Gubernamental.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="historia-content">
+        <h3>Infraestructura</h3>
+        <h4>Instalaciones propias</h4>
+        <p>Con el respaldo de las dependencias normativas en inversión pública y de construcción de espacios educativos del Estado, la UPBC logró la aprobación de fondos para construir su primer edificio académico. Para ello, se diseñó un Plan Maestro de construcción. El Rector Rivas López definió la ubicación del nuevo campus, cuyo primer edificio recibió a los alumnos el 29 de octubre de 2007.</p>
+        
+        <h4>Edificio de Laboratorios y Talleres</h4>
+        <p>Anticipando el aumento de la demanda de educación superior, se gestionaron recursos para la construcción de este nuevo edificio, aprobado en 2008 y concluido en julio de 2009.</p>
+        
+        <h4>Edificio de Docencia 2</h4>
+        <p>Gracias a los resultados académicos obtenidos y con el respaldo de la SEP y el Gobierno del Estado, se justificó la construcción del segundo edificio de docencia, que permitió ampliar la capacidad de atención a estudiantes.</p>
+      </div>
+    </div>
+  </section>
+  
+  <section class="rectores-section">
+    <div class="container">
+      <div class="historia-header">
+        <h2>Rectores de la UPBC</h2>
+        <div class="section-divider"></div>
+      </div>
+      
+      <div class="row">
+        <div class="col-lg-4 col-md-6">
+          <div class="rector-card">
+            <div class="rector-image">
+              <img src="../Imagenes de Historia/Moisés Rivas López 2006-2010.jpg" alt="Moisés Rivas López">
+            </div>
+            <div class="rector-info">
+              <h4>Moisés Rivas López</h4>
+              <p>2006–2010</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-lg-4 col-md-6">
+          <div class="rector-card">
+            <div class="rector-image">
+              <img src="../Imagenes de Historia/Navor Rosas González 2010-2014.jpg" alt="Navor Rosas González">
+            </div>
+            <div class="rector-info">
+              <h4>Navor Rosas González</h4>
+              <p>2010–2014</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-lg-4 col-md-6">
+          <div class="rector-card">
+            <div class="rector-image">
+              <img src="../Imagenes de Historia/Juan Jesús Algrávez Uranga 2014-2019.jpg" alt="Juan Jesús Algrávez Uranga">
+            </div>
+            <div class="rector-info">
+              <h4>Juan Jesús Algrávez Uranga</h4>
+              <p>2014–2019</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-lg-4 col-md-6">
+          <div class="rector-card">
+            <div class="rector-info">
+              <h4>Jesús Esteban Castro Rojas</h4>
+              <p>2020–2022</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-lg-4 col-md-6">
+          <div class="rector-card">
+            <div class="rector-info">
+              <h4>Marcela Barrera Hernández</h4>
+              <p>2022–2026</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contenedor para cargar el footer -->
+  <div id="footer-container"></div>
+
+  <!-- Scripts con manejo de fallback -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  
+  <!-- Cargar Bootstrap con fallback a CDN -->
+  <script>
+    // Función para verificar si un archivo existe
+    function fileExists(url) {
+      var http = new XMLHttpRequest();
+      http.open('HEAD', url, false);
+      try {
+        http.send();
+        return http.status != 404;
+      } catch(e) {
+        return false;
+      }
+    }
+    
+    // Verificar si el archivo local existe
+    var bootstrapLocalPath = '../vendor/bootstrap/js/bootstrap.bundle.min.js';
+    var bootstrapCDN = 'https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js';
+    
+    // Cargar Bootstrap desde local o CDN según disponibilidad
+    document.addEventListener('DOMContentLoaded', function() {
+      var bootstrapScript = document.createElement('script');
+      
+      if (fileExists(bootstrapLocalPath)) {
+        bootstrapScript.src = bootstrapLocalPath;
+        console.log('Cargando Bootstrap desde ruta local');
+      } else {
+        bootstrapScript.src = bootstrapCDN;
+        console.log('Cargando Bootstrap desde CDN');
+      }
+      
+      document.body.appendChild(bootstrapScript);
+    });
+  </script>
+
+  <!-- Otros scripts con manejo de errores -->
+  <script>
+    // Función para cargar scripts con fallback
+    function loadScript(src, fallbackSrc) {
+      var script = document.createElement('script');
+      script.src = src;
+      script.onerror = function() {
+        console.error('Error al cargar script:', src);
+        if (fallbackSrc) {
+          console.log('Intentando cargar desde fallback:', fallbackSrc);
+          var fallbackScript = document.createElement('script');
+          fallbackScript.src = fallbackSrc;
+          document.body.appendChild(fallbackScript);
+        }
+      };
+      document.body.appendChild(script);
+    }
+    
+    // Cargar scripts con posible fallback
+    loadScript('../assets/js/isotope.min.js');
+    loadScript('../assets/js/owl-carousel.js');
+    loadScript('../assets/js/lightbox.js');
+    loadScript('../assets/js/tabs.js');
+    loadScript('../assets/js/video.js');
+    loadScript('../assets/js/slick-slider.js');
+    loadScript('../assets/js/custom.js');
+  </script>
+
+  <script>
+    // Función para cargar componentes (navbar y footer)
+    function loadComponent(url, containerId, callback) {
+      $.ajax({
+        url: url,
+        method: 'GET',
+        success: function(data) {
+          // Corregir rutas relativas en el HTML antes de insertarlo
+          let correctedData = data;
+          
+          // Corregir rutas de imágenes
+          correctedData = correctedData.replace(/src="assets\//g, 'src="../assets/');
+          
+          // Corregir rutas de enlaces a páginas raíz
+          correctedData = correctedData.replace(/href="index.html/g, 'href="../index.html');
+          correctedData = correctedData.replace(/href="calendario.html/g, 'href="../calendario.html');
+          
+          // Corregir rutas de enlaces a páginas en subdirectorios
+          correctedData = correctedData.replace(/href="becas\/becas.html/g, 'href="../becas/becas.html');
+          correctedData = correctedData.replace(/href="mision-vision\/mision-vision.html/g, 'href="../mision-vision/mision-vision.html');
+          correctedData = correctedData.replace(/href="historia\/historia.html/g, 'href="../historia/historia.html');
+          
+          // Insertar el HTML corregido
+          $(containerId).html(correctedData);
+          
+          // Manejar la carga del logo con fallback
+          $('.navbar-logo-img').on('error', function() {
+            // Si falla la carga del logo, intentar con una ruta alternativa
+            $(this).attr('src', '../assets/images/logos/UPBC_FullColor-H-FondoClaro.png');
+            
+            // Si también falla la segunda ruta, usar una URL absoluta remota
+            $(this).on('error', function() {
+              $(this).attr('src', 'https://www.upbc.edu.mx/images/UPBC_FullColor-H-FondoClaro.png');
+            });
+          });
+          
+          // Verificar si Bootstrap está cargado, si no, cargarlo desde CDN
+          if (typeof $.fn.modal === 'undefined') {
+            console.log('Bootstrap no está cargado localmente, cargando desde CDN...');
+            var bootstrapScript = document.createElement('script');
+            bootstrapScript.src = 'https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js';
+            document.head.appendChild(bootstrapScript);
+          }
+          
+          if (callback) callback();
+        },
+        error: function() {
+          console.error('Error al cargar el componente: ' + url);
+        }
+      });
+    }
+
+    // Cargar navbar y footer
+    $(document).ready(function() {
+      // Precargar y verificar la existencia del logo
+      var logoPreload = new Image();
+      logoPreload.src = '../assets/images/logos/UPBC_FullColor-H-FondoClaro.png';
+      
+      // Cargar navbar
+      loadComponent('../components/navbar.html', '#navbar-container', function() {
+        // Reinicializar funciones específicas del navbar después de cargarlo
+        if (typeof initializeNavbarFunctions === 'function') {
+          initializeNavbarFunctions();
+        }
+        
+        // Activar el enlace de Historia en el menú
+        $('.nav.single-row-menu li.has-sub').each(function() {
+          if ($(this).find('a:first').text() === 'Universidad') {
+            $(this).find('ul.sub-menu li a').each(function() {
+              if ($(this).text() === 'Historia') {
+                $(this).addClass('active');
+              }
+            });
+          }
+        });
+      });
+      
+      // Cargar footer
+      loadComponent('../components/footer.html', '#footer-container', function() {
+        // Reinicializar funciones específicas del footer después de cargarlo
+        if (typeof initializeFooterFunctions === 'function') {
+          initializeFooterFunctions();
+        }
+      });
+    });
+  </script>
+</body>
+
+</html>

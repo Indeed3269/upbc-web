@@ -467,8 +467,13 @@
 
 
 	function visible(partial) {
-        var $t = partial,
-            $w = jQuery(window),
+        // Verificar si el elemento existe y tiene la propiedad offset
+        var $t = partial;
+        if (!$t || !$t.length || typeof $t.offset !== 'function' || !$t.offset()) {
+            return false;
+        }
+        
+        var $w = jQuery(window),
             viewTop = $w.scrollTop(),
             viewBottom = viewTop + $w.height(),
             _top = $t.offset().top,
