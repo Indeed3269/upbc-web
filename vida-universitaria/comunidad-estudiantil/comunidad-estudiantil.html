@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Vida Estudiantil - Universidad Politécnica de Baja California">
+  <meta name="author" content="UPBC">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <title>UPBC - Vida Estudiantil</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="../../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Asegurando que Bootstrap JS esté disponible -->
+  <script src="../../vendor/jquery/jquery.min.js"></script>
+  <script src="../../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Additional CSS Files -->
+  <link rel="stylesheet" href="../../assets/css/fontawesome.css">
+  <link rel="stylesheet" href="../../assets/css/owl.css">
+  <link rel="stylesheet" href="../../assets/css/lightbox.css">
+  <link rel="stylesheet" href="../../assets/css/templatemo-edu-meeting.css">
+  <!-- UPBC CSS Modular Structure -->
+  <link rel="stylesheet" href="../../assets/css/upbc-main.css?v=1.1">
+  <style>
+    .page-heading {
+      background-color: #602b82; /* Color morado UPBC */
+      padding: 150px 0px 80px 0px;
+      position: relative;
+      z-index: 1;
+    }
+    
+    /* Eliminado el overlay ya que tenemos un fondo sólido */
+    
+    .page-heading h2 {
+      color: #fff;
+      font-size: 36px;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+    
+    .page-content {
+      padding: 60px 0;
+    }
+    
+    .event-section {
+      margin-bottom: 50px;
+    }
+    
+    .event-title {
+      color: #602b82;
+      font-size: 28px;
+      font-weight: 700;
+      margin-bottom: 20px;
+      border-bottom: 2px solid #cd8b47;
+      padding-bottom: 10px;
+    }
+    
+    .event-content p {
+      color: #7b8082;
+      font-size: 16px;
+      line-height: 1.8;
+      margin-bottom: 20px;
+    }
+    
+    .event-gallery {
+      margin: 30px 0;
+    }
+    
+    .gallery-item {
+      margin-bottom: 30px;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+    
+    .gallery-item:hover {
+      transform: translateY(-5px);
+    }
+    
+    .gallery-item img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+    
+    .facebook-link {
+      display: inline-block;
+      background-color: #602b82;
+      color: #fff;
+      padding: 12px 25px;
+      border-radius: 5px;
+      font-weight: 500;
+      margin-top: 20px;
+      transition: all 0.3s ease;
+    }
+    
+    .facebook-link:hover {
+      background-color: #cd8b47;
+      color: #fff;
+      text-decoration: none;
+    }
+    
+    .facebook-link i {
+      margin-right: 8px;
+    }
+    
+    /* Estilos para la barra lateral */
+    .sidebar {
+      background-color: #f9f9f9;
+      border-radius: 10px;
+      padding: 25px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+      margin-top: 30px;
+    }
+    
+    .sidebar-item {
+      margin-bottom: 30px;
+    }
+    
+    .sidebar-item:last-child {
+      margin-bottom: 0;
+    }
+    
+    .sidebar-item h4 {
+      color: #602b82;
+      font-size: 20px;
+      font-weight: 600;
+      margin-bottom: 20px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid #cd8b47;
+    }
+    
+    /* Estilos para la lista de eventos */
+    .event-list {
+      list-style: none;
+      padding: 0;
+    }
+    
+    .event-list li {
+      display: flex;
+      margin-bottom: 15px;
+      padding-bottom: 15px;
+      border-bottom: 1px solid #eee;
+    }
+    
+    .event-list li:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+    
+    .event-date {
+      background-color: #602b82;
+      color: #fff;
+      width: 50px;
+      height: 50px;
+      border-radius: 5px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 18px;
+      line-height: 1;
+      margin-right: 15px;
+    }
+    
+    .event-date span {
+      font-size: 12px;
+      font-weight: 400;
+      margin-top: 3px;
+    }
+    
+    .event-info {
+      flex: 1;
+    }
+    
+    .event-info h5 {
+      font-size: 16px;
+      margin: 0 0 5px;
+      color: #333;
+    }
+    
+    .event-info p {
+      font-size: 14px;
+      margin: 0;
+      color: #666;
+    }
+    
+    /* Estilos para enlaces rápidos */
+    .quick-links {
+      list-style: none;
+      padding: 0;
+    }
+    
+    .quick-links li {
+      margin-bottom: 12px;
+    }
+    
+    .quick-links a {
+      display: flex;
+      align-items: center;
+      color: #333;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+    
+    .quick-links a:hover {
+      color: #602b82;
+      transform: translateX(5px);
+    }
+    
+    .quick-links i {
+      color: #cd8b47;
+      margin-right: 10px;
+      width: 20px;
+      text-align: center;
+    }
+    
+    /* Estilos para contenido principal */
+    .main-content h2 {
+      color: #602b82;
+      margin-bottom: 20px;
+      font-weight: 700;
+    }
+    
+    .main-content > p {
+      margin-bottom: 30px;
+      font-size: 16px;
+      line-height: 1.8;
+    }
+    
+    @media (max-width: 768px) {
+      .page-heading h2 {
+        font-size: 28px;
+      }
+      
+      .event-title {
+        font-size: 24px;
+      }
+      
+      .sidebar {
+        margin-top: 40px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Sub Header -->
+  <div class="sub-header">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-sm-8">
+          <div class="left-content">
+            <p>Bienvenidos a la <em>Universidad Politécnica de Baja California</em> - Formando profesionales de excelencia</p>
+          </div>
+        </div>
+        <div class="col-lg-4 col-sm-4">
+          <div class="right-icons">
+            <ul>
+              <li><a href="https://www.facebook.com/UPBCUNIVERSIDAD" target="_blank" title="Facebook"><i class="fa fa-facebook"></i></a></li>
+              <li><a href="https://www.instagram.com/upbcuniversidad/" target="_blank" title="Instagram"><i class="fa fa-instagram"></i></a></li>
+              <li><a href="https://www.youtube.com/channel/UCCROxBHIXoVourok76BnXNA" target="_blank" title="YouTube"><i class="fa fa-youtube"></i></a></li>
+              <li><a href="https://www2.upbc.edu.mx/alumnos/siaax/" target="_blank" title="SIAAX Alumnos"><i class="fa fa-user"></i></a></li>
+              <li><a href="https://www2.upbc.edu.mx/siaax/Defaultx.aspx" target="_blank" title="SIAAX"><i class="fa fa-graduation-cap"></i></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ***** Header Area Start ***** -->
+  <header class="header-area header-sticky">
+      <div class="container">
+          <div class="row">
+              <div class="col-12">
+                  <nav class="main-nav">
+                      <!-- ***** Logo Start ***** -->
+                      <a href="../../index.html" class="logo">
+                          <img src="../../assets/images/logos/UPBC_FullColor-H-FondoClaro.png" alt="Logo UPBC" class="navbar-logo-img">
+                      </a>
+                      <!-- ***** Logo End ***** -->
+                      <!-- ***** Menu Start ***** -->
+                      <div class="menu-container">
+                          <!-- Contenedor principal del menú con una sola fila -->
+                          <div class="menu-wrapper">
+                              <!-- Menú en una sola fila -->
+                              <ul class="nav single-row-menu">
+                                  <!-- Logo móvil solo visible en menú móvil -->
+                                  <div class="mobile-menu-logo" style="display: none;">
+                                      <img src="../../assets/images/logos/UPBC_FullColor-H-FondoClaro.png" alt="Logo UPBC" class="navbar-logo-img">
+                                      <div class="mobile-menu-close"></div>
+                                  </div>
+                                  <li class="scroll-to-section"><a href="../../index.html">Inicio</a></li>
+                                  <li class="has-sub">
+                                      <a href="javascript:void(0)">Universidad</a>
+                                      <ul class="sub-menu">
+                                          <li><a href="../../historia/historia.html">Historia</a></li>
+                                          <li><a href="../../mision-vision/mision-vision.html">Misión y visión</a></li>
+                                          <li><a href="#">Directorio</a></li>
+                                          <li><a href="#">Instalaciones</a></li>
+                                      </ul>
+                                  </li>
+                                  <li class="has-sub">
+                                      <a href="javascript:void(0)">Oferta educativa</a>
+                                      <ul class="sub-menu">
+                                          <li><a href="../../index.html#carreras-disponibles">Carreras</a></li>
+                                          <li><a href="#">Posgrados</a></li>
+                                          <li><a href="#">Educación continua</a></li>
+                                          <li><a href="#">Modalidades especiales</a></li>
+                                      </ul>
+                                  </li>
+                                  <li class="has-sub">
+                                      <a href="javascript:void(0)">Admisiones</a>
+                                      <ul class="sub-menu">
+                                          <li><a href="#">Requisitos</a></li>
+                                          <li><a href="#">Proceso de inscripción</a></li>
+                                          <li><a href="../../calendario.html">Calendario escolar</a></li>
+                                          <li><a href="#">Costos</a></li>
+                                      </ul>
+                                  </li>
+                                  <li class="has-sub">
+                                      <a href="javascript:void(0)" class="active">Vida universitaria</a>
+                                      <ul class="sub-menu">
+                                          <li><a href="#">Eventos Especiales</a></li>
+                                          <li><a href="#">Bienestar y Salud</a></li>
+                                          <li><a href="../comunidad-estudiantil/comunidad-estudiantil.html" class="active">Vida Estudiantil</a></li>
+                                          <li><a href="#">Convivencia y Equidad</a></li>
+                                      </ul>
+                                  </li>
+                                  <li class="has-sub">
+                                      <a href="javascript:void(0)">Servicios</a>
+                                      <ul class="sub-menu">
+                                          <li><a href="#">Biblioteca</a></li>
+                                          <li><a href="#">Laboratorios</a></li>
+                                          <li><a href="#">Servicios escolares</a></li>
+                                          <li><a href="../../becas/becas.html">Becas</a></li>
+                                      </ul>
+                                  </li>
+                                  <li class="scroll-to-section"><a href="../../index.html#contact">Contacto</a></li>
+                                  
+                                  <!-- Buscador móvil (solo visible en móvil) -->
+                                  <div class="mobile-search">
+                                      <div class="search-container-mobile">
+                                          <input type="text" class="search-input-mobile" placeholder="Buscar...">
+                                          <button class="search-button-mobile"><i class="fa fa-search"></i></button>
+                                      </div>
+                                  </div>
+                              </ul>
+                          </div>
+                      </div>
+                     
+                     <!-- Buscador y botones rápidos (escritorio) -->
+                     <div class="search-wrapper">
+                         <div class="search-container">
+                             <input type="text" class="search-input" placeholder="Buscar...">
+                             <button class="search-button"><i class="fa fa-search"></i></button>
+                         </div>
+                         <div class="quick-buttons-dropdown">
+                             <div class="quick-buttons-grid">
+                                 <a href="../../calendario.html" class="quick-button" title="Calendario Escolar"><i class="fa fa-calendar"></i></a>
+                                 <a href="../../becas/becas.html" class="quick-button" title="Becas"><i class="fa fa-graduation-cap"></i></a>
+                                 <a href="#" class="quick-button" title="SIAAX"><i class="fa fa-user"></i></a>
+                                 <a href="#" class="quick-button" title="Inscripciones"><i class="fa fa-pencil"></i></a>
+                             </div>
+                         </div>
+                     </div>
+                     
+                     <a class='menu-trigger'>
+                         <span>Menu</span>
+                     </a>
+                     <div class="mobile-menu-overlay"></div>
+                     <!-- ***** Menu End ***** -->
+                  </nav>
+              </div>
+          </div>
+      </div>
+  </header>
+  <!-- ***** Header Area End ***** -->
+
+  <!-- ***** Page Heading Start ***** -->
+  <section class="heading-page header-text" id="top">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <h6>Vida universitaria</h6>
+          <h2>Vida Estudiantil</h2>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ***** Page Heading End ***** -->
+
+  <!-- ***** Page Content Start ***** -->
+  <section class="page-content">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8">
+          <div class="main-content">
+            <h2>Vida Estudiantil UPBC</h2>
+            <p>La vida estudiantil en la Universidad Politécnica de Baja California es vibrante y enriquecedora, con múltiples oportunidades para el desarrollo integral de nuestros estudiantes. Aquí encontrarás información sobre las diferentes actividades y servicios disponibles.</p>
+            
+            <div class="event-section">
+              <h3 class="event-title">Eventos Especiales</h3>
+              <div class="event-content">
+                <p>A lo largo del año académico, organizamos diversos eventos para enriquecer tu experiencia universitaria:</p>
+                <ul>
+                  <li>Semana de la Ingeniería</li>
+                  <li>Feria de Emprendimiento</li>
+                  <li>Conferencias y Talleres Profesionales</li>
+                  <li>Ceremonias de Graduación</li>
+                  <li>Aniversario UPBC</li>
+                </ul>
+                <div class="row event-gallery">
+                  <div class="col-md-6 col-lg-6">
+                    <div class="gallery-item">
+                      <img src="../../assets/images/vida-universitaria/comunidad-estudiantil/eventos/proyecto1.jpeg" alt="Evento especial UPBC" class="img-fluid">
+                    </div>
+                  </div>
+                  <div class="col-md-6 col-lg-6">
+                    <div class="gallery-item">
+                      <img src="../../assets/images/vida-universitaria/comunidad-estudiantil/eventos/proyecto2.jpeg" alt="Feria de Emprendimiento" class="img-fluid">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="event-section">
+              <h3 class="event-title">Bienestar y Salud</h3>
+              <div class="event-content">
+                <p>Nos preocupamos por el bienestar integral de nuestra comunidad universitaria:</p>
+                <ul>
+                  <li>Servicios de Atención Psicológica</li>
+                  <li>Campañas de Salud Preventiva</li>
+                  <li>Actividades Deportivas</li>
+                  <li>Nutrición y Alimentación Saludable</li>
+                  <li>Espacios de Descanso y Recreación</li>
+                </ul>
+                <div class="row event-gallery">
+                  <div class="col-md-6 col-lg-6">
+                    <div class="gallery-item">
+                      <img src="../../assets/images/vida-universitaria/comunidad-estudiantil/eventos/proyecto3.jpeg" alt="Actividades deportivas" class="img-fluid">
+                    </div>
+                  </div>
+                  <div class="col-md-6 col-lg-6">
+                    <div class="gallery-item">
+                      <img src="../../assets/images/vida-universitaria/comunidad-estudiantil/eventos/proyecto4.jpeg" alt="Campaña de salud" class="img-fluid">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="event-section">
+              <h3 class="event-title">Vida Estudiantil</h3>
+              <div class="event-content">
+                <p>Disfruta de una experiencia universitaria completa con actividades que complementan tu formación académica:</p>
+                <ul>
+                  <li>Grupos Estudiantiles</li>
+                  <li>Actividades Recreativas</li>
+                  <li>Torneos Deportivos</li>
+                  <li>Talleres Extracurriculares</li>
+                  <li>Proyectos Colaborativos</li>
+                </ul>
+              </div>
+            </div>
+            
+            <div class="event-section">
+              <h3 class="event-title">Convivencia y Equidad</h3>
+              <div class="event-content">
+                <p>Promovemos un ambiente universitario inclusivo y respetuoso:</p>
+                <ul>
+                  <li>Programa de Inclusión y Diversidad</li>
+                  <li>Actividades Interculturales</li>
+                  <li>Comité de Equidad de Género</li>
+                  <li>Mediación y Resolución de Conflictos</li>
+                  <li>Proyectos de Responsabilidad Social</li>
+                </ul>
+                <div class="text-center mt-4">
+                  <a href="https://www.facebook.com/UPBCUNIVERSIDAD/photos" target="_blank" class="facebook-link">
+                    <i class="fa fa-facebook"></i> Ver más actividades en Facebook
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-lg-4">
+          <div class="sidebar">
+            <div class="sidebar-item">
+              <h4>Próximos Eventos</h4>
+              <ul class="event-list">
+                <li>
+                  <div class="event-date">15<span>Jun</span></div>
+                  <div class="event-info">
+                    <h5>Feria de Empleo</h5>
+                    <p>Oportunidades laborales para estudiantes y egresados</p>
+                  </div>
+                </li>
+                <li>
+                  <div class="event-date">22<span>Jun</span></div>
+                  <div class="event-info">
+                    <h5>Torneo Deportivo</h5>
+                    <p>Competencias internas de fútbol y básquetbol</p>
+                  </div>
+                </li>
+                <li>
+                  <div class="event-date">30<span>Jun</span></div>
+                  <div class="event-info">
+                    <h5>Conferencia de Innovación</h5>
+                    <p>Tendencias tecnológicas en la industria local</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            
+            <div class="sidebar-item">
+              <h4>Enlaces Rápidos</h4>
+              <ul class="quick-links">
+                <li><a href="#"><i class="fa fa-calendar"></i> Calendario de Actividades</a></li>
+                <li><a href="#"><i class="fa fa-users"></i> Grupos Estudiantiles</a></li>
+                <li><a href="#"><i class="fa fa-graduation-cap"></i> Servicios Estudiantiles</a></li>
+                <li><a href="../../becas/becas.html"><i class="fa fa-money"></i> Becas y Apoyos</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ***** Page Content End ***** -->
+
+  <!-- ***** Footer Start ***** -->
+  <footer id="footer">
+    <div class="container">
+      <div class="row">
+        <!-- Columna 1: Logo y descripción -->
+        <div class="col-lg-3 col-md-6 col-sm-12">
+          <div class="footer-logo">
+            <img src="../../assets/images/logos/UPBC_FullColor-H-FondoClaro.png" alt="Logo UPBC" class="img-fluid mb-3" style="max-width: 200px;">
+            <p>Universidad Politécnica de Baja California - Formando profesionales de excelencia desde 2006.</p>
+          </div>
+        </div>
+        
+        <!-- Columna 2: Enlaces útiles -->
+        <div class="col-lg-3 col-md-6 col-sm-12">
+          <h4>Enlaces útiles</h4>
+          <ul class="footer-links">
+            <li><a href="#">Directorio</a></li>
+            <li><a href="#">Aviso de privacidad</a></li>
+            <li><a href="#">Términos y condiciones</a></li>
+            <li><a href="#">Preguntas frecuentes</a></li>
+            <li><a href="#">Mapa del sitio</a></li>
+          </ul>
+        </div>
+        
+        <!-- Columna 3: Contacto -->
+        <div class="col-lg-3 col-md-6 col-sm-12">
+          <h4>Contacto</h4>
+          <ul class="footer-contact">
+            <li><i class="fa fa-map-marker"></i> Calle de la Claridad S/N Colonia Plutarco Elías Calles, Mexicali, Baja California, México CP. 21376</li>
+            <li><i class="fa fa-phone"></i> (686) 104-2727</li>
+            <li><i class="fa fa-envelope"></i> contacto@upbc.edu.mx</li>
+            <li><i class="fa fa-clock-o"></i> Lun - Vie: 8:00 AM - 5:00 PM</li>
+          </ul>
+        </div>
+        
+        <!-- Columna 4: Redes sociales y mapa -->
+        <div class="col-lg-3 col-md-6 col-sm-12">
+          <h4>Síguenos</h4>
+          <div class="footer-social">
+            <a href="https://www.facebook.com/UPBCUNIVERSIDAD" target="_blank" aria-label="Facebook"><i class="fa fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/upbcuniversidad/" target="_blank" aria-label="Instagram"><i class="fa fa-instagram"></i></a>
+            <a href="https://www.youtube.com/channel/UCCROxBHIXoVourok76BnXNA" target="_blank" aria-label="YouTube"><i class="fa fa-youtube-play"></i></a>
+            <a href="https://twitter.com/upbcuniversidad" target="_blank" aria-label="Twitter"><i class="fa fa-twitter"></i></a>
+            <a href="https://siax.upbc.edu.mx" target="_blank" aria-label="SIAX"><i class="fa fa-graduation-cap"></i></a>
+          </div>
+          
+          <!-- Mapa de Google -->
+          <div class="footer-map mt-3">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3357.9616345082066!2d-115.4476138!3d32.6512646!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80d77aae0a9c3d55%3A0x40eb4705efb1e0a!2sUniversidad%20Polit%C3%A9cnica%20de%20Baja%20California!5e0!3m2!1ses-419!2smx!4v1656955420000!5m2!1ses-419!2smx" width="100%" height="150" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Línea divisoria -->
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="copyright-text">
+            <hr>
+            <p>&copy; 2025 Universidad Politécnica de Baja California. Todos los derechos reservados.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- ***** Footer End ***** -->
+
+  <!-- Estilos adicionales para el footer -->
+  <style>
+    footer {
+      background-color: #f8f9fa;
+      padding: 50px 0 20px;
+      color: #333;
+      margin-top: 50px;
+    }
+    
+    footer h4 {
+      color: var(--upbc-purple);
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 20px;
+      position: relative;
+    }
+    
+    footer h4:after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -8px;
+      width: 50px;
+      height: 2px;
+      background-color: var(--upbc-purple);
+    }
+    
+    .footer-links, .footer-contact {
+      list-style: none;
+      padding-left: 0;
+    }
+    
+    .footer-links li, .footer-contact li {
+      margin-bottom: 10px;
+    }
+    
+    .footer-links a {
+      color: #555;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+    
+    .footer-links a:hover {
+      color: var(--upbc-purple);
+      padding-left: 5px;
+    }
+    
+    .footer-contact li {
+      display: flex;
+      align-items: flex-start;
+    }
+    
+    .footer-contact i {
+      color: var(--upbc-purple);
+      margin-right: 10px;
+      margin-top: 5px;
+    }
+    
+    .footer-social {
+      display: flex;
+      gap: 10px;
+    }
+    
+    .footer-social a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      background-color: white;
+      color: #333;
+      border-radius: 50%;
+      transition: all 0.3s ease;
+      border: 1px solid #ddd;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    }
+    
+    .footer-social a:hover {
+      background-color: #602b82; /* Usar valor directo en lugar de variable */
+      color: #ffffff !important; /* Forzar color blanco con !important */
+      transform: translateY(-3px);
+      border-color: #602b82;
+    }
+    
+    .footer-social a:hover i {
+      color: #ffffff !important; /* Asegurar que el icono sea blanco */
+    }
+    
+    .copyright-text {
+      text-align: center;
+      font-size: 14px;
+      margin-top: 20px;
+    }
+    
+    .footer-map iframe {
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    
+    @media (max-width: 767px) {
+      footer [class*="col-"] {
+        margin-bottom: 30px;
+      }
+    }
+  </style>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="../../vendor/jquery/jquery.min.js"></script>
+  <script src="../../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <script src="../../assets/js/isotope.min.js"></script>
+  <script src="../../assets/js/owl-carousel.js"></script>
+  <script src="../../assets/js/lightbox.js"></script>
+  <script src="../../assets/js/tabs.js"></script>
+  <script src="../../assets/js/video.js"></script>
+  <script src="../../assets/js/slick-slider.js"></script>
+  <script src="../../assets/js/custom.js"></script>
+  <script>
+    // Activar el primer elemento del menú
+    $('.nav li:first').addClass('active');
+
+    // Funcionalidad para el menú móvil
+    $('.menu-trigger').on('click', function() {
+        $('.nav').toggleClass('active');
+        $('.mobile-menu-overlay').toggleClass('active');
+        $('.mobile-menu-logo').show();
+        $('body').toggleClass('menu-open');
+    });
+    
+    // Cerrar menú móvil al hacer clic en el botón de cierre o en el overlay
+    $('.mobile-menu-close, .mobile-menu-overlay').on('click', function() {
+        $('.nav').removeClass('active');
+        $('.mobile-menu-overlay').removeClass('active');
+        $('body').removeClass('menu-open');
+    });
+    
+    // Funcionalidad para submenús en móvil
+    $('.has-sub > a').on('click', function(e) {
+        if ($(window).width() < 992) {
+            e.preventDefault();
+            $(this).parent().toggleClass('active');
+            $(this).next('.sub-menu').slideToggle();
+        }
+    });
+    
+    // Ejecutar al cargar y al cambiar tamaño de ventana
+    $(window).on('load resize', function() {
+        // Resetear estilos en cambio de tamaño
+        if ($(window).width() > 991) {
+            $('.sub-menu').removeAttr('style');
+            $('.has-sub').removeClass('active');
+        }
+    });
+  </script>
+</body>
+
+</html>

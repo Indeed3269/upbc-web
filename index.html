@@ -290,6 +290,26 @@
         line-height: 1.7 !important;
         font-style: italic !important;
       }
+      
+      /* Estilos para las imágenes de noticias */
+      .news-thumbnail {
+        width: 100% !important;
+        height: 220px !important; /* Altura fija para todas las imágenes */
+        object-fit: cover !important; /* Mantiene la proporción y recorta si es necesario */
+        border-radius: 15px !important;
+      }
+      
+      /* Estilos para los resúmenes de noticias */
+      .news-excerpt {
+        display: -webkit-box !important;
+        -webkit-line-clamp: 3 !important; /* Limita a 3 líneas */
+        line-clamp: 3 !important; /* Propiedad estándar para compatibilidad */
+        -webkit-box-orient: vertical !important;
+        overflow: hidden !important;
+        text-overflow: ellipsis !important;
+        max-height: 4.5em !important; /* Aproximadamente 3 líneas */
+        line-height: 1.5em !important;
+      }
     </style>
   </head>
 
@@ -671,14 +691,14 @@
                   <div class="price">
                     <span>Ultimas noticias</span>
                   </div>
-                  <a href="news-nuevas-carreras/news-nuevas-carreras.html"><img src="assets/images/meeting-03.jpg" alt="Nuevas Carreras UPBC"></a>
+                  <a href="news-nuevas-carreras/news-nuevas-carreras.html"><img src="assets/images/meeting-03.jpg" alt="Nuevas Carreras UPBC" class="news-thumbnail"></a>
                 </div>
                 <div class="down-content">
                   <div class="date">
                     <h6>Jun <span>25</span></h6>
                   </div>
                   <a href="news-nuevas-carreras/news-nuevas-carreras.html"><h4>Cinco Nuevas Carreras en la UPBC</h4></a>
-                  <p>La UPBC amplía su oferta educativa con cinco nuevas carreras para el próximo ciclo escolar.</p>
+                  <p class="news-excerpt">La UPBC amplía su oferta educativa con cinco nuevas carreras para el próximo ciclo escolar.</p>
                 </div>
               </div>
             </div>
@@ -688,14 +708,14 @@
                   <div class="price">
                     <span>Ultimas noticias</span>
                   </div>
-                  <a href="news-firman-convenio/news-firman-convenio.html"><img src="news-firman-convenio/WhatsApp Image 2025-07-09 at 3.28.29 PM.jpeg" alt="Convenio UPBC y Centro de Conciliación Laboral"></a>
+                  <a href="news-firman-convenio/news-firman-convenio.html"><img src="news-firman-convenio/WhatsApp Image 2025-07-09 at 3.28.29 PM.jpeg" alt="Convenio UPBC y Centro de Conciliación Laboral" class="news-thumbnail"></a>
                 </div>
                 <div class="down-content">
                   <div class="date">
                     <h6>Jul <span>09</span></h6>
                   </div>
                   <a href="news-firman-convenio/news-firman-convenio.html"><h4>Firman convenio la UPBC y el Centro de Conciliación Laboral</h4></a>
-                  <p>Importante acuerdo de colaboración para impulsar la formación profesional y el desarrollo de nuestra comunidad.</p>
+                  <p class="news-excerpt">Importante acuerdo de colaboración para impulsar la formación profesional y el desarrollo de nuestra comunidad.</p>
                 </div>
               </div>
             </div>
@@ -743,16 +763,16 @@
                     <div class="content">
                         <ul>
                           <li><a href="carreras/animacion/animacion.html">Ingeniería en Animación y Efectos Visuales</a></li>
-                          <li>Ingeniería en Energía y Desarrollo Sostenible</li>
-                          <li>Ingeniería Mecatrónica</li>
-                          <li>Ingeniería en Tecnologías de la Información e Innovación Digital</li>
-                          <li>Ingeniería en Manufactura Avanzada</li>
-                          <li>Ingeniería en Microelectrónica y Semiconductores</li>
-                          <li>Ingeniería Industrial</li>
-                          <li>Licenciatura en Administración</li>
-                          <li>Licenciatura en Educación</li>
-                          <li>Licenciatura en Gastronomía</li>
-                          <li>Licenciatura en Negocios y Mercadotecnia</li>
+                          <li><a href="carreras/energia/energia.html">Ingeniería en Energía y Desarrollo Sostenible</a></li>
+                          <li><a href="carreras/mecatronica/mecatronica.html">Ingeniería Mecatrónica</a></li>
+                          <li><a href="carreras/tecnologias/tecnologias.html">Ingeniería en Tecnologías de la Información e Innovación Digital</a></li>
+                          <li><a href="carreras/manufactura/manufactura.html">Ingeniería en Manufactura Avanzada</a></li>
+                          <li><a href="carreras/microelectronica/microelectronica.html">Ingeniería en Microelectrónica y Semiconductores</a></li>
+                          <li><a href="carreras/industrial/industrial.html">Ingeniería Industrial</a></li>
+                          <li><a href="carreras/administracion/administracion.html">Licenciatura en Administración</a></li>
+                          <li><a href="carreras/educacion/educacion.html">Licenciatura en Educación</a></li>
+                          <li><a href="carreras/gastronomia/gastronomia.html">Licenciatura en Gastronomía</a></li>
+                          <li><a href="carreras/negocios/negocios.html">Licenciatura en Negocios y Mercadotecnia</a></li>
                         </ul>
                     </div>
                 </div>
@@ -1168,7 +1188,7 @@
             <ul>
               <li>
                 <h6>Teléfono</h6>
-                <span>+52 (664) 123-4567</span>
+                <span>(686) 104-2727</span>
               </li>
               <li>
                 <h6>Correo Electrónico</h6>
@@ -1176,7 +1196,7 @@
               </li>
               <li>
                 <h6>Dirección</h6>
-                <span>Carretera Tijuana-Ensenada Km. 10, Zona Playitas, Ensenada, B.C.</span>
+                <span>Calle de la Claridad S/N Colonia Plutarco Elías Calles, Mexicali, Baja California, México CP. 21376</span>
               </li>
               <li>
                 <h6>Sitio Web</h6>
