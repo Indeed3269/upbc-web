@@ -24,17 +24,23 @@
   <!-- UPBC CSS Modular Structure -->
   <link rel="stylesheet" href="../../assets/css/upbc-main.css?v=1.1">
   <style>
-    .heading-page {
-      background-color: #602b82;
-      padding: 60px 0;
-      position: relative;
-      z-index: 1;
+    /* Estilos para el título de la página */
+    .page-title {
+      padding: 20px 0;
+      border-bottom: 3px solid #602b82;
+      margin-bottom: 30px;
     }
     
-    /* Eliminado el overlay ya que tenemos un fondo sólido */
+    .page-title h6 {
+      color: #cd8b47;
+      font-size: 16px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
     
-    .page-heading h2 {
-      color: #fff;
+    .page-title h2 {
+      color: #602b82;
       font-size: 36px;
       font-weight: 700;
       margin-bottom: 20px;
@@ -394,21 +400,21 @@
   </header>
   <!-- ***** Header Area End ***** -->
 
-  <!-- ***** Page Heading Start ***** -->
-  <section class="heading-page header-text" id="top">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-12">
+  <!-- ***** Page Title Start ***** -->
+  <div class="container mt-5 pt-4">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="page-title">
           <h6>Vida universitaria</h6>
-          <h2>Vida Estudiantil</h2>
+          <h2 class="mb-4">Vida Estudiantil</h2>
         </div>
       </div>
     </div>
-  </section>
-  <!-- ***** Page Heading End ***** -->
+  </div>
+  <!-- ***** Page Title End ***** -->
 
   <!-- ***** Page Content Start ***** -->
-  <section class="page-content">
+  <section class="page-content pt-0">
     <div class="container">
       <div class="row">
         <div class="col-lg-8">
