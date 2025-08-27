@@ -1,0 +1,475 @@
+/* Estilos para la página de Educación Continua */
+
+/* Estilos para el banner principal */
+.main-banner {
+  position: relative;
+  background-color: #602b82; /* Color morado UPBC */
+  padding: 80px 0;
+  text-align: center;
+}
+
+.main-banner .caption h2 {
+  color: #fff;
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.main-banner .caption p {
+  color: #fff;
+  font-size: 18px;
+}
+
+/* Estilos para la sección de educación continua */
+.educacion-continua-section {
+  padding: 80px 0;
+  background-color: #f8f9fa;
+}
+
+.section-heading {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.section-heading h2 {
+  color: #602b82;
+  font-size: 32px;
+  font-weight: 700;
+  position: relative;
+  padding-bottom: 15px;
+  margin-bottom: 20px;
+}
+
+.section-heading h2:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background-color: #cd8b47; /* Color dorado UPBC */
+}
+
+.section-heading p {
+  color: #666;
+  font-size: 16px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Estilos para las categorías de cursos */
+.category-tabs {
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.category-tabs .nav-tabs {
+  border: none;
+  display: inline-flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.category-tabs .nav-tabs .nav-item {
+  margin: 0 5px 10px;
+}
+
+.category-tabs .nav-tabs .nav-link {
+  border: 2px solid #602b82;
+  border-radius: 30px;
+  padding: 8px 20px;
+  color: #602b82;
+  font-weight: 600;
+  transition: all 0.3s;
+  background-color: transparent;
+}
+
+.category-tabs .nav-tabs .nav-link:hover {
+  background-color: rgba(96, 43, 130, 0.1);
+}
+
+.category-tabs .nav-tabs .nav-link.active {
+  background-color: #602b82;
+  color: #fff;
+  border-color: #602b82;
+}
+
+/* Estilos para los cursos */
+.curso-item {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
+  overflow: hidden;
+  height: 100%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.curso-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.curso-image {
+  height: 200px;
+  overflow: hidden;
+  position: relative;
+}
+
+.curso-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.curso-item:hover .curso-image img {
+  transform: scale(1.05);
+}
+
+.curso-category {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background-color: #cd8b47;
+  color: #fff;
+  padding: 5px 15px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  z-index: 1;
+}
+
+.curso-info {
+  padding: 25px;
+}
+
+.curso-info h4 {
+  color: #333;
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 15px;
+  position: relative;
+  padding-bottom: 10px;
+}
+
+.curso-info h4:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 50px;
+  height: 2px;
+  background-color: #cd8b47;
+}
+
+.curso-info p {
+  color: #666;
+  font-size: 15px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  min-height: 75px;
+}
+
+.curso-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #eee;
+}
+
+.curso-meta .duration {
+  display: flex;
+  align-items: center;
+}
+
+.curso-meta .duration i {
+  color: #602b82;
+  margin-right: 5px;
+}
+
+.curso-meta .duration span {
+  color: #666;
+  font-size: 14px;
+}
+
+.curso-meta .modality {
+  display: flex;
+  align-items: center;
+}
+
+.curso-meta .modality i {
+  color: #602b82;
+  margin-right: 5px;
+}
+
+.curso-meta .modality span {
+  color: #666;
+  font-size: 14px;
+}
+
+.curso-info .main-button {
+  display: inline-block;
+  background-color: #602b82;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 8px 20px;
+  border-radius: 25px;
+  transition: all 0.3s;
+  text-decoration: none;
+}
+
+.curso-info .main-button:hover {
+  background-color: #cd8b47;
+}
+
+/* Estilos para la sección de beneficios */
+.benefits-section {
+  background-color: #f0f0f0;
+  padding: 60px 0;
+}
+
+.benefit-item {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.benefit-icon {
+  width: 80px;
+  height: 80px;
+  background-color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.benefit-item:hover .benefit-icon {
+  transform: translateY(-5px);
+}
+
+.benefit-icon i {
+  font-size: 32px;
+  color: #602b82;
+}
+
+.benefit-item h4 {
+  color: #333;
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.benefit-item p {
+  color: #666;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* Estilos para la sección de testimonios */
+.testimonials-section {
+  padding: 80px 0;
+  background-color: #fff;
+}
+
+.testimonial-item {
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  padding: 30px;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.testimonial-item:before {
+  content: '\201C';
+  font-size: 80px;
+  color: rgba(96, 43, 130, 0.1);
+  position: absolute;
+  top: 10px;
+  left: 20px;
+  font-family: Georgia, serif;
+}
+
+.testimonial-content {
+  position: relative;
+  z-index: 1;
+}
+
+.testimonial-content p {
+  color: #666;
+  font-size: 16px;
+  line-height: 1.6;
+  font-style: italic;
+  margin-bottom: 20px;
+}
+
+.testimonial-author {
+  display: flex;
+  align-items: center;
+}
+
+.testimonial-author img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 15px;
+}
+
+.testimonial-author-info h5 {
+  color: #333;
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.testimonial-author-info p {
+  color: #666;
+  font-size: 14px;
+  margin-bottom: 0;
+}
+
+/* Estilos para la sección de registro */
+.registration-section {
+  background-color: #602b82;
+  padding: 60px 0;
+  color: #fff;
+  text-align: center;
+}
+
+.registration-section h3 {
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.registration-section p {
+  font-size: 16px;
+  margin-bottom: 30px;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.registration-section .main-button {
+  display: inline-block;
+  background-color: #cd8b47;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 500;
+  padding: 12px 30px;
+  border-radius: 25px;
+  transition: all 0.3s;
+  text-decoration: none;
+}
+
+.registration-section .main-button:hover {
+  background-color: #fff;
+  color: #602b82;
+}
+
+/* Estilos para la sección de preguntas frecuentes */
+.faq-section {
+  padding: 80px 0;
+  background-color: #f8f9fa;
+}
+
+.accordion-item {
+  margin-bottom: 15px;
+  border: none;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+}
+
+.accordion-button {
+  padding: 20px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+  background-color: #fff;
+}
+
+.accordion-button:not(.collapsed) {
+  color: #602b82;
+  background-color: #fff;
+  box-shadow: none;
+}
+
+.accordion-button:focus {
+  box-shadow: none;
+  border-color: rgba(96, 43, 130, 0.1);
+}
+
+.accordion-button:not(.collapsed)::after {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23602b82'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+}
+
+.accordion-body {
+  padding: 20px;
+  background-color: #fff;
+  color: #666;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+/* Responsive */
+@media (max-width: 991px) {
+  .educacion-continua-section {
+    padding: 60px 0;
+  }
+  
+  .curso-image {
+    height: 180px;
+  }
+  
+  .curso-info p {
+    min-height: 100px;
+  }
+  
+  .benefit-item {
+    margin-bottom: 40px;
+  }
+}
+
+@media (max-width: 767px) {
+  .main-banner {
+    padding: 60px 0;
+  }
+  
+  .main-banner .caption h2 {
+    font-size: 28px;
+  }
+  
+  .section-heading h2 {
+    font-size: 26px;
+  }
+  
+  .category-tabs .nav-tabs {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .category-tabs .nav-tabs .nav-item {
+    margin-bottom: 10px;
+  }
+  
+  .curso-info p {
+    min-height: auto;
+  }
+  
+  .testimonial-item {
+    padding: 20px;
+  }
+  
+  .registration-section h3 {
+    font-size: 24px;
+  }
+}

@@ -1107,13 +1107,13 @@ section.upcoming-meetings {
 }
 
 section.upcoming-meetings .container {
-  padding-top: 120px !important; /* Espacio adicional en la parte superior del contenedor */
+  padding-top: 0px !important; /* Espacio reducido en la parte superior del contenedor */
 }
 
 section.upcoming-meetings .section-heading {
   text-align: center !important;
-  margin-bottom: 60px !important; /* Aumentado el margen inferior */
-  padding-top: 40px !important; /* Espacio adicional arriba del título */
+  margin-bottom: 30px !important; /* Reducido el margen inferior */
+  padding-top: 10px !important; /* Reducido el espacio arriba del título */
 }
 
 section.upcoming-meetings .section-heading h2 {

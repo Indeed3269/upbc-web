@@ -1,0 +1,408 @@
+/* Estilos para la página de Posgrados */
+
+/* Estilos para el banner principal */
+.main-banner {
+  position: relative;
+  background-color: #602b82; /* Color morado UPBC */
+  padding: 80px 0;
+  text-align: center;
+}
+
+.main-banner .caption h2 {
+  color: #fff;
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.main-banner .caption p {
+  color: #fff;
+  font-size: 18px;
+}
+
+/* Estilos para la sección de posgrados */
+.posgrados-section {
+  padding: 80px 0;
+  background-color: #f8f9fa;
+}
+
+.section-heading {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.section-heading h2 {
+  color: #602b82;
+  font-size: 32px;
+  font-weight: 700;
+  position: relative;
+  padding-bottom: 15px;
+  margin-bottom: 20px;
+}
+
+.section-heading h2:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background-color: #cd8b47; /* Color dorado UPBC */
+}
+
+.section-heading p {
+  color: #666;
+  font-size: 16px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.section-heading-secondary {
+  margin-bottom: 30px;
+}
+
+.section-heading-secondary h3 {
+  color: #602b82;
+  font-size: 24px;
+  font-weight: 600;
+  position: relative;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #cd8b47;
+  display: inline-block;
+}
+
+/* Estilos para los items de posgrados */
+.posgrado-item {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
+  overflow: hidden;
+  height: 100%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.posgrado-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.posgrado-image {
+  height: 200px;
+  overflow: hidden;
+}
+
+.posgrado-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.posgrado-item:hover .posgrado-image img {
+  transform: scale(1.05);
+}
+
+.posgrado-info {
+  padding: 25px;
+}
+
+.posgrado-info h4 {
+  color: #333;
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 15px;
+  position: relative;
+  padding-bottom: 10px;
+}
+
+.posgrado-info h4:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 50px;
+  height: 2px;
+  background-color: #cd8b47;
+}
+
+.posgrado-info p {
+  color: #666;
+  font-size: 15px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  min-height: 80px;
+}
+
+.posgrado-details {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 20px;
+}
+
+.posgrado-details li {
+  color: #666;
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+.posgrado-details li i {
+  color: #602b82;
+  margin-right: 8px;
+}
+
+.posgrado-info .main-button {
+  display: inline-block;
+  background-color: #602b82;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 8px 20px;
+  border-radius: 25px;
+  transition: all 0.3s;
+  text-decoration: none;
+}
+
+.posgrado-info .main-button:hover {
+  background-color: #cd8b47;
+}
+
+/* Estilos para el proceso de admisión */
+.admission-process {
+  background-color: #f0f0f0;
+  padding: 40px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.admission-process h3 {
+  color: #602b82;
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 30px;
+  position: relative;
+  padding-bottom: 15px;
+  display: inline-block;
+}
+
+.admission-process h3:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 2px;
+  background-color: #cd8b47;
+}
+
+.process-step {
+  background-color: #fff;
+  padding: 25px 15px;
+  border-radius: 8px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+  height: 100%;
+  position: relative;
+  transition: transform 0.3s ease;
+}
+
+.process-step:hover {
+  transform: translateY(-5px);
+}
+
+.step-number {
+  width: 50px;
+  height: 50px;
+  background-color: #602b82;
+  color: #fff;
+  font-size: 24px;
+  font-weight: 600;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 15px;
+}
+
+.process-step h4 {
+  color: #333;
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.process-step p {
+  color: #666;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* Estilos para la sección de requisitos */
+.requisitos-section {
+  background-color: #fff;
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.requisitos-section h3 {
+  color: #602b82;
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 25px;
+  position: relative;
+  padding-bottom: 10px;
+}
+
+.requisitos-section h3:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 50px;
+  height: 2px;
+  background-color: #cd8b47;
+}
+
+.requisitos-list {
+  list-style: none;
+  padding: 0;
+}
+
+.requisitos-list li {
+  color: #666;
+  font-size: 15px;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: flex-start;
+}
+
+.requisitos-list li i {
+  color: #cd8b47;
+  margin-right: 10px;
+  font-size: 16px;
+  margin-top: 3px;
+}
+
+.requisitos-note {
+  margin-top: 20px;
+  padding-top: 15px;
+  border-top: 1px dashed #ddd;
+}
+
+.requisitos-note p {
+  color: #777;
+  font-size: 14px;
+  font-style: italic;
+}
+
+/* Estilos para la sección de contacto */
+.contact-cta {
+  background-color: #602b82;
+  padding: 40px;
+  border-radius: 8px;
+  text-align: center;
+  color: #fff;
+}
+
+.contact-cta h3 {
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.contact-cta p {
+  font-size: 16px;
+  margin-bottom: 25px;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.contact-info {
+  margin-bottom: 30px;
+}
+
+.contact-item {
+  margin-bottom: 15px;
+}
+
+.contact-item i {
+  font-size: 24px;
+  color: #cd8b47;
+  margin-bottom: 10px;
+}
+
+.contact-item p {
+  font-size: 16px;
+  margin-bottom: 0;
+}
+
+.contact-cta .main-button {
+  display: inline-block;
+  background-color: #cd8b47;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 500;
+  padding: 12px 30px;
+  border-radius: 25px;
+  transition: all 0.3s;
+  text-decoration: none;
+}
+
+.contact-cta .main-button:hover {
+  background-color: #fff;
+  color: #602b82;
+}
+
+/* Responsive */
+@media (max-width: 991px) {
+  .posgrados-section {
+    padding: 60px 0;
+  }
+  
+  .posgrado-image {
+    height: 180px;
+  }
+  
+  .posgrado-info p {
+    min-height: 100px;
+  }
+  
+  .process-step {
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 767px) {
+  .main-banner {
+    padding: 60px 0;
+  }
+  
+  .main-banner .caption h2 {
+    font-size: 28px;
+  }
+  
+  .section-heading h2 {
+    font-size: 26px;
+  }
+  
+  .section-heading-secondary h3 {
+    font-size: 20px;
+  }
+  
+  .posgrado-info p {
+    min-height: auto;
+  }
+  
+  .admission-process, 
+  .requisitos-section, 
+  .contact-cta {
+    padding: 30px 20px;
+  }
+  
+  .contact-item {
+    margin-bottom: 20px;
+  }
+}

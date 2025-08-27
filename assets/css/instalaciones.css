@@ -1,0 +1,212 @@
+/* Estilos para la página de Instalaciones */
+
+/* Estilos para el banner principal */
+.main-banner {
+    position: relative;
+    background-color: #602b82; /* Color morado UPBC */
+    padding: 80px 0;
+    text-align: center;
+}
+
+.main-banner .caption h2 {
+    color: #fff;
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.main-banner .caption p {
+    color: #fff;
+    font-size: 18px;
+}
+
+/* Estilos para la sección de instalaciones */
+.instalaciones-section {
+    padding: 80px 0;
+    background-color: #f8f9fa;
+}
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.section-heading h2 {
+    color: #602b82;
+    font-size: 32px;
+    font-weight: 700;
+    position: relative;
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+}
+
+.section-heading h2:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background-color: #cd8b47; /* Color dorado UPBC */
+}
+
+.section-heading p {
+    color: #666;
+    font-size: 16px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.section-heading-secondary {
+    margin-bottom: 30px;
+}
+
+.section-heading-secondary h3 {
+    color: #602b82;
+    font-size: 24px;
+    font-weight: 600;
+    position: relative;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #cd8b47;
+    display: inline-block;
+}
+
+/* Estilos para los items de instalaciones */
+.instalacion-item {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+    overflow: hidden;
+    height: 100%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.instalacion-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.instalacion-image {
+    height: 250px;
+    overflow: hidden;
+}
+
+.instalacion-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.instalacion-item:hover .instalacion-image img {
+    transform: scale(1.05);
+}
+
+.instalacion-info {
+    padding: 25px;
+}
+
+.instalacion-info h4 {
+    color: #333;
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.instalacion-info h4:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50px;
+    height: 2px;
+    background-color: #cd8b47;
+}
+
+.instalacion-info p {
+    color: #666;
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+/* Estilos para el tour virtual */
+.tour-virtual {
+    background-color: #602b82;
+    padding: 40px;
+    border-radius: 8px;
+    text-align: center;
+    color: #fff;
+    margin-top: 30px;
+}
+
+.tour-virtual h3 {
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.tour-virtual p {
+    font-size: 16px;
+    margin-bottom: 25px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.tour-virtual .main-button {
+    display: inline-block;
+    background-color: #cd8b47;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 12px 30px;
+    border-radius: 25px;
+    transition: all 0.3s;
+    text-decoration: none;
+}
+
+.tour-virtual .main-button:hover {
+    background-color: #fff;
+    color: #602b82;
+}
+
+/* Responsive */
+@media (max-width: 991px) {
+    .instalaciones-section {
+        padding: 60px 0;
+    }
+    
+    .instalacion-image {
+        height: 220px;
+    }
+}
+
+@media (max-width: 767px) {
+    .main-banner {
+        padding: 60px 0;
+    }
+    
+    .main-banner .caption h2 {
+        font-size: 28px;
+    }
+    
+    .section-heading h2 {
+        font-size: 26px;
+    }
+    
+    .section-heading-secondary h3 {
+        font-size: 20px;
+    }
+    
+    .tour-virtual {
+        padding: 30px 20px;
+    }
+    
+    .tour-virtual h3 {
+        font-size: 24px;
+    }
+}

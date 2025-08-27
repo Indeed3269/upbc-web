@@ -1,5 +1,315 @@
 /* Estilos para las páginas de carreras */
 
+/* Estilos para la página principal de carreras */
+.main-banner {
+  position: relative;
+  background-color: #602b82; /* Color morado UPBC */
+  padding: 80px 0;
+  text-align: center;
+}
+
+.main-banner .caption h2 {
+  color: #fff;
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.main-banner .caption p {
+  color: #fff;
+  font-size: 18px;
+}
+
+.carreras-section {
+  padding: 80px 0;
+  background-color: #f8f9fa;
+}
+
+.section-heading {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.section-heading h2 {
+  color: #602b82;
+  font-size: 32px;
+  font-weight: 700;
+  position: relative;
+  padding-bottom: 15px;
+  margin-bottom: 20px;
+}
+
+.section-heading h2:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background-color: #cd8b47; /* Color dorado UPBC */
+}
+
+.section-heading p {
+  color: #666;
+  font-size: 16px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Filtros de carreras */
+.carreras-filtros {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.filtro-btn {
+  background-color: transparent;
+  border: 2px solid #602b82;
+  color: #602b82;
+  padding: 8px 20px;
+  margin: 0 5px;
+  border-radius: 25px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.filtro-btn:hover, .filtro-btn.active {
+  background-color: #602b82;
+  color: #fff;
+}
+
+/* Tarjetas de carreras */
+.carrera-card {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
+  overflow: hidden;
+  height: 100%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.carrera-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.carrera-image {
+  height: 220px;
+  overflow: hidden;
+  position: relative;
+}
+
+.carrera-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.carrera-card:hover .carrera-image img {
+  transform: scale(1.05);
+}
+
+.carrera-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(96, 43, 130, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.carrera-card:hover .carrera-overlay {
+  opacity: 1;
+}
+
+.carrera-link {
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+  background-color: #cd8b47;
+  padding: 10px 20px;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+}
+
+.carrera-link:hover {
+  background-color: #fff;
+  color: #602b82;
+}
+
+.carrera-info {
+  padding: 25px;
+}
+
+.carrera-info h4 {
+  color: #333;
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 15px;
+  position: relative;
+  padding-bottom: 10px;
+  min-height: 50px;
+}
+
+.carrera-info h4:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 50px;
+  height: 2px;
+  background-color: #cd8b47;
+}
+
+.carrera-info p {
+  color: #666;
+  font-size: 14px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  min-height: 90px;
+}
+
+.carrera-info .main-button {
+  display: inline-block;
+  background-color: #602b82;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 8px 20px;
+  border-radius: 25px;
+  transition: all 0.3s;
+  text-decoration: none;
+}
+
+.carrera-info .main-button:hover {
+  background-color: #cd8b47;
+}
+
+/* Sección de admisiones CTA */
+.admisiones-cta {
+  background-color: #602b82;
+  padding: 40px;
+  border-radius: 8px;
+  text-align: center;
+  color: #fff;
+}
+
+.admisiones-cta h3 {
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.admisiones-cta p {
+  font-size: 16px;
+  margin-bottom: 25px;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cta-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.cta-buttons .main-button {
+  display: inline-block;
+  background-color: #cd8b47;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 500;
+  padding: 12px 30px;
+  border-radius: 25px;
+  transition: all 0.3s;
+  text-decoration: none;
+}
+
+.cta-buttons .main-button:hover {
+  background-color: #fff;
+  color: #602b82;
+}
+
+.cta-buttons .main-button-outline {
+  display: inline-block;
+  background-color: transparent;
+  border: 2px solid #fff;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 500;
+  padding: 12px 30px;
+  border-radius: 25px;
+  transition: all 0.3s;
+  text-decoration: none;
+}
+
+.cta-buttons .main-button-outline:hover {
+  background-color: #fff;
+  color: #602b82;
+}
+
+/* Responsive */
+@media (max-width: 991px) {
+  .carreras-section {
+    padding: 60px 0;
+  }
+  
+  .carrera-image {
+    height: 200px;
+  }
+  
+  .carrera-info h4 {
+    font-size: 16px;
+    min-height: 60px;
+  }
+  
+  .carrera-info p {
+    min-height: 110px;
+  }
+}
+
+@media (max-width: 767px) {
+  .main-banner {
+    padding: 60px 0;
+  }
+  
+  .main-banner .caption h2 {
+    font-size: 28px;
+  }
+  
+  .section-heading h2 {
+    font-size: 26px;
+  }
+  
+  .carreras-filtros {
+    flex-wrap: wrap;
+  }
+  
+  .filtro-btn {
+    margin-bottom: 10px;
+  }
+  
+  .cta-buttons {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .carrera-info p {
+    min-height: auto;
+  }
+}
+
 /* Contenedor de mapas curriculares */
 .mapa-curricular-container {
   margin-bottom: 30px;
