@@ -193,7 +193,7 @@
       <div class="row">
         <div class="col-lg-8 col-sm-8">
           <div class="left-content">
-            <p>Bienvenidos a la <em>Universidad PoliTÃ©cnica de Baja California</em> - Formando Profesionales de excelencia</p>
+            <p>Bienvenidos a la <em>Universidad Politécnica de Baja California</em> - Formando Profesionales de excelencia</p>
           </div>
         </div>
         <div class="col-lg-4 col-sm-4">
@@ -375,7 +375,7 @@
           <!-- Campo Laboral -->
           <div class="carrera-section">
             <div class="carrera-section-title-container">
-            <img src="../../assets/images/carreras/titles/campo-Laboral.png" alt="Campo Laboral" class="section-title-image">
+            <img src="../../assets/images/carreras/titles/campo-laboral.png" alt="Campo Laboral" class="section-title-image">
           </div>
             <div class="carrera-description">
               <p>Como Ingeniero en Tecnologías de la Información e Innovación Digital podrás desempeñarte profesionalmente en:</p>
@@ -673,12 +673,12 @@
   <script src="../../assets/js/custom.js"></script>
   
   <script>
-    // Activar el enlace de Oferta educativa y Carreras en el menÃº
+    // Activar el enlace de Oferta educativa y Carreras en el menú
     $(document).ready(function() {
       // Marcar como activo el enlace de Oferta educativa
       $('.nav li:has(a:contains("Oferta educativa"))').addClass('active');
       
-      // Funcionalidad para el menÃº mÃ³vil
+      // Funcionalidad para el menú móvil
       $('.menu-trigger').on('click', function() {
           $('.nav').toggleClass('active');
           $('.mobile-menu-overlay').toggleClass('active');
@@ -687,7 +687,7 @@
           $('body').toggleClass('menu-open');
       });
       
-      // Cerrar menÃº mÃ³vil al hacer clic en el botÃ³n de cierre o en el overlay
+      // Cerrar menú móvil al hacer clic en el botón de cierre o en el overlay
       $('.mobile-menu-close, .mobile-menu-overlay').on('click', function() {
           $('.nav').removeClass('active');
           $('.mobile-menu-overlay').removeClass('active');
@@ -695,7 +695,7 @@
           $('body').removeClass('menu-open');
       });
       
-      // Funcionalidad para submenÃºs en mÃ³vil
+      // Funcionalidad para submenús en móvil
       $('.has-sub > a').on('click', function(e) {
           if ($(window).width() < 992) {
               e.preventDefault();
@@ -707,15 +707,15 @@
       // Funcionalidad para el buscador
       $('.search-button').on('click', function(e) {
           e.preventDefault();
-          // AquÃ­ puedes agregar la lÃ³gica de bÃºsqueda
-          console.log('BÃºsqueda: ' + $('.search-input').val());
+          // Aquí puedes agregar la lógica de búsqueda
+          console.log('Búsqueda: ' + $('.search-input').val());
       });
       
       // Mostrar dropdown al hacer hover en el buscador
       $('.search-wrapper').on('mouseenter', function() {
           $('.quick-buttons-dropdown').show();
       }).on('mouseleave', function() {
-          // PequeÃ±o retraso para mejorar la experiencia
+          // Pequeño retraso para mejorar la experiencia
           setTimeout(function() {
               if (!$('.quick-buttons-dropdown:hover').length) {
                   $('.quick-buttons-dropdown').hide();
