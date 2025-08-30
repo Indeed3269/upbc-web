@@ -1,0 +1,59 @@
+/* 
+ * Correcciones para el texto en cajas de información de carreras
+ * Este archivo soluciona problemas de visualización en dispositivos móviles
+ * para textos largos en las cajas de información de las carreras
+ */
+
+/* Ajuste general para las cajas de información */
+.carrera-info-box {
+  margin-bottom: 25px;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  word-wrap: break-word; /* Permite que las palabras largas se rompan */
+  overflow-wrap: break-word; /* Asegura que el texto largo se ajuste */
+}
+
+/* Ajuste para los títulos */
+.carrera-info-box h4 {
+  color: #602b82;
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  border-bottom: 2px solid #cd8b47;
+  padding-bottom: 8px;
+}
+
+/* Ajuste para los párrafos */
+.carrera-info-box p {
+  color: #333;
+  font-size: 15px;
+  line-height: 1.5;
+  margin-bottom: 0;
+  hyphens: auto; /* Permite guiones para dividir palabras largas */
+}
+
+/* Ajustes específicos para dispositivos móviles */
+@media (max-width: 767px) {
+  .carrera-info-box {
+    padding: 15px;
+  }
+  
+  .carrera-info-box h4 {
+    font-size: 16px;
+  }
+  
+  .carrera-info-box p {
+    font-size: 14px;
+    line-height: 1.4;
+    word-break: break-word; /* Fuerza el quiebre de palabras largas en móviles */
+  }
+}
+
+/* Ajustes para pantallas muy pequeñas */
+@media (max-width: 480px) {
+  .carrera-info-box p {
+    font-size: 13px;
+  }
+}
