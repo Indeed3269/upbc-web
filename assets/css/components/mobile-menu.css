@@ -1,0 +1,187 @@
+/* Estilos específicos para el menú móvil */
+
+/* Estilos para el botón hamburguesa */
+.menu-trigger {
+    cursor: pointer;
+    display: none;
+    z-index: 35;
+}
+
+@media (max-width: 991px) {
+    .menu-trigger {
+        display: block;
+        position: absolute;
+        right: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 30px;
+        height: 24px;
+    }
+
+    .menu-trigger span {
+        display: block;
+        position: absolute;
+        height: 3px;
+        width: 100%;
+        background-color: #602b82;
+        border-radius: 3px;
+        opacity: 1;
+        left: 0;
+        transform: rotate(0deg);
+        transition: .25s ease-in-out;
+    }
+
+    .menu-trigger span:nth-child(1) {
+        top: 0px;
+    }
+
+    .menu-trigger span:nth-child(2) {
+        top: 10px;
+    }
+
+    .menu-trigger span:nth-child(3) {
+        top: 20px;
+    }
+
+    .menu-trigger.active span:nth-child(1) {
+        top: 10px;
+        transform: rotate(135deg);
+    }
+
+    .menu-trigger.active span:nth-child(2) {
+        opacity: 0;
+        left: -60px;
+    }
+
+    .menu-trigger.active span:nth-child(3) {
+        top: 10px;
+        transform: rotate(-135deg);
+    }
+}
+
+/* Estilos para el overlay del menú móvil */
+.mobile-menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 25;
+    display: none;
+    opacity: 0;
+    transition: all .3s ease;
+}
+
+.mobile-menu-overlay.active {
+    display: block !important;
+    opacity: 1 !important;
+}
+
+/* Estilos para el menú móvil */
+@media (max-width: 991px) {
+    .header-area .main-nav .nav {
+        display: none;
+        position: fixed;
+        overflow-y: auto;
+        top: 0;
+        right: -380px;
+        width: 380px;
+        height: 100vh;
+        background-color: #fff;
+        z-index: 30;
+        box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+        transition: all .3s ease;
+        padding: 0;
+        margin: 0;
+    }
+
+    .header-area .main-nav .nav.active {
+        display: block !important;
+        right: 0 !important;
+    }
+
+    .header-area .main-nav .nav li {
+        border-bottom: 1px solid #eee;
+        padding-left: 0;
+        padding-right: 0;
+        width: 100%;
+    }
+
+    .header-area .main-nav .nav li a {
+        padding: 15px 20px;
+        width: 100%;
+        display: block;
+        color: #1e1e1e;
+        font-weight: 500;
+    }
+
+    .header-area .main-nav .nav li.has-sub > a::after {
+        content: '\f107';
+        font-family: 'FontAwesome';
+        float: right;
+        transition: all .3s ease;
+    }
+
+    .header-area .main-nav .nav li.has-sub.open > a::after {
+        transform: rotate(180deg);
+    }
+
+    .header-area .main-nav .nav li .sub-menu {
+        position: static;
+        width: 100%;
+        box-shadow: none;
+        padding: 0;
+        margin: 0;
+        display: none;
+        overflow: hidden;
+        opacity: 1;
+        visibility: visible;
+        transition: all 0.3s ease;
+        border-top: 1px solid #eee;
+    }
+
+    .header-area .main-nav .nav li .sub-menu li {
+        margin-left: 0;
+        padding-left: 20px;
+        border-bottom: none;
+    }
+
+    .header-area .main-nav .nav li .sub-menu li a {
+        padding: 12px 15px;
+        color: #1e1e1e;
+        font-weight: 400;
+    }
+
+    /* Logo móvil y botón de cierre */
+    .mobile-menu-logo {
+        display: none;
+        align-items: center;
+        justify-content: space-between;
+        padding: 20px;
+        border-bottom: 1px solid #eee;
+    }
+
+    .mobile-menu-logo img {
+        max-height: 40px;
+    }
+
+    .mobile-menu-close {
+        font-size: 24px;
+        cursor: pointer;
+        color: #602b82;
+    }
+
+    /* Ajustes para el body cuando el menú está abierto */
+    body.menu-open {
+        overflow: hidden;
+    }
+}
+
+/* Ajustes para pantallas más pequeñas */
+@media (max-width: 767px) {
+    .header-area .main-nav .nav {
+        width: 320px;
+        right: -320px;
+    }
+}

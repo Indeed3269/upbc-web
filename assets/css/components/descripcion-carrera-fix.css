@@ -1,0 +1,39 @@
+/* 
+ * Correcciones para las imágenes de descripción de carreras
+ * Este archivo soluciona el problema de imágenes cortadas en las páginas de carreras
+ */
+
+/* Ajuste para el contenedor de la imagen de descripción */
+.carrera-image {
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  margin-bottom: 30px;
+  /* Eliminar altura fija que podría estar causando el recorte */
+  height: auto !important;
+}
+
+/* Ajuste para la imagen dentro del contenedor */
+.carrera-image img {
+  width: 100%;
+  height: auto !important;
+  object-fit: contain !important;
+  display: block;
+}
+
+/* Asegurar que las imágenes de descripción específicas se muestren completas */
+.carrera-section .carrera-image {
+  height: auto !important;
+  max-height: none !important;
+}
+
+.carrera-section .carrera-image img {
+  object-fit: contain !important;
+}
+
+/* Ajustes responsivos */
+@media (max-width: 767px) {
+  .carrera-image {
+    margin-bottom: 20px;
+  }
+}

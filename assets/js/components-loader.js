@@ -1,14 +1,14 @@
 // Función para cargar componentes HTML
 document.addEventListener('DOMContentLoaded', function() {
     // Cargar el navbar
-    loadComponent('components/navbar.html', 'navbar-container')
+    loadComponent('../components/navbar.html', 'navbar-container')
         .then(() => {
             // Reinicializar funcionalidades del navbar después de cargarlo
             reinitializeNavbarFunctions();
         });
     
     // Cargar el footer
-    loadComponent('components/footer.html', 'footer-container')
+    loadComponent('../components/footer.html', 'footer-container')
         .then(() => {
             // Reinicializar funcionalidades del footer después de cargarlo
             reinitializeFooterFunctions();
