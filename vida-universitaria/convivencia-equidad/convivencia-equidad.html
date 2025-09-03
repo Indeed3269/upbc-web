@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Convivencia y Equidad - Universidad Politécnica de Baja California">
+  <meta name="author" content="UPBC">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <title>UPBC - Convivencia y Equidad</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="../../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Asegurando que Bootstrap JS esté disponible -->
+  <script src="../../vendor/jquery/jquery.min.js"></script>
+  <script src="../../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Additional CSS Files -->
+  <link rel="stylesheet" href="../../assets/css/fontawesome.css">
+  <link rel="stylesheet" href="../../assets/css/owl.css">
+  <link rel="stylesheet" href="../../assets/css/lightbox.css">
+  <link rel="stylesheet" href="../../assets/css/templatemo-edu-meeting.css">
+  <!-- UPBC CSS Modular Structure -->
+  <link rel="stylesheet" href="../../assets/css/upbc-main.css?v=1.1">
+  <style>
+    /* Estilos para el título de la página */
+    .page-title {
+      padding: 20px 0;
+      border-bottom: 3px solid #602b82;
+      margin-bottom: 30px;
+    }
+    
+    .page-title h6 {
+      color: #cd8b47;
+      font-size: 16px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    
+    .page-title h2 {
+      color: #602b82;
+      font-size: 36px;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+    
+    .page-content {
+      padding: 60px 0;
+    }
+    
+    .section-title {
+      color: #602b82;
+      font-size: 28px;
+      font-weight: 700;
+      margin-bottom: 20px;
+      border-bottom: 2px solid #cd8b47;
+      padding-bottom: 10px;
+    }
+    
+    .section-content p {
+      color: #7b8082;
+      font-size: 16px;
+      line-height: 1.8;
+      margin-bottom: 20px;
+    }
+    
+    .value-card {
+      background-color: #f9f9f9;
+      border-radius: 10px;
+      padding: 25px;
+      margin-bottom: 30px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+      transition: transform 0.3s ease;
+    }
+    
+    .value-card:hover {
+      transform: translateY(-5px);
+    }
+    
+    .value-card h4 {
+      color: #602b82;
+      font-size: 20px;
+      font-weight: 600;
+      margin-bottom: 15px;
+    }
+    
+    .value-card p {
+      color: #7b8082;
+      font-size: 15px;
+      line-height: 1.6;
+    }
+    
+    .value-icon {
+      font-size: 40px;
+      color: #cd8b47;
+      margin-bottom: 15px;
+    }
+    
+    .program-card {
+      background-color: #fff;
+      border-radius: 10px;
+      padding: 25px;
+      margin-bottom: 30px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+      border-left: 5px solid #602b82;
+    }
+    
+    .program-card h4 {
+      color: #602b82;
+      font-size: 20px;
+      font-weight: 600;
+      margin-bottom: 15px;
+    }
+    
+    .program-card p {
+      color: #7b8082;
+      font-size: 15px;
+      line-height: 1.6;
+    }
+    
+    .cta-box {
+      background-color: #602b82;
+      color: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      margin-top: 40px;
+      text-align: center;
+    }
+    
+    .cta-box h3 {
+      font-size: 24px;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+    
+    .cta-box p {
+      font-size: 16px;
+      margin-bottom: 25px;
+      color: rgba(255,255,255,0.8);
+    }
+    
+    .cta-btn {
+      display: inline-block;
+      background-color: #cd8b47;
+      color: #fff;
+      padding: 12px 30px;
+      border-radius: 5px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+    
+    .cta-btn:hover {
+      background-color: #fff;
+      color: #602b82;
+      text-decoration: none;
+    }
+    
+    /* Estilos para la barra lateral */
+    .sidebar {
+      background-color: #f9f9f9;
+      border-radius: 10px;
+      padding: 25px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+      margin-top: 30px;
+    }
+    
+    .sidebar-item {
+      margin-bottom: 30px;
+    }
+    
+    .sidebar-item:last-child {
+      margin-bottom: 0;
+    }
+    
+    .sidebar-item h4 {
+      color: #602b82;
+      font-size: 20px;
+      font-weight: 600;
+      margin-bottom: 20px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid #cd8b47;
+    }
+    
+    /* Estilos para enlaces rápidos */
+    .quick-links {
+      list-style: none;
+      padding: 0;
+    }
+    
+    .quick-links li {
+      margin-bottom: 12px;
+    }
+    
+    .quick-links a {
+      display: flex;
+      align-items: center;
+      color: #333;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+    
+    .quick-links a:hover {
+      color: #602b82;
+      transform: translateX(5px);
+    }
+    
+    .quick-links i {
+      color: #cd8b47;
+      margin-right: 10px;
+      width: 20px;
+      text-align: center;
+    }
+    
+    /* Estilos para contenido principal */
+    .main-content h2 {
+      color: #602b82;
+      margin-bottom: 20px;
+      font-weight: 700;
+    }
+    
+    .main-content > p {
+      margin-bottom: 30px;
+      font-size: 16px;
+      line-height: 1.8;
+    }
+    
+    @media (max-width: 768px) {
+      .page-heading h2 {
+        font-size: 28px;
+      }
+      
+      .section-title {
+        font-size: 24px;
+      }
+      
+      .sidebar {
+        margin-top: 40px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Sub Header -->
+  <div class="sub-header">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-sm-8">
+          <div class="left-content">
+            <p>Bienvenidos a la <em>Universidad Politécnica de Baja California</em> - Formando profesionales de excelencia</p>
+          </div>
+        </div>
+        <div class="col-lg-4 col-sm-4">
+          <div class="right-icons">
+            <ul>
+              <li><a href="https://www.facebook.com/UPBCUNIVERSIDAD" target="_blank" title="Facebook"><i class="fa fa-facebook"></i></a></li>
+              <li><a href="https://www.instagram.com/upbcuniversidad/" target="_blank" title="Instagram"><i class="fa fa-instagram"></i></a></li>
+              <li><a href="https://www.youtube.com/channel/UCCROxBHIXoVourok76BnXNA" target="_blank" title="YouTube"><i class="fa fa-youtube"></i></a></li>
+              <li><a href="https://www2.upbc.edu.mx/alumnos/siaax/" target="_blank" title="SIAAX Alumnos"><i class="fa fa-user"></i></a></li>
+              <li><a href="https://www2.upbc.edu.mx/siaax/Defaultx.aspx" target="_blank" title="SIAAX"><i class="fa fa-graduation-cap"></i></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ***** Header Area Start ***** -->
+  <div id="navbar-container"></div>
+  <!-- ***** Header Area End ***** -->
+
+  <!-- Espacio para que el menú no tape el contenido -->
+  <div style="height: 100px;"></div>
+
+  <!-- ***** Page Title Start ***** -->
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="page-title">
+          <h6>Vida universitaria</h6>
+          <h2 class="mb-4">Convivencia y Equidad</h2>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- ***** Page Title End ***** -->
+
+  <!-- ***** Page Content Start ***** -->
+  <section class="page-content pt-0">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8">
+          <div class="main-content">
+            <h2>Construyendo una comunidad universitaria inclusiva y respetuosa</h2>
+            <p>En la Universidad Politécnica de Baja California, estamos comprometidos con la creación de un entorno educativo donde la convivencia armónica y la equidad sean pilares fundamentales. Creemos firmemente que la diversidad enriquece nuestra comunidad y que cada miembro merece ser tratado con dignidad y respeto.</p>
+            
+            <div class="section-content mb-5">
+              <h3 class="section-title">Nuestros Valores</h3>
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="value-card">
+                    <div class="value-icon">
+                      <i class="fa fa-handshake-o"></i>
+                    </div>
+                    <h4>Respeto</h4>
+                    <p>Promovemos el reconocimiento y valoración de las diferencias individuales, fomentando un trato digno entre todos los miembros de nuestra comunidad.</p>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="value-card">
+                    <div class="value-icon">
+                      <i class="fa fa-balance-scale"></i>
+                    </div>
+                    <h4>Equidad</h4>
+                    <p>Trabajamos para garantizar la igualdad de oportunidades y el acceso justo a los recursos y servicios educativos para todos nuestros estudiantes.</p>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="value-card">
+                    <div class="value-icon">
+                      <i class="fa fa-users"></i>
+                    </div>
+                    <h4>Inclusión</h4>
+                    <p>Construimos espacios donde todas las voces son escuchadas y valoradas, eliminando barreras para la participación plena de cada persona.</p>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="value-card">
+                    <div class="value-icon">
+                      <i class="fa fa-heart"></i>
+                    </div>
+                    <h4>Solidaridad</h4>
+                    <p>Fomentamos el apoyo mutuo y la colaboración entre los miembros de nuestra comunidad, creando redes de soporte para el bienestar colectivo.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="section-content mb-5">
+              <h3 class="section-title">Programas y Actividades</h3>
+              <div class="program-card">
+                <h4>Programa de Sensibilización y Prevención</h4>
+                <p>Realizamos talleres, conferencias y campañas de concientización sobre temas como la prevención de la violencia, la igualdad de género y el respeto a la diversidad.</p>
+              </div>
+              <div class="program-card">
+                <h4>Mediación y Resolución de Conflictos</h4>
+                <p>Contamos con un equipo capacitado para facilitar el diálogo y la resolución pacífica de conflictos dentro de la comunidad universitaria.</p>
+              </div>
+              <div class="program-card">
+                <h4>Comité de Equidad e Inclusión</h4>
+                <p>Un grupo multidisciplinario que trabaja en la implementación de políticas y prácticas que promuevan la equidad y la inclusión en todos los ámbitos universitarios.</p>
+              </div>
+            </div>
+            
+            <div class="cta-box">
+              <h3>¿Quieres participar?</h3>
+              <p>Súmate a nuestras iniciativas y contribuye a construir una comunidad universitaria más justa, inclusiva y respetuosa.</p>
+              <a href="#" class="cta-btn">Conoce más</a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-lg-4">
+          <div class="sidebar">
+            <div class="sidebar-item">
+              <h4>Recursos</h4>
+              <ul class="quick-links">
+                <li><a href="#"><i class="fa fa-file-pdf-o"></i> Protocolo de actuación contra la discriminación</a></li>
+                <li><a href="#"><i class="fa fa-file-text-o"></i> Guía para la convivencia universitaria</a></li>
+                <li><a href="#"><i class="fa fa-book"></i> Política de equidad de género</a></li>
+                <li><a href="#"><i class="fa fa-exclamation-triangle"></i> Procedimiento para denuncias</a></li>
+              </ul>
+            </div>
+            
+            <div class="sidebar-item">
+              <h4>Contacto</h4>
+              <p><strong>Coordinación de Convivencia y Equidad</strong></p>
+              <p><i class="fa fa-envelope"></i> convivencia.equidad@upbc.edu.mx</p>
+              <p><i class="fa fa-phone"></i> (686) 123-4567 Ext. 123</p>
+              <p><i class="fa fa-map-marker"></i> Edificio A, Planta Baja</p>
+              <p><i class="fa fa-clock-o"></i> Lunes a Viernes: 8:00 - 16:00</p>
+            </div>
+            
+            <div class="sidebar-item">
+              <h4>Enlaces Rápidos</h4>
+              <ul class="quick-links">
+                <li><a href="../../vida-universitaria/vida-estudiantil/vida-estudiantil.html"><i class="fa fa-users"></i> Vida Estudiantil</a></li>
+                <li><a href="../../vida-universitaria/eventos-especiales/eventos-especiales.html"><i class="fa fa-calendar"></i> Eventos Especiales</a></li>
+                <li><a href="../../vida-universitaria/bienestar-salud/bienestar-salud.html"><i class="fa fa-heartbeat"></i> Bienestar y Salud</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ***** Page Content End ***** -->
+
+  <!-- ***** Footer Start ***** -->
+  <div id="footer-container"></div>
+  <!-- ***** Footer End ***** -->
+
+  <!-- Estilos adicionales para el footer -->
+  <style>
+    footer {
+      background-color: #f8f9fa;
+      padding: 50px 0 20px;
+      color: #333;
+      margin-top: 50px;
+    }
+    
+    footer h4 {
+      color: var(--upbc-purple);
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 20px;
+      position: relative;
+    }
+    
+    footer h4:after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -8px;
+      width: 50px;
+      height: 2px;
+      background-color: var(--upbc-purple);
+    }
+    
+    .footer-links, .footer-contact {
+      list-style: none;
+      padding-left: 0;
+    }
+    
+    .footer-links li, .footer-contact li {
+      margin-bottom: 10px;
+    }
+    
+    .footer-links a {
+      color: #555;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+    
+    .footer-links a:hover {
+      color: var(--upbc-purple);
+      padding-left: 5px;
+    }
+    
+    .footer-contact li {
+      display: flex;
+      align-items: flex-start;
+    }
+    
+    .footer-contact i {
+      color: var(--upbc-purple);
+      margin-right: 10px;
+      margin-top: 5px;
+    }
+    
+    .footer-social {
+      display: flex;
+      gap: 10px;
+    }
+    
+    .footer-social a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      background-color: white;
+      color: #333;
+      border-radius: 50%;
+      transition: all 0.3s ease;
+      border: 1px solid #ddd;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    }
+    
+    .footer-social a:hover {
+      background-color: #602b82; /* Usar valor directo en lugar de variable */
+      color: #ffffff !important; /* Forzar color blanco con !important */
+      transform: translateY(-3px);
+      border-color: #602b82;
+    }
+    
+    .footer-social a:hover i {
+      color: #ffffff !important; /* Asegurar que el icono sea blanco */
+    }
+    
+    .copyright-text {
+      text-align: center;
+      font-size: 14px;
+      margin-top: 20px;
+    }
+    
+    .footer-map iframe {
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    
+    @media (max-width: 767px) {
+      footer [class*="col-"] {
+        margin-bottom: 30px;
+      }
+    }
+  </style>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="../../vendor/jquery/jquery.min.js"></script>
+  <script src="../../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <script src="../../assets/js/isotope.min.js"></script>
+  <script src="../../assets/js/owl-carousel.js"></script>
+  <script src="../../assets/js/lightbox.js"></script>
+  <script src="../../assets/js/tabs.js"></script>
+  <script src="../../assets/js/video.js"></script>
+  <script src="../../assets/js/slick-slider.js"></script>
+  <script src="../../assets/js/custom.js"></script>
+  <!-- Script para cargar componentes dinámicos -->
+  <script src="../../components-loader.js"></script>
+</body>
+
+</html>

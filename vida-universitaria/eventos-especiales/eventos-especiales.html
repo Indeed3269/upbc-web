@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Eventos Especiales - Universidad Politécnica de Baja California">
+  <meta name="author" content="UPBC">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <title>UPBC - Eventos Especiales</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="../../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Asegurando que Bootstrap JS esté disponible -->
+  <script src="../../vendor/jquery/jquery.min.js"></script>
+  <script src="../../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Additional CSS Files -->
+  <link rel="stylesheet" href="../../assets/css/fontawesome.css">
+  <link rel="stylesheet" href="../../assets/css/owl.css">
+  <link rel="stylesheet" href="../../assets/css/lightbox.css">
+  <link rel="stylesheet" href="../../assets/css/templatemo-edu-meeting.css">
+  <!-- UPBC CSS Modular Structure -->
+  <link rel="stylesheet" href="../../assets/css/upbc-main.css?v=1.1">
+  <style>
+    /* Estilos para el título de la página */
+    .page-title {
+      padding: 20px 0;
+      border-bottom: 3px solid #602b82;
+      margin-bottom: 30px;
+    }
+    
+    .page-title h6 {
+      color: #cd8b47;
+      font-size: 16px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    
+    .page-title h2 {
+      color: #602b82;
+      font-size: 36px;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+    
+    .page-content {
+      padding: 60px 0;
+    }
+    
+    /* Estilos para eventos destacados */
+    .featured-events {
+      margin-bottom: 50px;
+    }
+    
+    .featured-event-card {
+      background-color: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      margin-bottom: 30px;
+      transition: transform 0.3s ease;
+    }
+    
+    .featured-event-card:hover {
+      transform: translateY(-5px);
+    }
+    
+    .featured-event-image {
+      height: 250px;
+      overflow: hidden;
+      position: relative;
+    }
+    
+    .featured-event-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+    
+    .featured-event-card:hover .featured-event-image img {
+      transform: scale(1.05);
+    }
+    
+    .featured-event-date {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      background-color: #602b82;
+      color: #fff;
+      padding: 10px 15px;
+      border-radius: 5px;
+      font-weight: 600;
+      font-size: 14px;
+    }
+    
+    .featured-event-content {
+      padding: 25px;
+    }
+    
+    .featured-event-content h3 {
+      color: #602b82;
+      font-size: 22px;
+      font-weight: 700;
+      margin-bottom: 15px;
+    }
+    
+    .featured-event-content p {
+      color: #7b8082;
+      font-size: 15px;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+    
+    .event-meta {
+      display: flex;
+      align-items: center;
+      margin-bottom: 15px;
+    }
+    
+    .event-meta i {
+      color: #cd8b47;
+      margin-right: 8px;
+      width: 16px;
+      text-align: center;
+    }
+    
+    .event-meta span {
+      color: #666;
+      font-size: 14px;
+      margin-right: 20px;
+    }
+    
+    .event-btn {
+      display: inline-block;
+      background-color: #602b82;
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 5px;
+      font-weight: 500;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+    
+    .event-btn:hover {
+      background-color: #cd8b47;
+      color: #fff;
+      text-decoration: none;
+    }
+    
+    /* Estilos para calendario de eventos */
+    .events-calendar {
+      margin-bottom: 50px;
+    }
+    
+    .calendar-title {
+      color: #602b82;
+      font-size: 28px;
+      font-weight: 700;
+      margin-bottom: 20px;
+      border-bottom: 2px solid #cd8b47;
+      padding-bottom: 10px;
+    }
+    
+    .event-list {
+      list-style: none;
+      padding: 0;
+    }
+    
+    .event-item {
+      display: flex;
+      background-color: #f9f9f9;
+      border-radius: 10px;
+      padding: 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+      transition: transform 0.3s ease;
+    }
+    
+    .event-item:hover {
+      transform: translateX(5px);
+    }
+    
+    .event-date-box {
+      background-color: #602b82;
+      color: #fff;
+      width: 80px;
+      height: 80px;
+      border-radius: 10px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      margin-right: 20px;
+      flex-shrink: 0;
+    }
+    
+    .event-date-box .day {
+      font-size: 28px;
+      line-height: 1;
+    }
+    
+    .event-date-box .month {
+      font-size: 14px;
+      text-transform: uppercase;
+    }
+    
+    .event-details {
+      flex: 1;
+    }
+    
+    .event-details h4 {
+      color: #602b82;
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+    
+    .event-details p {
+      color: #7b8082;
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+    
+    .event-details .event-location {
+      display: flex;
+      align-items: center;
+      color: #666;
+      font-size: 14px;
+    }
+    
+    .event-details .event-location i {
+      color: #cd8b47;
+      margin-right: 8px;
+    }
+    
+    /* Estilos para la barra lateral */
+    .sidebar {
+      background-color: #f9f9f9;
+      border-radius: 10px;
+      padding: 25px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+      margin-top: 30px;
+    }
+    
+    .sidebar-item {
+      margin-bottom: 30px;
+    }
+    
+    .sidebar-item:last-child {
+      margin-bottom: 0;
+    }
+    
+    .sidebar-item h4 {
+      color: #602b82;
+      font-size: 20px;
+      font-weight: 600;
+      margin-bottom: 20px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid #cd8b47;
+    }
+    
+    /* Estilos para enlaces rápidos */
+    .quick-links {
+      list-style: none;
+      padding: 0;
+    }
+    
+    .quick-links li {
+      margin-bottom: 12px;
+    }
+    
+    .quick-links a {
+      display: flex;
+      align-items: center;
+      color: #333;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+    
+    .quick-links a:hover {
+      color: #602b82;
+      transform: translateX(5px);
+    }
+    
+    .quick-links i {
+      color: #cd8b47;
+      margin-right: 10px;
+      width: 20px;
+      text-align: center;
+    }
+    
+    /* Estilos para categorías de eventos */
+    .event-categories {
+      list-style: none;
+      padding: 0;
+    }
+    
+    .event-categories li {
+      margin-bottom: 10px;
+    }
+    
+    .event-categories a {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: #333;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+    
+    .event-categories a:hover {
+      color: #602b82;
+    }
+    
+    .event-categories .category-count {
+      background-color: #602b82;
+      color: #fff;
+      font-size: 12px;
+      font-weight: 600;
+      padding: 3px 8px;
+      border-radius: 20px;
+    }
+    
+    @media (max-width: 768px) {
+      .page-heading h2 {
+        font-size: 28px;
+      }
+      
+      .featured-event-image {
+        height: 200px;
+      }
+      
+      .sidebar {
+        margin-top: 40px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Sub Header -->
+  <div class="sub-header">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-sm-8">
+          <div class="left-content">
+            <p>Bienvenidos a la <em>Universidad Politécnica de Baja California</em> - Formando profesionales de excelencia</p>
+          </div>
+        </div>
+        <div class="col-lg-4 col-sm-4">
+          <div class="right-icons">
+            <ul>
+              <li><a href="https://www.facebook.com/UPBCUNIVERSIDAD" target="_blank" title="Facebook"><i class="fa fa-facebook"></i></a></li>
+              <li><a href="https://www.instagram.com/upbcuniversidad/" target="_blank" title="Instagram"><i class="fa fa-instagram"></i></a></li>
+              <li><a href="https://www.youtube.com/channel/UCCROxBHIXoVourok76BnXNA" target="_blank" title="YouTube"><i class="fa fa-youtube"></i></a></li>
+              <li><a href="https://www2.upbc.edu.mx/alumnos/siaax/" target="_blank" title="SIAAX Alumnos"><i class="fa fa-user"></i></a></li>
+              <li><a href="https://www2.upbc.edu.mx/siaax/Defaultx.aspx" target="_blank" title="SIAAX"><i class="fa fa-graduation-cap"></i></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ***** Header Area Start ***** -->
+  <div id="navbar-container"></div>
+  <!-- ***** Header Area End ***** -->
+
+  <!-- Espacio para que el menú no tape el contenido -->
+  <div style="height: 100px;"></div>
+
+  <!-- ***** Page Title Start ***** -->
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="page-title">
+          <h6>Vida universitaria</h6>
+          <h2 class="mb-4">Eventos Especiales</h2>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- ***** Page Title End ***** -->
+
+  <!-- ***** Page Content Start ***** -->
+  <section class="page-content pt-0">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8">
+          <div class="featured-events">
+            <h3 class="calendar-title">Eventos Destacados</h3>
+            
+            <div class="row">
+              <div class="col-lg-12">
+                <div class="featured-event-card">
+                  <div class="featured-event-image">
+                    <img src="../../assets/images/vida-universitaria/eventos/evento-principal.jpg" alt="Semana de la Ingeniería">
+                    <div class="featured-event-date">15-19 Junio</div>
+                  </div>
+                  <div class="featured-event-content">
+                    <h3>Semana de la Ingeniería UPBC 2025</h3>
+                    <div class="event-meta">
+                      <i class="fa fa-calendar"></i>
+                      <span>15-19 Junio, 2025</span>
+                      <i class="fa fa-clock-o"></i>
+                      <span>9:00 - 18:00</span>
+                    </div>
+                    <div class="event-meta">
+                      <i class="fa fa-map-marker"></i>
+                      <span>Auditorio Principal y Laboratorios UPBC</span>
+                    </div>
+                    <p>Una semana completa dedicada a la innovación tecnológica, con conferencias magistrales, talleres prácticos, exposiciones de proyectos y networking con empresas del sector. Una oportunidad única para que nuestros estudiantes muestren su talento y se conecten con el mundo profesional.</p>
+                    <a href="#" class="event-btn">Más información</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="row">
+              <div class="col-md-6">
+                <div class="featured-event-card">
+                  <div class="featured-event-image">
+                    <img src="../../assets/images/vida-universitaria/eventos/evento-secundario1.jpg" alt="Foro de Emprendimiento">
+                    <div class="featured-event-date">25 Mayo</div>
+                  </div>
+                  <div class="featured-event-content">
+                    <h3>Foro de Emprendimiento</h3>
+                    <div class="event-meta">
+                      <i class="fa fa-calendar"></i>
+                      <span>25 Mayo, 2025</span>
+                      <i class="fa fa-clock-o"></i>
+                      <span>10:00 - 14:00</span>
+                    </div>
+                    <p>Espacio para compartir experiencias de emprendimiento exitoso y conectar con mentores.</p>
+                    <a href="#" class="event-btn">Más información</a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="featured-event-card">
+                  <div class="featured-event-image">
+                    <img src="../../assets/images/vida-universitaria/eventos/evento-secundario2.jpg" alt="Festival Cultural">
+                    <div class="featured-event-date">10 Julio</div>
+                  </div>
+                  <div class="featured-event-content">
+                    <h3>Festival Cultural UPBC</h3>
+                    <div class="event-meta">
+                      <i class="fa fa-calendar"></i>
+                      <span>10 Julio, 2025</span>
+                      <i class="fa fa-clock-o"></i>
+                      <span>16:00 - 21:00</span>
+                    </div>
+                    <p>Una celebración de la diversidad cultural con música, danza, arte y gastronomía.</p>
+                    <a href="#" class="event-btn">Más información</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="events-calendar">
+            <h3 class="calendar-title">Próximos Eventos</h3>
+            <ul class="event-list">
+              <li class="event-item">
+                <div class="event-date-box">
+                  <span class="day">05</span>
+                  <span class="month">May</span>
+                </div>
+                <div class="event-details">
+                  <h4>Conferencia: Inteligencia Artificial en la Industria</h4>
+                  <p>Conferencia magistral sobre las aplicaciones actuales y futuras de la IA en diferentes sectores industriales.</p>
+                  <div class="event-location">
+                    <i class="fa fa-map-marker"></i>
+                    <span>Auditorio Principal, 17:00 - 19:00</span>
+                  </div>
+                </div>
+              </li>
+              <li class="event-item">
+                <div class="event-date-box">
+                  <span class="day">12</span>
+                  <span class="month">May</span>
+                </div>
+                <div class="event-details">
+                  <h4>Taller: Desarrollo de Aplicaciones Móviles</h4>
+                  <p>Taller práctico para aprender a desarrollar aplicaciones móviles utilizando las últimas tecnologías.</p>
+                  <div class="event-location">
+                    <i class="fa fa-map-marker"></i>
+                    <span>Laboratorio de Cómputo 3, 10:00 - 14:00</span>
+                  </div>
+                </div>
+              </li>
+              <li class="event-item">
+                <div class="event-date-box">
+                  <span class="day">20</span>
+                  <span class="month">May</span>
+                </div>
+                <div class="event-details">
+                  <h4>Feria de Empleo UPBC 2025</h4>
+                  <p>Oportunidad para conectar con empresas locales y nacionales que ofrecen vacantes para estudiantes y egresados.</p>
+                  <div class="event-location">
+                    <i class="fa fa-map-marker"></i>
+                    <span>Explanada Principal, 9:00 - 15:00</span>
+                  </div>
+                </div>
+              </li>
+              <li class="event-item">
+                <div class="event-date-box">
+                  <span class="day">02</span>
+                  <span class="month">Jun</span>
+                </div>
+                <div class="event-details">
+                  <h4>Concurso de Robótica</h4>
+                  <p>Competencia interuniversitaria donde los equipos mostrarán sus creaciones robóticas en diferentes categorías.</p>
+                  <div class="event-location">
+                    <i class="fa fa-map-marker"></i>
+                    <span>Gimnasio Universitario, 11:00 - 18:00</span>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="col-lg-4">
+          <div class="sidebar">
+            <div class="sidebar-item">
+              <h4>Categorías de Eventos</h4>
+              <ul class="event-categories">
+                <li><a href="#">Académicos <span class="category-count">12</span></a></li>
+                <li><a href="#">Culturales <span class="category-count">8</span></a></li>
+                <li><a href="#">Deportivos <span class="category-count">6</span></a></li>
+                <li><a href="#">Conferencias <span class="category-count">15</span></a></li>
+                <li><a href="#">Talleres <span class="category-count">9</span></a></li>
+                <li><a href="#">Ferias y Exposiciones <span class="category-count">4</span></a></li>
+              </ul>
+            </div>
+            
+            <div class="sidebar-item">
+              <h4>Calendario Académico</h4>
+              <p>Consulta las fechas importantes del calendario escolar para no perderte ningún evento relevante.</p>
+              <a href="../../calendario.html" class="event-btn" style="margin-top: 10px;">Ver Calendario</a>
+            </div>
+            
+            <div class="sidebar-item">
+              <h4>Enlaces Rápidos</h4>
+              <ul class="quick-links">
+                <li><a href="../../vida-universitaria/vida-estudiantil/vida-estudiantil.html"><i class="fa fa-users"></i> Vida Estudiantil</a></li>
+                <li><a href="../../vida-universitaria/convivencia-equidad/convivencia-equidad.html"><i class="fa fa-handshake-o"></i> Convivencia y Equidad</a></li>
+                <li><a href="../../vida-universitaria/bienestar-salud/bienestar-salud.html"><i class="fa fa-heartbeat"></i> Bienestar y Salud</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ***** Page Content End ***** -->
+
+  <!-- ***** Footer Start ***** -->
+  <div id="footer-container"></div>
+  <!-- ***** Footer End ***** -->
+
+  <!-- Estilos adicionales para el footer -->
+  <style>
+    footer {
+      background-color: #f8f9fa;
+      padding: 50px 0 20px;
+      color: #333;
+      margin-top: 50px;
+    }
+    
+    footer h4 {
+      color: var(--upbc-purple);
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 20px;
+      position: relative;
+    }
+    
+    footer h4:after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -8px;
+      width: 50px;
+      height: 2px;
+      background-color: var(--upbc-purple);
+    }
+    
+    .footer-links, .footer-contact {
+      list-style: none;
+      padding-left: 0;
+    }
+    
+    .footer-links li, .footer-contact li {
+      margin-bottom: 10px;
+    }
+    
+    .footer-links a {
+      color: #555;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+    
+    .footer-links a:hover {
+      color: var(--upbc-purple);
+      padding-left: 5px;
+    }
+    
+    .footer-contact li {
+      display: flex;
+      align-items: flex-start;
+    }
+    
+    .footer-contact i {
+      color: var(--upbc-purple);
+      margin-right: 10px;
+      margin-top: 5px;
+    }
+    
+    .footer-social {
+      display: flex;
+      gap: 10px;
+    }
+    
+    .footer-social a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      background-color: white;
+      color: #333;
+      border-radius: 50%;
+      transition: all 0.3s ease;
+      border: 1px solid #ddd;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    }
+    
+    .footer-social a:hover {
+      background-color: #602b82; /* Usar valor directo en lugar de variable */
+      color: #ffffff !important; /* Forzar color blanco con !important */
+      transform: translateY(-3px);
+      border-color: #602b82;
+    }
+    
+    .footer-social a:hover i {
+      color: #ffffff !important; /* Asegurar que el icono sea blanco */
+    }
+    
+    .copyright-text {
+      text-align: center;
+      font-size: 14px;
+      margin-top: 20px;
+    }
+    
+    .footer-map iframe {
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    
+    @media (max-width: 767px) {
+      footer [class*="col-"] {
+        margin-bottom: 30px;
+      }
+    }
+  </style>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="../../vendor/jquery/jquery.min.js"></script>
+  <script src="../../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <script src="../../assets/js/isotope.min.js"></script>
+  <script src="../../assets/js/owl-carousel.js"></script>
+  <script src="../../assets/js/lightbox.js"></script>
+  <script src="../../assets/js/tabs.js"></script>
+  <script src="../../assets/js/video.js"></script>
+  <script src="../../assets/js/slick-slider.js"></script>
+  <script src="../../assets/js/custom.js"></script>
+  <!-- Script para cargar componentes dinámicos -->
+  <script src="../../components-loader.js"></script>
+</body>
+
+</html>

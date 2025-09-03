@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Bienestar y Salud - Universidad Politécnica de Baja California">
+  <meta name="author" content="UPBC">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <title>UPBC - Bienestar y Salud</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="../../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Asegurando que Bootstrap JS esté disponible -->
+  <script src="../../vendor/jquery/jquery.min.js"></script>
+  <script src="../../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Additional CSS Files -->
+  <link rel="stylesheet" href="../../assets/css/fontawesome.css">
+  <link rel="stylesheet" href="../../assets/css/owl.css">
+  <link rel="stylesheet" href="../../assets/css/lightbox.css">
+  <link rel="stylesheet" href="../../assets/css/templatemo-edu-meeting.css">
+  <!-- UPBC CSS Modular Structure -->
+  <link rel="stylesheet" href="../../assets/css/upbc-main.css?v=1.1">
+  <style>
+    /* Estilos para el título de la página */
+    .page-title {
+      padding: 20px 0;
+      border-bottom: 3px solid #602b82;
+      margin-bottom: 30px;
+    }
+    
+    .page-title h6 {
+      color: #cd8b47;
+      font-size: 16px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    
+    .page-title h2 {
+      color: #602b82;
+      font-size: 36px;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+    
+    .page-content {
+      padding: 60px 0;
+    }
+    
+    /* Estilos para servicios de bienestar */
+    .wellness-services {
+      margin-bottom: 50px;
+    }
+    
+    .section-title {
+      color: #602b82;
+      font-size: 28px;
+      font-weight: 700;
+      margin-bottom: 30px;
+      border-bottom: 2px solid #cd8b47;
+      padding-bottom: 10px;
+    }
+    
+    .service-card {
+      background-color: #fff;
+      border-radius: 10px;
+      padding: 30px;
+      margin-bottom: 30px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+      transition: transform 0.3s ease;
+      height: 100%;
+      border-top: 5px solid #602b82;
+    }
+    
+    .service-card:hover {
+      transform: translateY(-5px);
+    }
+    
+    .service-icon {
+      font-size: 50px;
+      color: #cd8b47;
+      margin-bottom: 20px;
+    }
+    
+    .service-card h4 {
+      color: #602b82;
+      font-size: 22px;
+      font-weight: 600;
+      margin-bottom: 15px;
+    }
+    
+    .service-card p {
+      color: #7b8082;
+      font-size: 15px;
+      line-height: 1.6;
+    }
+    
+    /* Estilos para consejos de salud */
+    .health-tips {
+      margin-bottom: 50px;
+    }
+    
+    .tip-card {
+      background-color: #f9f9f9;
+      border-radius: 10px;
+      padding: 25px;
+      margin-bottom: 30px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+      border-left: 4px solid #cd8b47;
+    }
+    
+    .tip-card h4 {
+      color: #602b82;
+      font-size: 20px;
+      font-weight: 600;
+      margin-bottom: 15px;
+    }
+    
+    .tip-card p {
+      color: #7b8082;
+      font-size: 15px;
+      line-height: 1.6;
+      margin-bottom: 0;
+    }
+    
+    /* Estilos para programas de bienestar */
+    .wellness-programs {
+      margin-bottom: 50px;
+    }
+    
+    .program-card {
+      background-color: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      margin-bottom: 30px;
+      transition: transform 0.3s ease;
+    }
+    
+    .program-card:hover {
+      transform: translateY(-5px);
+    }
+    
+    .program-image {
+      height: 200px;
+      overflow: hidden;
+    }
+    
+    .program-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+    
+    .program-card:hover .program-image img {
+      transform: scale(1.05);
+    }
+    
+    .program-content {
+      padding: 25px;
+    }
+    
+    .program-content h4 {
+      color: #602b82;
+      font-size: 20px;
+      font-weight: 600;
+      margin-bottom: 15px;
+    }
+    
+    .program-content p {
+      color: #7b8082;
+      font-size: 15px;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+    
+    .program-btn {
+      display: inline-block;
+      background-color: #602b82;
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 5px;
+      font-weight: 500;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+    
+    .program-btn:hover {
+      background-color: #cd8b47;
+      color: #fff;
+      text-decoration: none;
+    }
+    
+    /* Estilos para la barra lateral */
+    .sidebar {
+      background-color: #f9f9f9;
+      border-radius: 10px;
+      padding: 25px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+      margin-top: 30px;
+    }
+    
+    .sidebar-item {
+      margin-bottom: 30px;
+    }
+    
+    .sidebar-item:last-child {
+      margin-bottom: 0;
+    }
+    
+    .sidebar-item h4 {
+      color: #602b82;
+      font-size: 20px;
+      font-weight: 600;
+      margin-bottom: 20px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid #cd8b47;
+    }
+    
+    /* Estilos para horarios */
+    .schedule-table {
+      width: 100%;
+      border-collapse: separate;
+      border-spacing: 0;
+      margin-bottom: 0;
+    }
+    
+    .schedule-table th, .schedule-table td {
+      padding: 12px 15px;
+      text-align: left;
+      border-bottom: 1px solid #eee;
+    }
+    
+    .schedule-table th {
+      background-color: #602b82;
+      color: #fff;
+      font-weight: 600;
+      font-size: 14px;
+    }
+    
+    .schedule-table tr:last-child td {
+      border-bottom: none;
+    }
+    
+    .schedule-table td {
+      color: #666;
+      font-size: 14px;
+    }
+    
+    /* Estilos para contacto de emergencia */
+    .emergency-contact {
+      background-color: #f8d7da;
+      border-left: 5px solid #dc3545;
+      padding: 15px;
+      border-radius: 5px;
+      margin-top: 20px;
+    }
+    
+    .emergency-contact h5 {
+      color: #721c24;
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+    
+    .emergency-contact p {
+      color: #721c24;
+      font-size: 14px;
+      margin-bottom: 5px;
+    }
+    
+    .emergency-contact .phone {
+      font-size: 18px;
+      font-weight: 700;
+    }
+    
+    /* Estilos para enlaces rápidos */
+    .quick-links {
+      list-style: none;
+      padding: 0;
+    }
+    
+    .quick-links li {
+      margin-bottom: 12px;
+    }
+    
+    .quick-links a {
+      display: flex;
+      align-items: center;
+      color: #333;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+    
+    .quick-links a:hover {
+      color: #602b82;
+      transform: translateX(5px);
+    }
+    
+    .quick-links i {
+      color: #cd8b47;
+      margin-right: 10px;
+      width: 20px;
+      text-align: center;
+    }
+    
+    @media (max-width: 768px) {
+      .page-heading h2 {
+        font-size: 28px;
+      }
+      
+      .section-title {
+        font-size: 24px;
+      }
+      
+      .sidebar {
+        margin-top: 40px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Sub Header -->
+  <div class="sub-header">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-sm-8">
+          <div class="left-content">
+            <p>Bienvenidos a la <em>Universidad Politécnica de Baja California</em> - Formando profesionales de excelencia</p>
+          </div>
+        </div>
+        <div class="col-lg-4 col-sm-4">
+          <div class="right-icons">
+            <ul>
+              <li><a href="https://www.facebook.com/UPBCUNIVERSIDAD" target="_blank" title="Facebook"><i class="fa fa-facebook"></i></a></li>
+              <li><a href="https://www.instagram.com/upbcuniversidad/" target="_blank" title="Instagram"><i class="fa fa-instagram"></i></a></li>
+              <li><a href="https://www.youtube.com/channel/UCCROxBHIXoVourok76BnXNA" target="_blank" title="YouTube"><i class="fa fa-youtube"></i></a></li>
+              <li><a href="https://www2.upbc.edu.mx/alumnos/siaax/" target="_blank" title="SIAAX Alumnos"><i class="fa fa-user"></i></a></li>
+              <li><a href="https://www2.upbc.edu.mx/siaax/Defaultx.aspx" target="_blank" title="SIAAX"><i class="fa fa-graduation-cap"></i></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ***** Header Area Start ***** -->
+  <div id="navbar-container"></div>
+  <!-- ***** Header Area End ***** -->
+
+  <!-- Espacio para que el menú no tape el contenido -->
+  <div style="height: 100px;"></div>
+
+  <!-- ***** Page Title Start ***** -->
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="page-title">
+          <h6>Vida universitaria</h6>
+          <h2 class="mb-4">Bienestar y Salud</h2>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- ***** Page Title End ***** -->
+
+  <!-- ***** Page Content Start ***** -->
+  <section class="page-content pt-0">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8">
+          <div class="wellness-services">
+            <h3 class="section-title">Nuestros Servicios</h3>
+            <p class="mb-4">En la Universidad Politécnica de Baja California nos preocupamos por el bienestar integral de nuestra comunidad universitaria. Ofrecemos diversos servicios orientados a promover la salud física y emocional de nuestros estudiantes, docentes y personal administrativo.</p>
+            
+            <div class="row">
+              <div class="col-md-6">
+                <div class="service-card">
+                  <div class="service-icon">
+                    <i class="fa fa-medkit"></i>
+                  </div>
+                  <h4>Servicio Médico</h4>
+                  <p>Atención médica de primer contacto para emergencias menores, consultas generales y seguimiento de condiciones crónicas. Contamos con personal capacitado para brindar primeros auxilios y orientación en temas de salud.</p>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="service-card">
+                  <div class="service-icon">
+                    <i class="fa fa-comments"></i>
+                  </div>
+                  <h4>Apoyo Psicológico</h4>
+                  <p>Servicio de orientación y apoyo psicológico para estudiantes que enfrentan situaciones de estrés, ansiedad, depresión u otros desafíos emocionales que puedan afectar su desempeño académico y bienestar personal.</p>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="service-card">
+                  <div class="service-icon">
+                    <i class="fa fa-heartbeat"></i>
+                  </div>
+                  <h4>Campañas de Salud</h4>
+                  <p>Organizamos regularmente campañas de prevención, vacunación y detección temprana de enfermedades, en colaboración con instituciones de salud locales para promover hábitos saludables en nuestra comunidad.</p>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="service-card">
+                  <div class="service-icon">
+                    <i class="fa fa-cutlery"></i>
+                  </div>
+                  <h4>Nutrición</h4>
+                  <p>Asesoría nutricional personalizada para promover hábitos alimenticios saludables. Ofrecemos evaluaciones, planes alimenticios y seguimiento para mejorar la calidad de vida de nuestra comunidad universitaria.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="wellness-programs">
+            <h3 class="section-title">Programas de Bienestar</h3>
+            <div class="row">
+              <div class="col-md-6">
+                <div class="program-card">
+                  <div class="program-image">
+                    <img src="../../assets/images/vida-universitaria/bienestar/programa1.jpg" alt="Programa de Activación Física">
+                  </div>
+                  <div class="program-content">
+                    <h4>Activación Física</h4>
+                    <p>Programa diseñado para promover la actividad física regular entre los miembros de la comunidad universitaria, con sesiones grupales de ejercicio, yoga y deportes recreativos.</p>
+                    <a href="#" class="program-btn">Inscríbete</a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="program-card">
+                  <div class="program-image">
+                    <img src="../../assets/images/vida-universitaria/bienestar/programa2.jpg" alt="Manejo del Estrés">
+                  </div>
+                  <div class="program-content">
+                    <h4>Manejo del Estrés</h4>
+                    <p>Talleres y sesiones prácticas para aprender técnicas de manejo del estrés, mindfulness y relajación, especialmente útiles durante períodos de exámenes.</p>
+                    <a href="#" class="program-btn">Inscríbete</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="health-tips">
+            <h3 class="section-title">Consejos para tu Bienestar</h3>
+            <div class="tip-card">
+              <h4>Mantén un Balance</h4>
+              <p>Equilibra tu tiempo entre estudio, descanso y actividades recreativas. Establece horarios regulares para dormir y procura descansar al menos 7-8 horas diarias para mantener un óptimo rendimiento académico.</p>
+            </div>
+            <div class="tip-card">
+              <h4>Alimentación Consciente</h4>
+              <p>Procura mantener una alimentación balanceada, rica en frutas, verduras y proteínas. Evita excesos de comida rápida y bebidas azucaradas. Recuerda hidratarte adecuadamente durante el día.</p>
+            </div>
+            <div class="tip-card">
+              <h4>Actividad Física Regular</h4>
+              <p>Incorpora al menos 30 minutos de actividad física moderada a tu rutina diaria. Puedes aprovechar las instalaciones deportivas de la universidad o participar en las clases grupales que ofrecemos.</p>
+            </div>
+            <div class="tip-card">
+              <h4>Salud Mental</h4>
+              <p>No descuides tu salud emocional. Si te sientes abrumado, busca apoyo en nuestro servicio de orientación psicológica. Recuerda que pedir ayuda es un signo de fortaleza, no de debilidad.</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-lg-4">
+          <div class="sidebar">
+            <div class="sidebar-item">
+              <h4>Horario de Servicios</h4>
+              <table class="schedule-table">
+                <thead>
+                  <tr>
+                    <th>Servicio</th>
+                    <th>Horario</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Servicio Médico</td>
+                    <td>Lun-Vie: 8:00 - 20:00</td>
+                  </tr>
+                  <tr>
+                    <td>Apoyo Psicológico</td>
+                    <td>Lun-Vie: 9:00 - 18:00</td>
+                  </tr>
+                  <tr>
+                    <td>Nutrición</td>
+                    <td>Mar y Jue: 10:00 - 16:00</td>
+                  </tr>
+                  <tr>
+                    <td>Activación Física</td>
+                    <td>Lun-Vie: 7:00 - 9:00 y 17:00 - 19:00</td>
+                  </tr>
+                </tbody>
+              </table>
+              
+              <div class="emergency-contact">
+                <h5>Contacto de Emergencia</h5>
+                <p>Para situaciones que requieran atención inmediata:</p>
+                <p class="phone"><i class="fa fa-phone"></i> (686) 123-4567 Ext. 911</p>
+              </div>
+            </div>
+            
+            <div class="sidebar-item">
+              <h4>Ubicación</h4>
+              <p><strong>Servicios de Bienestar y Salud</strong></p>
+              <p>Edificio B, Planta Baja</p>
+              <p>Junto a la cafetería principal</p>
+            </div>
+            
+            <div class="sidebar-item">
+              <h4>Enlaces Rápidos</h4>
+              <ul class="quick-links">
+                <li><a href="../../vida-universitaria/vida-estudiantil/vida-estudiantil.html"><i class="fa fa-users"></i> Vida Estudiantil</a></li>
+                <li><a href="../../vida-universitaria/convivencia-equidad/convivencia-equidad.html"><i class="fa fa-handshake-o"></i> Convivencia y Equidad</a></li>
+                <li><a href="../../vida-universitaria/eventos-especiales/eventos-especiales.html"><i class="fa fa-calendar"></i> Eventos Especiales</a></li>
+                <li><a href="#"><i class="fa fa-file-pdf-o"></i> Guía de Primeros Auxilios</a></li>
+                <li><a href="#"><i class="fa fa-clipboard"></i> Formulario de Cita</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ***** Page Content End ***** -->
+
+  <!-- ***** Footer Start ***** -->
+  <div id="footer-container"></div>
+  <!-- ***** Footer End ***** -->
+
+  <!-- Estilos adicionales para el footer -->
+  <style>
+    footer {
+      background-color: #f8f9fa;
+      padding: 50px 0 20px;
+      color: #333;
+      margin-top: 50px;
+    }
+    
+    footer h4 {
+      color: var(--upbc-purple);
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 20px;
+      position: relative;
+    }
+    
+    footer h4:after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -8px;
+      width: 50px;
+      height: 2px;
+      background-color: var(--upbc-purple);
+    }
+    
+    .footer-links, .footer-contact {
+      list-style: none;
+      padding-left: 0;
+    }
+    
+    .footer-links li, .footer-contact li {
+      margin-bottom: 10px;
+    }
+    
+    .footer-links a {
+      color: #555;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+    
+    .footer-links a:hover {
+      color: var(--upbc-purple);
+      padding-left: 5px;
+    }
+    
+    .footer-contact li {
+      display: flex;
+      align-items: flex-start;
+    }
+    
+    .footer-contact i {
+      color: var(--upbc-purple);
+      margin-right: 10px;
+      margin-top: 5px;
+    }
+    
+    .footer-social {
+      display: flex;
+      gap: 10px;
+    }
+    
+    .footer-social a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      background-color: white;
+      color: #333;
+      border-radius: 50%;
+      transition: all 0.3s ease;
+      border: 1px solid #ddd;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    }
+    
+    .footer-social a:hover {
+      background-color: #602b82; /* Usar valor directo en lugar de variable */
+      color: #ffffff !important; /* Forzar color blanco con !important */
+      transform: translateY(-3px);
+      border-color: #602b82;
+    }
+    
+    .footer-social a:hover i {
+      color: #ffffff !important; /* Asegurar que el icono sea blanco */
+    }
+    
+    .copyright-text {
+      text-align: center;
+      font-size: 14px;
+      margin-top: 20px;
+    }
+    
+    .footer-map iframe {
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    
+    @media (max-width: 767px) {
+      footer [class*="col-"] {
+        margin-bottom: 30px;
+      }
+    }
+  </style>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="../../vendor/jquery/jquery.min.js"></script>
+  <script src="../../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <script src="../../assets/js/isotope.min.js"></script>
+  <script src="../../assets/js/owl-carousel.js"></script>
+  <script src="../../assets/js/lightbox.js"></script>
+  <script src="../../assets/js/tabs.js"></script>
+  <script src="../../assets/js/video.js"></script>
+  <script src="../../assets/js/slick-slider.js"></script>
+  <script src="../../assets/js/custom.js"></script>
+  <!-- Script para cargar componentes dinámicos -->
+  <script src="../../components-loader.js"></script>
+</body>
+
+</html>
