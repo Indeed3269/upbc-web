@@ -1,5 +1,5 @@
 # Script para actualizar todas las páginas HTML para que usen el components-loader.js principal
-# y eliminar las versiones locales de components-loader.js en subdirectorios
+# y estandarizar todas las referencias a components-loader.js
 
 # Directorio raíz del proyecto
 $rootDir = $PSScriptRoot
@@ -30,17 +30,20 @@ foreach ($htmlFile in $htmlFiles) {
     $content = Get-Content -Path $htmlFile.FullName -Raw -Encoding UTF8
     $relativePath = Get-RelativePath -htmlFilePath $htmlFile.DirectoryName
     
-    # Buscar referencias a components-loader.js locales
+    # Buscar referencias a components-loader.js locales o en assets/js
     if ($content -match '<script src="components-loader\.js"></script>' -or 
-        $content -match '<script src="\.\.\/components-loader\.js"></script>' -or 
-        $content -match '<script src="\.\.\/\.\.\/components-loader\.js"></script>') {
+        $content -match '<script src="\.\./components-loader\.js"></script>' -or 
+        $content -match '<script src="\.\./\.\./components-loader\.js"></script>' -or
+        $content -match '<script src=".*assets\/js\/components-loader\.js"></script>') {
         
         Write-Host "Actualizando $($htmlFile.FullName)"
         
         # Reemplazar referencias locales con la ruta relativa correcta
-        $updatedContent = $content -replace '<script src="components-loader\.js"></script>', "<script src=`"$($relativePath)components-loader.js`"></script>"
-        $updatedContent = $updatedContent -replace '<script src="\.\.\/components-loader\.js"></script>', "<script src=`"$($relativePath)components-loader.js`"></script>"
-        $updatedContent = $updatedContent -replace '<script src="\.\.\/\.\.\/components-loader\.js"></script>', "<script src=`"$($relativePath)components-loader.js`"></script>"
+        $updatedContent = $content -replace '<script src="components-loader\.js"></script>', "<script src=\"$($relativePath)components-loader.js\"></script>"
+        $updatedContent = $updatedContent -replace '<script src="\.\./components-loader\.js"></script>', "<script src=\"$($relativePath)components-loader.js\"></script>"
+        $updatedContent = $updatedContent -replace '<script src="\.\./\.\./components-loader\.js"></script>', "<script src=\"$($relativePath)components-loader.js\"></script>"
+        # Reemplazar referencias a assets/js/components-loader.js
+        $updatedContent = $updatedContent -replace '<script src="(.*?)assets\/js\/components-loader\.js"></script>', "<script src=\"$($relativePath)components-loader.js\"></script>"
         
         # Guardar el archivo actualizado
         Set-Content -Path $htmlFile.FullName -Value $updatedContent -Encoding UTF8
@@ -58,4 +61,4 @@ foreach ($file in $componentLoaderFiles) {
     Remove-Item -Path $file.FullName -Force
 }
 
-Write-Host "Proceso completado. Se actualizaron las referencias en los archivos HTML y se eliminaron las versiones locales de components-loader.js."
+Write-Host "Proceso completado. Se estandarizaron las referencias a components-loader.js en todos los archivos HTML."

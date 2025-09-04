@@ -67,12 +67,18 @@ document.addEventListener('DOMContentLoaded', function() {
         if (depth > 0) {
             prefix = '../'.repeat(depth);
         }
+        console.log('Corrigiendo rutas con basePath:', prefix);
         
         // Corregir rutas en imágenes
         element.querySelectorAll('img').forEach(img => {
             const src = img.getAttribute('src');
             if (src && src.startsWith('assets/')) {
                 img.setAttribute('src', prefix + src);
+                console.log('Imagen corregida:', src, '->', prefix + src);
+            } else if (src && src.includes('BASE_PATH')) {
+                const newSrc = src.replace(/BASE_PATH/g, prefix.endsWith('/') ? prefix.slice(0, -1) : prefix);
+                img.setAttribute('src', newSrc);
+                console.log('Imagen con BASE_PATH corregida:', src, '->', newSrc);
             }
         });
         
@@ -82,10 +88,59 @@ document.addEventListener('DOMContentLoaded', function() {
             if (href && !href.startsWith('http') && !href.startsWith('#') && !href.startsWith('javascript')) {
                 if (href.startsWith('index.html') || href === 'index.html') {
                     a.setAttribute('href', prefix + href);
+                    console.log('Enlace corregido:', href, '->', prefix + href);
                 } else if (href.startsWith('assets/')) {
                     a.setAttribute('href', prefix + href);
+                    console.log('Enlace a recurso corregido:', href, '->', prefix + href);
+                } else if (href.endsWith('.html')) {
+                    a.setAttribute('href', prefix + href);
+                    console.log('Enlace a página corregido:', href, '->', prefix + href);
+                } else if (href.includes('BASE_PATH')) {
+                    const newHref = href.replace(/BASE_PATH/g, prefix.endsWith('/') ? prefix.slice(0, -1) : prefix);
+                    a.setAttribute('href', newHref);
+                    console.log('Enlace con BASE_PATH corregido:', href, '->', newHref);
                 }
             }
+        });
+        
+        // Corregir rutas en hojas de estilo
+        element.querySelectorAll('link[rel="stylesheet"]').forEach(link => {
+            const href = link.getAttribute('href');
+            if (href) {
+                if (href.startsWith('assets/')) {
+                    link.setAttribute('href', prefix + href);
+                    console.log('CSS corregido:', href, '->', prefix + href);
+                } else if (href.includes('BASE_PATH')) {
+                    // Asegurarse de que prefix no termine con / para evitar doble slash
+                    const prefixClean = prefix.endsWith('/') ? prefix.slice(0, -1) : prefix;
+                    const newHref = href.replace(/BASE_PATH\//g, prefixClean + '/').replace(/BASE_PATH/g, prefixClean);
+                    link.setAttribute('href', newHref);
+                    console.log('CSS con BASE_PATH corregido:', href, '->', newHref);
+                }
+            }
+        });
+        
+        // Corregir rutas en estilos inline que puedan contener BASE_PATH
+        element.querySelectorAll('style').forEach(style => {
+            if (style.textContent && style.textContent.includes('BASE_PATH')) {
+                style.textContent = style.textContent.replace(/BASE_PATH/g, prefix.endsWith('/') ? prefix.slice(0, -1) : prefix);
+                console.log('Estilo inline con BASE_PATH corregido');
+            }
+        });
+        
+        // Reemplazar el marcador BASE_PATH en cualquier elemento con atributos que puedan contener rutas
+        const attributesToCheck = ['src', 'href', 'data-src', 'data-background', 'poster'];
+        attributesToCheck.forEach(attr => {
+            element.querySelectorAll(`[${attr}*="BASE_PATH"]`).forEach(el => {
+                const value = el.getAttribute(attr);
+                if (value) {
+                    // Asegurarse de que prefix no termine con / para evitar doble slash
+                    const prefixClean = prefix.endsWith('/') ? prefix.slice(0, -1) : prefix;
+                    const newValue = value.replace(/BASE_PATH\//g, prefixClean + '/').replace(/BASE_PATH/g, prefixClean);
+                    el.setAttribute(attr, newValue);
+                    console.log(`Atributo ${attr} corregido:`, value, '->', newValue);
+                }
+            });
         });
     }
 });
