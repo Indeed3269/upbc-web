@@ -1,0 +1,104 @@
+/* Estilos para el footer UPBC */
+footer {
+  background-color: #f8f9fa;
+  padding: 50px 0 20px;
+  color: #333;
+  margin-top: 50px;
+}
+
+footer h4 {
+  color: #602b82; /* Color morado UPBC */
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+footer h4:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -8px;
+  width: 50px;
+  height: 2px;
+  background-color: #602b82; /* Color morado UPBC */
+}
+
+.footer-links, .footer-contact {
+  list-style: none;
+  padding-left: 0;
+}
+
+.footer-links li, .footer-contact li {
+  margin-bottom: 10px;
+}
+
+.footer-links a {
+  color: #555;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: #602b82; /* Color morado UPBC */
+  padding-left: 5px;
+}
+
+.footer-contact li {
+  display: flex;
+  align-items: flex-start;
+}
+
+.footer-contact i {
+  color: #602b82; /* Color morado UPBC */
+  margin-right: 10px;
+  margin-top: 5px;
+}
+
+.footer-social {
+  display: flex;
+  gap: 10px;
+}
+
+.footer-social a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  background-color: white;
+  color: #333;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  border: 1px solid #ddd;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.footer-social a:hover {
+  background-color: #602b82; /* Color morado UPBC */
+  color: #ffffff !important;
+  transform: translateY(-3px);
+  border-color: #602b82;
+}
+
+.footer-social a:hover i {
+  color: #ffffff !important;
+}
+
+.copyright-text {
+  text-align: center;
+  font-size: 14px;
+  margin-top: 20px;
+}
+
+.footer-map iframe {
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+/* Estilos responsive */
+@media (max-width: 767px) {
+  footer [class*="col-"] {
+    margin-bottom: 30px;
+  }
+}

@@ -18,6 +18,11 @@ document.addEventListener('DOMContentLoaded', function() {
     console.log('Construyendo ruta para footer con basePath:', basePath);
     const footerPath = basePath + 'components/footer.html';
     console.log('Ruta final del footer:', footerPath);
+    
+    // Cargar el CSS del footer
+    const footerCSSPath = basePath + 'assets/css/components/footer.css';
+    loadCSS(footerCSSPath);
+    
     loadComponent(footerPath, 'footer-container')
         .then(() => {
             // Reinicializar funcionalidades del footer después de cargarlo
@@ -126,72 +131,85 @@ document.addEventListener('DOMContentLoaded', function() {
         return prefix;
     }
     
-    // Función para corregir rutas relativas en los componentes cargados
+    // Función para corregir rutas relativas en componentes cargados
     function fixRelativePaths(element, componentUrl, basePath) {
-        console.log('Corrigiendo rutas con basePath:', basePath);
+        console.log('Corrigiendo rutas relativas en componente cargado');
         
-        // Corregir rutas en imágenes
+        // Obtener la ruta base del componente (sin el nombre del archivo)
+        const componentBasePath = componentUrl.substring(0, componentUrl.lastIndexOf('/') + 1);
+        console.log('Ruta base del componente:', componentBasePath);
+        
+        // Corregir rutas relativas en imágenes
         element.querySelectorAll('img').forEach(img => {
             const src = img.getAttribute('src');
-            if (src && src.startsWith('assets/')) {
-                img.setAttribute('src', basePath + src);
-                console.log('Imagen corregida:', src, '->', basePath + src);
-            } else if (src && src.includes('BASE_PATH')) {
-                const newSrc = src.replace(/BASE_PATH/g, basePath.endsWith('/') ? basePath.slice(0, -1) : basePath);
+            if (src && !src.startsWith('http') && !src.startsWith('/') && !src.startsWith('data:')) {
+                const newSrc = basePath + src;
                 img.setAttribute('src', newSrc);
-                console.log('Imagen con BASE_PATH corregida:', src, '->', newSrc);
+                console.log('Imagen corregida:', src, '->', newSrc);
             }
         });
         
-        // Corregir rutas en enlaces
+        // Corregir rutas relativas en enlaces
         element.querySelectorAll('a').forEach(a => {
             const href = a.getAttribute('href');
-            if (href && !href.startsWith('http') && !href.startsWith('#') && !href.startsWith('javascript')) {
-                // Enlaces a la página principal
-                if (href === 'index.html') {
-                    a.setAttribute('href', basePath + href);
-                    console.log('Enlace corregido:', href, '->', basePath + href);
-                } 
-                // Enlaces a recursos estáticos
-                else if (href.startsWith('assets/')) {
-                    a.setAttribute('href', basePath + href);
-                    console.log('Enlace a recurso corregido:', href, '->', basePath + href);
+            if (href && !href.startsWith('http') && !href.startsWith('/') && !href.startsWith('#') && !href.startsWith('tel:') && !href.startsWith('mailto:')) {
+                const newHref = basePath + href;
+                a.setAttribute('href', newHref);
+                console.log('Enlace corregido:', href, '->', newHref);
+            }
+        });
+        
+        // Corregir rutas relativas en estilos CSS inline que contengan url()
+        element.querySelectorAll('[style*="url("]').forEach(el => {
+            const style = el.getAttribute('style');
+            if (style) {
+                // Buscar todas las URL en el estilo inline
+                const urlRegex = /url\(['"]?([^'")]+)['"]?\)/g;
+                let match;
+                let newStyle = style;
+                
+                while ((match = urlRegex.exec(style)) !== null) {
+                    const url = match[1];
+                    if (!url.startsWith('http') && !url.startsWith('/') && !url.startsWith('data:')) {
+                        const newUrl = basePath + url;
+                        newStyle = newStyle.replace(url, newUrl);
+                        console.log('URL en estilo inline corregida:', url, '->', newUrl);
+                    }
                 }
-                // Enlaces a otras páginas
-                else if (href.endsWith('.html')) {
-                    a.setAttribute('href', basePath + href);
-                    console.log('Enlace a página corregido:', href, '->', basePath + href);
-                }
-                // Enlaces con BASE_PATH
-                else if (href.includes('BASE_PATH')) {
-                    const newHref = href.replace(/BASE_PATH/g, basePath.endsWith('/') ? basePath.slice(0, -1) : basePath);
-                    a.setAttribute('href', newHref);
-                    console.log('Enlace con BASE_PATH corregido:', href, '->', newHref);
+                
+                if (newStyle !== style) {
+                    el.setAttribute('style', newStyle);
+                    console.log('Estilo inline con URL corregido');
                 }
             }
         });
         
-        // Corregir rutas en hojas de estilo
+        // Corregir rutas relativas en hojas de estilo
         element.querySelectorAll('link[rel="stylesheet"]').forEach(link => {
             const href = link.getAttribute('href');
-            if (href) {
-                if (href.startsWith('assets/')) {
-                    link.setAttribute('href', basePath + href);
-                    console.log('CSS corregido:', href, '->', basePath + href);
-                } else if (href.includes('BASE_PATH')) {
-                    // Asegurarse de que basePath no termine con / para evitar doble slash
-                    const basePathClean = basePath.endsWith('/') ? basePath.slice(0, -1) : basePath;
-                    const newHref = href.replace(/BASE_PATH\//g, basePathClean + '/').replace(/BASE_PATH/g, basePathClean);
-                    link.setAttribute('href', newHref);
-                    console.log('CSS con BASE_PATH corregido:', href, '->', newHref);
-                }
+            if (href && !href.startsWith('http') && !href.startsWith('/')) {
+                const newHref = basePath + href;
+                link.setAttribute('href', newHref);
+                console.log('Hoja de estilo corregida:', href, '->', newHref);
             }
         });
         
-        // Corregir rutas en estilos inline que puedan contener BASE_PATH
-        element.querySelectorAll('style').forEach(style => {
-            if (style.textContent && style.textContent.includes('BASE_PATH')) {
-                style.textContent = style.textContent.replace(/BASE_PATH/g, basePath.endsWith('/') ? basePath.slice(0, -1) : basePath);
+        // Corregir rutas relativas en scripts
+        element.querySelectorAll('script[src]').forEach(script => {
+            const src = script.getAttribute('src');
+            if (src && !src.startsWith('http') && !src.startsWith('/')) {
+                const newSrc = basePath + src;
+                script.setAttribute('src', newSrc);
+                console.log('Script corregido:', src, '->', newSrc);
+            }
+        });
+        
+        // Corregir estilos inline que contengan BASE_PATH
+        element.querySelectorAll('[style*="BASE_PATH"]').forEach(el => {
+            const style = el.getAttribute('style');
+            if (style) {
+                const newStyle = style.replace(/BASE_PATH/g, basePath.endsWith('/') ? basePath.slice(0, -1) : basePath);
+                el.setAttribute('style', newStyle);
                 console.log('Estilo inline con BASE_PATH corregido');
             }
         });
@@ -221,8 +239,35 @@ document.addEventListener('DOMContentLoaded', function() {
                 console.log('Elemento dynamic-path corregido:', value, '->', newValue);
             }
         });
+}
+
+// Función para reinicializar funcionalidades del footer
+function reinitializeFooterFunctions() {
+    console.log('Reinicializando funcionalidades del footer');
+    // Aquí puedes añadir código para reinicializar cualquier funcionalidad del footer
+    // Por ejemplo, inicializar tooltips, popups, etc.
+}
+
+// Función para cargar archivos CSS dinámicamente
+function loadCSS(href) {
+    console.log('Cargando CSS desde:', href);
+    // Verificar si el CSS ya está cargado
+    const links = document.getElementsByTagName('link');
+    for (let i = 0; i < links.length; i++) {
+        if (links[i].href === href) {
+            console.log('CSS ya cargado:', href);
+            return;
+        }
     }
-});
+    
+    // Si no está cargado, crear un nuevo elemento link
+    const link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = href;
+    document.head.appendChild(link);
+    console.log('CSS cargado correctamente:', href);
+}
 
 // Función para reinicializar las funcionalidades del navbar
 function reinitializeNavbarFunctions() {
@@ -433,21 +478,5 @@ function reinitializeNavbarFunctions() {
     }
 }
 
-// Función para reinicializar las funcionalidades del footer
-function reinitializeFooterFunctions() {
-    // Reinicializar cualquier funcionalidad específica del footer aquí
-    // Por ejemplo, validación de formularios, suscripción al boletín, etc.
-    
-    // Ejemplo: Formulario de boletín informativo
-    $('.footer-newsletter').off('submit').on('submit', function(e) {
-        e.preventDefault();
-        // Lógica para manejar la suscripción al boletín
-        const email = $(this).find('input[type="email"]').val();
-        if (email) {
-            console.log('Suscripción al boletín:', email);
-            // Aquí iría el código para enviar la suscripción
-            $(this).find('input[type="email"]').val('');
-            alert('¡Gracias por suscribirte a nuestro boletín!');
-        }
-    });
-}
+// La función reinitializeFooterFunctions ya está definida arriba
+});
