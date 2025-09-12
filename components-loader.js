@@ -29,7 +29,9 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Cargar el footer
     console.log('Construyendo ruta para footer con basePath:', basePath);
-    const footerPath = basePath + 'components/footer.html';
+    // Añadir parámetro de versión para evitar el caché
+    const footerVersion = new Date().getTime();
+    const footerPath = basePath + 'components/footer.html?v=' + footerVersion;
     console.log('Ruta final del footer:', footerPath);
     
     // Cargar el CSS del footer
