@@ -12,6 +12,19 @@ document.addEventListener('DOMContentLoaded', function() {
         .then(() => {
             // Reinicializar funcionalidades del navbar después de cargarlo
             reinitializeNavbarFunctions();
+            
+            // Añadir div espaciador después del navbar para evitar superposición
+            const navbarContainer = document.getElementById('navbar-container');
+            if (navbarContainer) {
+                // Verificar si ya existe un espaciador
+                const existingSpacers = document.querySelectorAll('.navbar-spacer');
+                if (existingSpacers.length === 0) {
+                    const spacerDiv = document.createElement('div');
+                    spacerDiv.className = 'navbar-spacer';
+                    spacerDiv.style.height = '100px';
+                    navbarContainer.parentNode.insertBefore(spacerDiv, navbarContainer.nextSibling);
+                }
+            }
         });
     
     // Cargar el footer
@@ -22,6 +35,10 @@ document.addEventListener('DOMContentLoaded', function() {
     // Cargar el CSS del footer
     const footerCSSPath = basePath + 'assets/css/components/footer.css';
     loadCSS(footerCSSPath);
+    
+    // Cargar el CSS del menú desplegable
+    const dropdownMenuCSSPath = basePath + 'assets/css/components/dropdown-menu.css';
+    loadCSS(dropdownMenuCSSPath);
     
     loadComponent(footerPath, 'footer-container')
         .then(() => {

@@ -1,0 +1,42 @@
+/* Estilos para mejorar la indicación visual de los elementos del menú */
+
+/* Estilo para elementos con submenús (no clickeables) */
+.main-nav ul.nav .has-sub > a {
+  cursor: default;
+  position: relative;
+}
+
+/* Añadir flecha indicadora para elementos con submenús */
+.main-nav ul.nav .has-sub > a::after {
+  content: '\f107'; /* Código de flecha hacia abajo de FontAwesome */
+  font-family: 'FontAwesome';
+  margin-left: 5px;
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+/* Rotar flecha cuando el submenú está abierto */
+.main-nav ul.nav .has-sub.is-open-sub > a::after {
+  transform: rotate(180deg);
+}
+
+/* Estilo para elementos clickeables (sin submenús) */
+.main-nav ul.nav li:not(.has-sub) > a {
+  cursor: pointer;
+}
+
+/* Estilo para elementos dentro de submenús (siempre clickeables) */
+.main-nav ul.nav .sub-menu li a {
+  cursor: pointer;
+}
+
+/* Mejorar la visibilidad de los submenús */
+.main-nav ul.nav .sub-menu {
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  border-radius: 0 0 5px 5px;
+}
+
+/* Mejorar el hover en elementos de submenús */
+.main-nav ul.nav .sub-menu li a:hover {
+  background-color: rgba(96, 43, 130, 0.05); /* Color morado UPBC con baja opacidad */
+}

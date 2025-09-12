@@ -5,6 +5,10 @@
 
 	// Configuración del navbar al cargar la página
 	$(document).ready(function() {
+	  // Variables para controlar el scroll
+	  var lastScrollTop = 0;
+	  var delta = 5;
+	  
 	  // Calcular la altura exacta del banner morado superior
 	  var subHeaderHeight = $('.sub-header').outerHeight();
 	  
@@ -15,16 +19,38 @@
 	  var headerHeight = $('.header-area').outerHeight();
 	  var totalOffset = subHeaderHeight + headerHeight;
 	  
-	  // Función de manejo del scroll
+	  // Función de manejo del scroll con detección de dirección
 	  function handleScroll() {
-	    var scroll = $(window).scrollTop();
+	    var st = $(window).scrollTop();
 	    
-	    // El navbar se vuelve fijo exactamente cuando el banner morado superior desaparece
-	    if (scroll >= subHeaderHeight) {
-	      $('header').addClass('background-header');
-	    } else {
-	      $('header').removeClass('background-header');
+	    // Detectar si el scroll es hacia arriba o hacia abajo
+	    if (Math.abs(lastScrollTop - st) <= delta) {
+	      return; // No hacer nada si el cambio es mínimo
 	    }
+	    
+	    // Scroll hacia abajo
+	    if (st > lastScrollTop) {
+	      // Si estamos por debajo del umbral, ocultar el cinturillo
+	      if (st > subHeaderHeight) {
+	        $('header').addClass('background-header');
+	        $('.sub-header').addClass('hidden-sub-header');
+	      }
+	    } 
+	    // Scroll hacia arriba
+	    else {
+	      // Si llegamos al tope, mostrar el cinturillo
+	      if (st <= 0) {
+	        $('header').removeClass('background-header');
+	        $('.sub-header').removeClass('hidden-sub-header');
+	      }
+	      // Si estamos cerca del tope pero no completamente
+	      else if (st < subHeaderHeight) {
+	        $('header').removeClass('background-header');
+	        $('.sub-header').removeClass('hidden-sub-header');
+	      }
+	    }
+	    
+	    lastScrollTop = st;
 	  }
 	  
 	  // Ejecutar al inicio para establecer el estado correcto
@@ -288,6 +314,19 @@
 
     // Open/Close Submenus
     if (dropdownOpener.length) {
+        // Primero, asegurarse de que los elementos con submenús no sean clickeables
+        dropdownOpener.each(function() {
+            var _this = $(this);
+            // Cambiar el cursor para indicar que no es clickeable
+            _this.css('cursor', 'default');
+            // Eliminar cualquier href que pudiera causar navegación
+            if (_this.attr('href') && _this.attr('href') !== '#' && _this.attr('href') !== 'javascript:void(0)') {
+                _this.attr('data-original-href', _this.attr('href'));
+            }
+            _this.attr('href', 'javascript:void(0)');
+        });
+
+        // Manejar el evento de clic solo para abrir/cerrar submenús
         dropdownOpener.each(function () {
             var _this = $(this);
 
@@ -316,7 +355,10 @@
                     }
                 }
 
+                // Siempre prevenir la navegación para elementos con submenús
                 e.preventDefault();
+                e.stopPropagation();
+                return false;
             });
         });
     }
