@@ -406,19 +406,16 @@
         }
         
         .news-carousel-wrapper {
-          height: 700px !important; /* Altura suficiente para 2 filas */
           overflow: hidden !important;
         }
         
         .news-carousel {
-          flex-wrap: wrap !important;
-          height: 100% !important;
-          align-content: flex-start !important;
+          display: flex !important;
+          flex-wrap: nowrap !important;
         }
         
         .news-item {
-          flex: 0 0 calc(50% - 20px) !important; /* 2 noticias por fila en desktop */
-          margin-bottom: 20px !important;
+          flex: 0 0 calc(50% - 20px) !important; /* 2 noticias por página en desktop */
         }
       }
     </style>

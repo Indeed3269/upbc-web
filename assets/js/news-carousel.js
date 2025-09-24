@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', function() {
         isDesktopView = window.innerWidth >= 992;
         
         if (isDesktopView) {
-            itemsPerPage = 4; // Desktop: 4 noticias por página (2x2)
+            itemsPerPage = 2; // Desktop: 2 noticias por página
         } else if (window.innerWidth >= 768) {
             itemsPerPage = 3; // Tablet: 3 noticias por página
         } else {
@@ -51,24 +51,12 @@ document.addEventListener('DOMContentLoaded', function() {
         // Actualizar la página actual
         currentPage = pageIndex;
         
-        if (isDesktopView) {
-            // En escritorio, mostrar/ocultar elementos para el formato 2x2
-            newsItems.forEach((item, index) => {
-                const startIndex = currentPage * itemsPerPage;
-                const endIndex = startIndex + itemsPerPage;
-                
-                if (index >= startIndex && index < endIndex) {
-                    item.style.display = 'block';
-                } else {
-                    item.style.display = 'none';
-                }
-            });
-        } else {
-            // En móvil y tablet, usar transformación horizontal
-            const itemWidth = newsItems[0].offsetWidth;
-            const translateX = -pageIndex * itemsPerPage * itemWidth;
-            carousel.style.transform = `translateX(${translateX}px)`;
-        }
+        // Calcular la posición de desplazamiento
+        const itemWidth = newsItems[0].offsetWidth;
+        const translateX = -pageIndex * itemsPerPage * itemWidth;
+        
+        // Aplicar la transformación
+        carousel.style.transform = `translateX(${translateX}px)`;
         
         // Actualizar los indicadores de página
         updatePageIndicators();
@@ -114,25 +102,13 @@ document.addEventListener('DOMContentLoaded', function() {
     // Evento para redimensionar la ventana
     window.addEventListener('resize', () => {
         // Guardar el estado actual
-        const wasDesktopView = isDesktopView;
         const oldItemsPerPage = itemsPerPage;
         
         // Actualizar el número de elementos por página
         updateItemsPerPage();
         
-        // Si cambió el modo de visualización o el número de elementos por página
-        if (wasDesktopView !== isDesktopView || oldItemsPerPage !== itemsPerPage) {
-            // Resetear estilos si cambiamos entre modos
-            if (wasDesktopView !== isDesktopView) {
-                // Si cambiamos de escritorio a móvil/tablet
-                if (!isDesktopView) {
-                    newsItems.forEach(item => {
-                        item.style.display = 'block';
-                    });
-                    carousel.style.transform = 'translateX(0)';
-                }
-            }
-            
+        // Si cambió el número de elementos por página
+        if (oldItemsPerPage !== itemsPerPage) {
             // Recalcular páginas y mostrar la primera
             totalPages = Math.ceil(newsItems.length / itemsPerPage);
             currentPage = 0;
