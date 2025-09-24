@@ -400,8 +400,25 @@
       }
       
       @media (min-width: 992px) {
+        .news-carousel-container {
+          display: flex !important;
+          flex-direction: column !important;
+        }
+        
+        .news-carousel-wrapper {
+          height: 700px !important; /* Altura suficiente para 2 filas */
+          overflow: hidden !important;
+        }
+        
+        .news-carousel {
+          flex-wrap: wrap !important;
+          height: 100% !important;
+          align-content: flex-start !important;
+        }
+        
         .news-item {
-          flex: 0 0 calc(25% - 20px) !important; /* 4 noticias por fila en desktop */
+          flex: 0 0 calc(50% - 20px) !important; /* 2 noticias por fila en desktop */
+          margin-bottom: 20px !important;
         }
       }
     </style>
